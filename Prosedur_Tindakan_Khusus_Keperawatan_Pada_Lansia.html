@@ -1,0 +1,1633 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prosedur Tindakan Khusus Keperawatan Pada Lansia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #080d16;
+  --bg2:       #0f1623;
+  --bg3:       #18202f;
+  --bg4:       #1f2b3e;
+  --border:    #253045;
+  --border2:   #1e2b40;
+  --text:      #dde6f5;
+  --text2:     #7a90b8;
+  --text3:     #4f6285;
+  --teal:      #0d9488;
+  --teal-l:    #14b8a6;
+  --teal-g:    rgba(13,148,136,.14);
+  --gold:      #c97a07;
+  --gold-l:    #f59e0b;
+  --gold-g:    rgba(245,158,11,.13);
+  --green:     #22c55e;
+  --red:       #ef4444;
+  --blue:      #60a5fa;
+  --sidebar-w: 268px;
+  --radius:    14px;
+  --rsm:       8px;
+  --font-d:    'Playfair Display', serif;
+  --font-b:    'Plus Jakarta Sans', sans-serif;
+  --shadow:    0 4px 24px rgba(0,0,0,.5);
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.35);
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-b);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+button { font-family: var(--font-b); cursor: pointer; border: none; outline: none; }
+a { color: var(--teal-l); text-decoration: none; }
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.sidebar {
+  position: fixed; top: 0; left: 0;
+  width: var(--sidebar-w);
+  height: 100vh;
+  background: var(--bg2);
+  border-right: 1px solid var(--border2);
+  display: flex; flex-direction: column;
+  z-index: 100;
+  transition: left .3s ease;
+  overflow: hidden;
+}
+.main {
+  margin-left: var(--sidebar-w);
+  min-height: 100vh;
+  transition: margin-left .3s ease;
+}
+
+/* ============================================================
+   MOBILE HEADER
+   ============================================================ */
+.mob-header {
+  display: none;
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 56px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border2);
+  z-index: 200;
+  align-items: center;
+  padding: 0 1rem;
+  gap: .75rem;
+}
+.mob-title { flex: 1; font-size: .9rem; font-weight: 600; color: var(--text); }
+.mob-ham {
+  background: none; color: var(--text);
+  font-size: 1.35rem; padding: .25rem .4rem;
+  border-radius: var(--rsm);
+  transition: background .2s;
+}
+.mob-ham:hover { background: var(--bg3); }
+.mob-quiz {
+  background: var(--gold); color: #000;
+  font-size: .78rem; font-weight: 700;
+  padding: .35rem .75rem; border-radius: 99px;
+  transition: opacity .2s;
+}
+.mob-quiz:hover { opacity: .85; }
+
+/* ============================================================
+   SIDEBAR COMPONENTS
+   ============================================================ */
+.sb-logo {
+  padding: 1.25rem 1.1rem 1rem;
+  display: flex; align-items: center; gap: .8rem;
+  border-bottom: 1px solid var(--border2);
+  flex-shrink: 0;
+}
+.sb-icon {
+  width: 42px; height: 42px; border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal), var(--teal-l));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+  box-shadow: 0 0 16px var(--teal-g);
+}
+.sb-logo-text .t1 {
+  font-family: var(--font-d); font-size: .95rem; font-weight: 700;
+  color: var(--text); line-height: 1.2;
+}
+.sb-logo-text .t2 {
+  font-size: .7rem; color: var(--text3); margin-top: 2px;
+}
+
+.sb-scroll { flex: 1; overflow-y: auto; padding: .6rem .7rem; }
+.sb-label {
+  font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--text3); text-transform: uppercase;
+  padding: .75rem .5rem .35rem;
+}
+.nav-btn {
+  width: 100%; text-align: left;
+  padding: .6rem .75rem;
+  border-radius: var(--rsm);
+  background: none;
+  color: var(--text2);
+  font-size: .8rem; font-weight: 500;
+  display: flex; align-items: center; gap: .6rem;
+  transition: all .18s;
+  position: relative;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.nav-btn:hover { background: var(--bg3); color: var(--text); }
+.nav-btn.active {
+  background: var(--teal-g);
+  color: var(--teal-l);
+  font-weight: 600;
+}
+.nav-btn.active::before {
+  content: '';
+  position: absolute; left: 0; top: 20%; bottom: 20%;
+  width: 3px; border-radius: 0 3px 3px 0;
+  background: var(--teal-l);
+}
+.nav-ico { font-size: 1rem; flex-shrink: 0; }
+.nav-badge {
+  margin-left: auto;
+  background: var(--bg4); color: var(--text3);
+  font-size: .63rem; padding: 1px 6px;
+  border-radius: 99px; font-weight: 600;
+}
+.nav-btn.active .nav-badge { background: var(--teal-g); color: var(--teal-l); }
+
+.sb-footer {
+  padding: .85rem .9rem 1rem;
+  border-top: 1px solid var(--border2);
+  flex-shrink: 0;
+}
+.quiz-main-btn {
+  width: 100%;
+  padding: .7rem 1rem;
+  border-radius: var(--rsm);
+  background: linear-gradient(135deg, var(--gold), #e69c0a);
+  color: #0a0800;
+  font-weight: 700; font-size: .85rem;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  box-shadow: 0 4px 18px rgba(245,158,11,.2);
+  transition: all .2s;
+  margin-bottom: .8rem;
+}
+.quiz-main-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 22px rgba(245,158,11,.3); }
+.sb-info { padding: .1rem .25rem; }
+.sb-info .name { font-size: .75rem; font-weight: 600; color: var(--text2); }
+.sb-info .sem  { font-size: .68rem; color: var(--text3); margin-top: 2px; }
+
+/* ============================================================
+   SIDEBAR OVERLAY (mobile)
+   ============================================================ */
+.sb-overlay {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 99;
+}
+
+/* ============================================================
+   PAGE SYSTEM
+   ============================================================ */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+/* Slide dari bawah (modal/overlay) */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Slide dari kanan (soal quiz masuk) */
+@keyframes slideInR {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+/* Slide halaman saat navigate */
+@keyframes pageSlide {
+  from { opacity: 0; transform: translateX(18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+/* Goyangan saat jawaban salah */
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  25%     { transform: translateX(-6px); }
+  75%     { transform: translateX(6px); }
+}
+/* Pop saat jawaban benar */
+@keyframes correctPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+/* Kedip dot / badge */
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50%     { opacity: .3; }
+}
+/* Glow pulsing tombol quiz di sidebar */
+@keyframes sbGlow {
+  0%,100% { box-shadow: 0 4px 18px rgba(245,158,11,.2); }
+  50%     { box-shadow: 0 6px 28px rgba(245,158,11,.45); }
+}
+/* Animasi skor muncul */
+@keyframes scoreCount {
+  from { opacity: 0; transform: scale(.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+/* Animasi bintang muncul */
+@keyframes starsIn {
+  from { opacity: 0; transform: rotate(-20deg) scale(0); }
+  to   { opacity: 1; transform: rotate(0) scale(1); }
+}
+/* Pakai sbGlow di .quiz-main-btn */
+.quiz-main-btn { animation: sbGlow 2.5s ease infinite; }
+
+/* Stagger animation: tambahkan class .anim ke elemen, aktif saat .page.active */
+.anim { opacity: 0; }
+.page.active .anim { animation: fadeUp .45s ease-out forwards; }
+.page.active .anim:nth-child(1)    { animation-delay: .03s; }
+.page.active .anim:nth-child(2)    { animation-delay: .07s; }
+.page.active .anim:nth-child(3)    { animation-delay: .11s; }
+.page.active .anim:nth-child(4)    { animation-delay: .14s; }
+.page.active .anim:nth-child(5)    { animation-delay: .17s; }
+.page.active .anim:nth-child(6)    { animation-delay: .20s; }
+.page.active .anim:nth-child(7)    { animation-delay: .22s; }
+.page.active .anim:nth-child(8)    { animation-delay: .24s; }
+.page.active .anim:nth-child(9)    { animation-delay: .25s; }
+.page.active .anim:nth-child(10)   { animation-delay: .25s; }
+.page.active .anim:nth-child(n+11) { animation-delay: .25s; }
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+.home-hero {
+  padding: 3.5rem 3rem 2.5rem;
+  background: linear-gradient(160deg, var(--bg2) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  position: relative; overflow: hidden;
+}
+.home-hero::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, var(--teal-g) 0%, transparent 70%);
+  pointer-events: none;
+}
+.home-hero::after {
+  content: '';
+  position: absolute; bottom: -80px; left: 30%;
+  width: 250px; height: 250px;
+  background: radial-gradient(circle, var(--gold-g) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--teal-g); border: 1px solid rgba(20,184,166,.25);
+  color: var(--teal-l); font-size: .75rem; font-weight: 600;
+  padding: .3rem .85rem; border-radius: 99px;
+  letter-spacing: .05em; margin-bottom: 1.2rem;
+}
+.hero-title {
+  font-family: var(--font-d);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700; line-height: 1.2;
+  color: var(--text); margin-bottom: .6rem;
+}
+.hero-title span { color: var(--gold-l); font-style: italic; }
+.hero-sub {
+  font-size: .92rem; color: var(--text2);
+  max-width: 540px; line-height: 1.7; margin-bottom: 2rem;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.hero-tag {
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text2); font-size: .73rem; font-weight: 500;
+  padding: .28rem .75rem; border-radius: 99px;
+}
+
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; padding: 1.75rem 3rem;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border2);
+}
+.stat-card {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 1.25rem;
+  text-align: center;
+  transition: border-color .2s, transform .2s;
+}
+.stat-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+.stat-num {
+  font-family: var(--font-d); font-size: 2.2rem; font-weight: 700;
+  color: var(--teal-l); line-height: 1;
+}
+.stat-num.gold { color: var(--gold-l); }
+.stat-lbl { font-size: .72rem; color: var(--text2); margin-top: .4rem; font-weight: 500; }
+
+.chapters-section { padding: 2rem 3rem 3rem; }
+.sec-heading {
+  font-family: var(--font-d); font-size: 1.3rem; font-weight: 700;
+  color: var(--text); margin-bottom: .3rem;
+}
+.sec-sub { font-size: .8rem; color: var(--text2); margin-bottom: 1.5rem; }
+
+.chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.ch-card {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 1.4rem;
+  cursor: pointer; transition: all .22s;
+  position: relative; overflow: hidden;
+}
+.ch-card:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow); }
+.ch-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--gold-l));
+  opacity: 0; transition: opacity .2s;
+}
+.ch-card:hover::before { opacity: 1; }
+.ch-num {
+  font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--teal-l); text-transform: uppercase; margin-bottom: .5rem;
+  background: var(--teal-g); display: inline-block;
+  padding: .2rem .6rem; border-radius: 99px;
+}
+.ch-title {
+  font-family: var(--font-d); font-size: 1.05rem; font-weight: 600;
+  color: var(--text); margin-bottom: .5rem; line-height: 1.3;
+}
+.ch-desc { font-size: .78rem; color: var(--text2); line-height: 1.6; }
+.ch-arrow {
+  margin-top: 1rem;
+  color: var(--teal-l); font-size: .8rem; font-weight: 600;
+  display: flex; align-items: center; gap: .3rem;
+}
+
+/* ============================================================
+   CHAPTER PAGES
+   ============================================================ */
+.ch-hero {
+  padding: 2.5rem 3rem 2rem;
+  background: linear-gradient(160deg, var(--bg2) 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border2);
+  position: relative; overflow: hidden;
+}
+.ch-hero::after {
+  content: '';
+  position: absolute; top: -50px; right: -30px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, var(--teal-g) 0%, transparent 70%);
+}
+.ch-label {
+  display: inline-flex; align-items: center; gap: .5rem;
+  background: var(--teal-g); border: 1px solid rgba(20,184,166,.25);
+  color: var(--teal-l); font-size: .7rem; font-weight: 700;
+  padding: .25rem .8rem; border-radius: 99px;
+  letter-spacing: .08em; text-transform: uppercase; margin-bottom: .8rem;
+}
+.ch-hero h1 {
+  font-family: var(--font-d); font-size: clamp(1.6rem,3.5vw,2.4rem);
+  font-weight: 700; color: var(--text); line-height: 1.2;
+  margin-bottom: .5rem;
+}
+.ch-hero p { font-size: .88rem; color: var(--text2); max-width: 520px; }
+
+.content-wrap { padding: 2rem 3rem 3rem; }
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: var(--radius); padding: 1.6rem;
+  margin-bottom: 1.25rem;
+}
+.card h2 {
+  font-family: var(--font-d); font-size: 1.18rem; font-weight: 600;
+  color: var(--text); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: .6rem;
+}
+.card h2 .icon {
+  width: 32px; height: 32px; border-radius: 9px;
+  background: var(--teal-g); border: 1px solid rgba(20,184,166,.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.card h3 {
+  font-size: .95rem; font-weight: 600; color: var(--text);
+  margin-bottom: .7rem; margin-top: 1.2rem;
+}
+.card h3:first-child { margin-top: 0; }
+.card p { font-size: .85rem; color: var(--text2); line-height: 1.75; }
+
+/* ============================================================
+   DEFINITION BOXES
+   ============================================================ */
+.def-box {
+  background: var(--bg3); border-left: 3px solid var(--teal-l);
+  border-radius: 0 var(--rsm) var(--rsm) 0;
+  padding: 1rem 1.2rem; margin: .8rem 0;
+}
+.def-box .term {
+  font-weight: 700; color: var(--teal-l); font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem;
+}
+.def-box p { font-size: .84rem; color: var(--text); line-height: 1.7; }
+.def-box .key { color: var(--gold-l); font-weight: 700; }
+
+.def-gold {
+  background: var(--bg3); border-left: 3px solid var(--gold-l);
+  border-radius: 0 var(--rsm) var(--rsm) 0;
+  padding: 1rem 1.2rem; margin: .8rem 0;
+}
+.def-gold .term {
+  color: var(--gold-l); font-weight: 700; font-size: .78rem;
+  text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem;
+}
+.def-gold p { font-size: .84rem; color: var(--text); line-height: 1.7; }
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+.blist { list-style: none; padding: 0; }
+.blist li {
+  font-size: .84rem; color: var(--text2); line-height: 1.7;
+  padding: .45rem 0 .45rem 1.3rem;
+  position: relative; border-bottom: 1px solid var(--border2);
+}
+.blist li:last-child { border-bottom: none; }
+.blist li::before {
+  content: '';
+  position: absolute; left: 0; top: .9rem;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--teal-l);
+}
+.blist li strong { color: var(--text); font-weight: 600; }
+
+.nlist { list-style: none; padding: 0; counter-reset: nc; }
+.nlist li {
+  font-size: .84rem; color: var(--text2); line-height: 1.7;
+  padding: .5rem .5rem .5rem 2.2rem;
+  position: relative; border-bottom: 1px solid var(--border2);
+  counter-increment: nc;
+}
+.nlist li:last-child { border-bottom: none; }
+.nlist li::before {
+  content: counter(nc);
+  position: absolute; left: 0; top: .55rem;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--teal-g); border: 1px solid rgba(20,184,166,.3);
+  color: var(--teal-l); font-size: .68rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.nlist li strong { color: var(--text); font-weight: 600; }
+
+/* ============================================================
+   SUB-SECTION DIVIDER
+   ============================================================ */
+.sub-sec {
+  display: flex; align-items: center; gap: .7rem;
+  margin: 1.4rem 0 .8rem;
+}
+.sub-sec-line { flex: 1; height: 1px; background: var(--border2); }
+.sub-sec-text {
+  font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--text3); text-transform: uppercase; white-space: nowrap;
+}
+
+/* ============================================================
+   PILLS (inline badge)
+   ============================================================ */
+.pill {
+  display: inline-block;
+  padding: .2rem .75rem;
+  border-radius: 99px;
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .04em;
+}
+.pill-teal { background: var(--teal-g); color: var(--teal-l); border: 1px solid rgba(20,184,166,.25); }
+.pill-gold { background: var(--gold-g); color: var(--gold-l); border: 1px solid rgba(245,158,11,.25); }
+
+/* ============================================================
+   SUMMARY CARD
+   ============================================================ */
+.summary {
+  background: linear-gradient(135deg, rgba(13,148,136,.12), rgba(245,158,11,.06));
+  border: 1px solid rgba(20,184,166,.25);
+  border-radius: var(--radius);
+  padding: 1.5rem; margin-bottom: 1.25rem;
+}
+.summary h3 {
+  font-family: var(--font-d); font-size: 1rem; font-weight: 700;
+  color: var(--teal-l); margin-bottom: 1rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.summary ul { list-style: none; padding: 0; }
+.summary ul li {
+  font-size: .83rem; color: var(--text2); line-height: 1.7;
+  padding: .35rem 0 .35rem 1.5rem; position: relative;
+  border-bottom: 1px solid rgba(20,184,166,.1);
+}
+.summary ul li:last-child { border-bottom: none; }
+.summary ul li::before {
+  content: '✦';
+  position: absolute; left: 0;
+  color: var(--teal-l); font-size: .6rem; top: .55rem;
+}
+
+/* ============================================================
+   GRID COMPONENTS
+   ============================================================ */
+
+/* 3-column (pilar/kategori) */
+.pilar-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 1rem 0; }
+.pilar-card {
+  background: var(--bg3); border: 1px solid var(--border);
+  border-radius: var(--rsm); padding: 1.2rem; text-align: center;
+  transition: all .2s;
+}
+.pilar-card:hover { border-color: var(--teal); background: var(--bg4); }
+.pilar-num {
+  font-family: var(--font-d); font-size: 1.5rem; font-weight: 700;
+  color: var(--teal-l); line-height: 1; margin-bottom: .5rem;
+}
+.pilar-title { font-size: .82rem; font-weight: 600; color: var(--text); line-height: 1.4; }
+.pilar-ico { font-size: 1.8rem; margin-bottom: .5rem; }
+
+/* Auto-fill indicator grid */
+.indik-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 1rem; margin: 1rem 0; }
+.indik-card {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: var(--rsm); padding: 1.1rem;
+  border-top: 3px solid var(--teal);
+  transition: transform .2s;
+}
+.indik-card:hover { transform: translateY(-2px); }
+.indik-cat {
+  font-size: .68rem; font-weight: 700; letter-spacing: .08em;
+  color: var(--teal-l); text-transform: uppercase; margin-bottom: .6rem;
+}
+.indik-card ul { list-style: none; padding: 0; }
+.indik-card li {
+  font-size: .78rem; color: var(--text2); padding: .3rem 0 .3rem 1.1rem;
+  position: relative; border-bottom: 1px solid var(--border2);
+  line-height: 1.5;
+}
+.indik-card li:last-child { border-bottom: none; }
+.indik-card li::before {
+  content: '▸';
+  position: absolute; left: 0; color: var(--teal-l); font-size: .65rem;
+}
+.indik-gold { border-top-color: var(--gold-l); }
+.indik-gold .indik-cat { color: var(--gold-l); }
+.indik-gold li::before { color: var(--gold-l); }
+
+/* Isu cards with icon header */
+.isu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr)); gap: 1rem; margin: 1rem 0; }
+.isu-card {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: var(--rsm); padding: 1.2rem;
+}
+.isu-head {
+  display: flex; align-items: center; gap: .6rem;
+  margin-bottom: .8rem;
+}
+.isu-ico {
+  width: 34px; height: 34px; border-radius: 9px;
+  background: var(--teal-g); font-size: 1rem;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.isu-head strong { font-size: .85rem; color: var(--text); font-weight: 600; }
+
+/* Compare table */
+.comp-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: .8rem 0; border-radius: var(--rsm); }
+.comp-table { width: 100%; min-width: 480px; border-collapse: collapse; font-size: .82rem; }
+.comp-table th {
+  background: var(--bg3); color: var(--teal-l);
+  padding: .7rem 1rem; text-align: left; font-weight: 700;
+  font-size: .75rem; letter-spacing: .05em; text-transform: uppercase;
+  border-bottom: 2px solid var(--teal);
+}
+.comp-table td {
+  padding: .65rem 1rem; color: var(--text2);
+  border-bottom: 1px solid var(--border2); line-height: 1.6;
+}
+.comp-table tr:last-child td { border-bottom: none; }
+.comp-table tr:hover td { background: var(--bg3); color: var(--text); }
+
+/* Small pill grid (kasus/contoh) */
+.kasus-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px,1fr)); gap: .75rem; margin: 1rem 0; }
+.kasus-item {
+  background: var(--bg3); border: 1px solid var(--border2);
+  border-radius: var(--rsm); padding: .9rem 1rem;
+  font-size: .82rem; color: var(--text); font-weight: 500;
+  text-align: center; transition: all .2s;
+  cursor: default;
+}
+.kasus-item:hover { border-color: var(--gold-l); background: var(--bg4); }
+
+/* ============================================================
+   FLASHCARD PAGE (grid layout — semua kartu tampil sekaligus)
+   ============================================================ */
+.fc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap: 1.1rem; padding: 2rem 3rem 3rem;
+}
+.fc-container { perspective: 1000px; }
+.fc-inner {
+  width: 100%; min-height: 180px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .6s cubic-bezier(.4,.2,.2,1);
+  cursor: pointer;
+}
+.fc-container.flipped .fc-inner { transform: rotateY(180deg); }
+.fc-face {
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  overflow: hidden;
+}
+.fc-front {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  justify-content: space-between;
+}
+.fc-back {
+  background: linear-gradient(135deg, rgba(13,148,136,.18), rgba(245,158,11,.08));
+  border: 1px solid rgba(20,184,166,.3);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+.fc-chapter {
+  font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+  color: var(--teal-l); text-transform: uppercase;
+  background: var(--teal-g); padding: .2rem .6rem;
+  border-radius: 99px; display: inline-block; margin-bottom: .7rem;
+}
+.fc-question { font-size: .86rem; color: var(--text); line-height: 1.65; font-weight: 500; flex: 1; }
+.fc-hint { font-size: .68rem; color: var(--text3); margin-top: .8rem; text-align: right; }
+.fc-answer { font-size: .83rem; color: var(--text); line-height: 1.7; flex: 1; }
+.fc-answer strong { color: var(--teal-l); }
+.fc-flip-hint { font-size: .68rem; color: var(--teal-l); margin-bottom: .5rem; }
+
+/* ============================================================
+   REFERENSI PAGE
+   ============================================================ */
+.ref-list { padding: 2rem 3rem 3rem; }
+.ref-item {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-left: 4px solid var(--teal-l);
+  border-radius: 0 var(--rsm) var(--rsm) 0;
+  padding: 1rem 1.25rem; margin-bottom: .85rem;
+  font-size: .82rem; color: var(--text2); line-height: 1.75;
+  transition: border-left-color .2s, background .2s;
+}
+.ref-item:hover { border-left-color: var(--gold-l); background: var(--bg3); }
+.ref-num {
+  font-size: .68rem; font-weight: 700; color: var(--teal-l);
+  margin-bottom: .35rem; letter-spacing: .06em; text-transform: uppercase;
+}
+
+/* ============================================================
+   QUIZ MODAL
+   ============================================================ */
+.quiz-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,.75); z-index: 500;
+  backdrop-filter: blur(4px);
+}
+.quiz-overlay.show { display: block; }
+.quiz-modal {
+  display: none; position: fixed;
+  top: 50%; left: 50%; z-index: 600;
+  transform: translate(-50%, -50%);
+  width: min(600px, 94vw);
+  max-height: 90vh; overflow-y: auto;
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,.6);
+  animation: scaleIn .25s ease;
+}
+.quiz-modal.show { display: block; }
+.qm-head {
+  padding: 1.5rem 1.75rem 1rem;
+  border-bottom: 1px solid var(--border2);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.qm-title { font-family: var(--font-d); font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.qm-close {
+  background: var(--bg3); color: var(--text2);
+  width: 32px; height: 32px; border-radius: 50%;
+  font-size: 1rem; transition: all .2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.qm-close:hover { background: var(--red); color: #fff; }
+.qm-progress-bar { height: 4px; background: var(--bg3); border-radius: 0; }
+.qm-progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--teal), var(--gold-l));
+  border-radius: 0; transition: width .4s ease;
+}
+.qm-body { padding: 1.75rem; }
+.qm-counter {
+  font-size: .72rem; color: var(--text3); font-weight: 600;
+  letter-spacing: .06em; text-transform: uppercase; margin-bottom: .9rem;
+}
+.qm-q { font-size: .95rem; color: var(--text); font-weight: 500; line-height: 1.65; margin-bottom: 1.4rem; }
+.qm-opts { display: flex; flex-direction: column; gap: .6rem; }
+.qm-opt {
+  background: var(--bg3); border: 1.5px solid var(--border);
+  border-radius: var(--rsm); padding: .8rem 1rem;
+  font-size: .85rem; color: var(--text2); text-align: left;
+  transition: all .18s; display: flex; align-items: flex-start; gap: .75rem;
+  font-family: var(--font-b);
+}
+.qm-opt:hover:not(:disabled) { border-color: var(--teal-l); color: var(--text); background: var(--bg4); }
+.qm-opt.selected { border-color: var(--teal-l); color: var(--text); background: var(--teal-g); }
+.qm-opt.correct { border-color: var(--green); background: rgba(34,197,94,.12); color: var(--text); }
+.qm-opt.wrong   { border-color: var(--red);   background: rgba(239,68,68,.12);  color: var(--text); }
+.opt-letter {
+  min-width: 24px; height: 24px; border-radius: 6px;
+  background: var(--bg4); border: 1px solid var(--border);
+  font-size: .72rem; font-weight: 700; color: var(--text3);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: all .18s;
+}
+.qm-opt.selected .opt-letter { background: var(--teal-g); border-color: var(--teal-l); color: var(--teal-l); }
+.qm-opt.correct  .opt-letter { background: rgba(34,197,94,.15); border-color: var(--green); color: var(--green); }
+.qm-opt.wrong    .opt-letter { background: rgba(239,68,68,.15);  border-color: var(--red);   color: var(--red); }
+.qm-feedback { margin-top: 1rem; padding: .75rem 1rem; border-radius: var(--rsm); font-size: .82rem; display: none; }
+.qm-feedback.correct-fb { background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3); color: var(--green); }
+.qm-feedback.wrong-fb   { background: rgba(239,68,68,.1);  border: 1px solid rgba(239,68,68,.3);  color: #f87171; }
+.qm-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.75rem 1.5rem; gap: .75rem;
+}
+.qm-btn {
+  padding: .65rem 1.3rem; border-radius: var(--rsm);
+  font-size: .83rem; font-weight: 600; transition: all .2s;
+  font-family: var(--font-b);
+}
+.qm-btn-sec  { background: var(--bg3); color: var(--text2); border: 1px solid var(--border); }
+.qm-btn-sec:hover  { background: var(--bg4); color: var(--text); }
+.qm-btn-prim { background: var(--teal); color: #fff; }
+.qm-btn-prim:hover { background: var(--teal-l); }
+.qm-btn-gold { background: var(--gold); color: #000; }
+.qm-btn-gold:hover { background: var(--gold-l); }
+
+/* Result screen */
+.qm-result { padding: 2rem 1.75rem 2.5rem; text-align: center; }
+.result-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+.result-score {
+  font-family: var(--font-d); font-size: 3.5rem; font-weight: 700;
+  line-height: 1; margin-bottom: .5rem;
+}
+.result-score.pass { color: var(--green); }
+.result-score.fail { color: var(--red); }
+.result-msg    { font-size: 1rem; color: var(--text2); margin-bottom: .3rem; }
+.result-detail { font-size: .82rem; color: var(--text3); margin-bottom: 2rem; }
+.result-actions { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   CONFETTI CANVAS
+   ============================================================ */
+#confetti-canvas {
+  position: fixed; inset: 0; z-index: 999;
+  pointer-events: none;
+}
+
+/* ============================================================
+   SEARCH BAR (sidebar)
+   ============================================================ */
+.search-wrap {
+  padding: .6rem .7rem .4rem;
+  position: relative;
+}
+.search-input {
+  width: 100%;
+  background: var(--bg4);
+  border: 1px solid var(--border2);
+  border-radius: var(--rsm);
+  padding: .48rem .75rem .48rem 2rem;
+  color: var(--text);
+  font-size: .78rem;
+  font-family: var(--font-b);
+  outline: none;
+  transition: border-color .2s, background .2s;
+  box-sizing: border-box;
+}
+.search-input:focus {
+  border-color: var(--teal);
+  background: var(--bg3);
+}
+.search-input::placeholder { color: var(--text3); }
+.search-ico {
+  position: absolute;
+  left: 1.15rem; top: 50%;
+  transform: translateY(-50%);
+  font-size: .8rem;
+  pointer-events: none;
+  color: var(--text3);
+}
+.search-highlight { background: rgba(20,184,166,.25); border-radius: 2px; }
+.search-no-result {
+  display: none;
+  padding: .5rem .9rem;
+  font-size: .72rem;
+  color: var(--text3);
+  text-align: center;
+}
+
+/* ============================================================
+   PRINT BUTTON — mobile header + sidebar desktop
+   ============================================================ */
+/* Mobile header version */
+.mob-print {
+  background: none;
+  border: 1px solid var(--border2);
+  border-radius: var(--rsm);
+  color: var(--text2);
+  font-size: .75rem;
+  padding: .3rem .55rem;
+  cursor: pointer;
+  display: flex; align-items: center; gap: .3rem;
+  transition: all .2s;
+  white-space: nowrap;
+}
+.mob-print:hover { background: var(--bg3); color: var(--text); }
+
+/* Sidebar desktop version (taruh di .sb-footer sebelum .quiz-main-btn) */
+.btn-print-sb {
+  width: 100%;
+  padding: .55rem 1rem;
+  border-radius: var(--rsm);
+  background: none;
+  border: 1px solid var(--border2);
+  color: var(--text2);
+  font-size: .8rem; font-weight: 600;
+  display: flex; align-items: center; justify-content: center; gap: .5rem;
+  transition: all .2s;
+  margin-bottom: .6rem;
+  font-family: var(--font-b);
+}
+.btn-print-sb:hover { background: var(--bg3); color: var(--text); border-color: var(--border); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  .stats-row { grid-template-columns: repeat(2,1fr); }
+  .pilar-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .mob-header { display: flex; }
+  .sidebar { left: calc(-1 * var(--sidebar-w)); z-index: 300; top: 0; height: 100vh; }
+  .sidebar.open { left: 0; box-shadow: 4px 0 40px rgba(0,0,0,.6); }
+  .sb-overlay { z-index: 299; }
+  .sb-overlay.show { display: block; }
+  .main { margin-left: 0; padding-top: 56px; }
+  .home-hero { padding: 2rem 1.25rem; }
+  .stats-row { padding: 1.25rem; }
+  .chapters-section { padding: 1.25rem; }
+  .content-wrap { padding: 1.25rem; }
+  .ch-hero { padding: 1.75rem 1.25rem; }
+  .fc-grid { padding: 1.25rem; }
+  .ref-list { padding: 1.25rem; }
+  .chapter-grid { grid-template-columns: 1fr; }
+  .comp-table { font-size: .78rem; }
+  .comp-table th, .comp-table td { padding: .55rem .75rem; }
+}
+@media (max-width: 480px) {
+  .stats-row { grid-template-columns: repeat(2,1fr); padding: 1rem; }
+  .isu-grid  { grid-template-columns: 1fr; }
+  .indik-grid { grid-template-columns: 1fr; }
+  .kasus-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* ============================================================
+   PRINT STYLES
+   ============================================================ */
+@media print {
+  .mob-header, .sidebar, .sb-overlay,
+  .quiz-modal, #confetti-canvas { display: none !important; }
+  body { background: #fff !important; color: #000 !important; }
+  .main { margin-left: 0 !important; padding-top: 0 !important; }
+  .page { display: none !important; }
+  .page.active { display: block !important; }
+  .card, .def-box, .def-gold, .summary, .ch-hero {
+    background: #f9f9f9 !important; border: 1px solid #ccc !important;
+    color: #000 !important; box-shadow: none !important;
+  }
+  h1, h2, h3, p, li, td, th { color: #000 !important; }
+  .comp-table th { background: #eee !important; }
+  .pill { border: 1px solid #999 !important; background: #eee !important; color: #000 !important; }
+  .card { page-break-inside: avoid; }
+}
+
+/* ============================================================
+   TAMBAHAN WAJIB (sesuai instruksi sistem)
+   ============================================================ */
+.page.active { animation: pageSlide .38s ease forwards; }
+.shake { animation: shake .4s ease; }
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+
+<header class="mob-header">
+  <button class="mob-ham" onclick="toggleSidebar()">☰</button>
+  <div class="mob-title">Tindakan Khusus Keperawatan Lansia</div>
+  <button class="mob-print" onclick="window.print()">🖨️</button>
+  <button class="mob-quiz" onclick="openQuiz()">Quiz</button>
+</header>
+
+<div class="sb-overlay" id="sbOverlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-icon">🏥</div>
+    <div class="sb-logo-text">
+      <div class="t1">Tindakan Khusus<br>Keperawatan Lansia</div>
+      <div class="t2">Keperawatan Gerontik</div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <span class="search-ico">🔍</span>
+    <input type="text" class="search-input" placeholder="Cari materi..." oninput="handleSearch(this.value)">
+    <div class="search-no-result" id="searchNoResult">Tidak ditemukan</div>
+  </div>
+  <div class="sb-scroll">
+    <div class="sb-label">Menu</div>
+    <button class="nav-btn active" id="nav-home" onclick="navigate('home')"><span class="nav-ico">🏠</span>Beranda</button>
+    <div class="sb-label">Materi</div>
+    <button class="nav-btn" id="nav-bab1" onclick="navigate('bab1')"><span class="nav-ico">🧠</span>Terapi Kognitif<span class="nav-badge">1</span></button>
+    <button class="nav-btn" id="nav-bab2" onclick="navigate('bab2')"><span class="nav-ico">👥</span>Terapi Aktivitas Kelompok<span class="nav-badge">2</span></button>
+    <button class="nav-btn" id="nav-bab3" onclick="navigate('bab3')"><span class="nav-ico">🤸</span>Senam Lansia<span class="nav-badge">3</span></button>
+    <div class="sb-label">Latihan</div>
+    <button class="nav-btn" id="nav-flashcard" onclick="navigate('flashcard')"><span class="nav-ico">🎴</span>Flashcard</button>
+  </div>
+  <div class="sb-footer">
+    <button class="btn-print-sb" onclick="window.print()">🖨️ Print Materi</button>
+    <button class="quiz-main-btn" onclick="openQuiz()">📝 Mulai Quiz</button>
+    <div class="sb-info">
+      <div class="name">Roro Ayu Galuh Masitoh</div>
+      <div class="sem">Poltekkes Mataram</div>
+    </div>
+  </div>
+</aside>
+
+<main class="main" id="main">
+
+  <!-- ================= HOME ================= -->
+  <div class="page active" id="page-home">
+    <div class="home-hero anim">
+      <div class="hero-eyebrow">🏥 Keperawatan Gerontik</div>
+      <h1 class="hero-title">Prosedur Tindakan <span>Khusus</span><br>Keperawatan pada Lansia</h1>
+      <p class="hero-sub">Materi ini membahas tiga tindakan keperawatan khusus yang umum diterapkan pada lansia, yaitu terapi kognitif, terapi aktivitas kelompok (TAK), dan senam lansia. Setiap topik disajikan secara ringkas mulai dari pengertian, tujuan, prinsip, jenis, hingga manfaatnya bagi kesehatan dan kesejahteraan lansia.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">🧠 Terapi Kognitif</span>
+        <span class="hero-tag">👥 Terapi Aktivitas Kelompok</span>
+        <span class="hero-tag">🤸 Senam Lansia</span>
+        <span class="hero-tag">Keperawatan Gerontik</span>
+      </div>
+    </div>
+
+    <div class="stats-row anim">
+      <div class="stat-card">
+        <div class="stat-num">3</div>
+        <div class="stat-lbl">Prosedur Tindakan Khusus</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num gold">20</div>
+        <div class="stat-lbl">Soal Quiz Interaktif</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">13</div>
+        <div class="stat-lbl">Kartu Flashcard</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num gold">60+</div>
+        <div class="stat-lbl">Tahun, Sasaran Usia Lansia</div>
+      </div>
+    </div>
+
+    <div class="chapters-section">
+      <div class="sec-heading">Topik Pembelajaran</div>
+      <div class="sec-sub">Pilih salah satu topik di bawah untuk mulai mempelajari materinya secara lengkap.</div>
+      <div class="chapter-grid">
+        <div class="ch-card anim" style="animation-delay:.06s" onclick="navigate('bab1')">
+          <div class="ch-num">BAB 1</div>
+          <div class="ch-title">Terapi Kognitif pada Lansia</div>
+          <div class="ch-desc">Terapi jangka pendek dan terstruktur untuk membantu lansia mengenali serta memperbaiki pola pikir yang kurang tepat.</div>
+          <div class="ch-arrow">Mulai Belajar →</div>
+        </div>
+        <div class="ch-card anim" style="animation-delay:.12s" onclick="navigate('bab2')">
+          <div class="ch-num">BAB 2</div>
+          <div class="ch-title">Terapi Aktivitas Kelompok (TAK)</div>
+          <div class="ch-desc">Kegiatan kelompok yang dirancang untuk memberikan stimulasi sosial, sensoris, dan kognitif bagi lansia.</div>
+          <div class="ch-arrow">Mulai Belajar →</div>
+        </div>
+        <div class="ch-card anim" style="animation-delay:.18s" onclick="navigate('bab3')">
+          <div class="ch-num">BAB 3</div>
+          <div class="ch-title">Senam Lansia</div>
+          <div class="ch-desc">Olahraga ringan yang disesuaikan dengan kondisi fisik lansia untuk menjaga kebugaran dan memperlambat proses degeneratif.</div>
+          <div class="ch-arrow">Mulai Belajar →</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BAB 1 ================= -->
+  <div class="page" id="page-bab1">
+    <div class="ch-hero anim">
+      <div class="ch-label">BAB 1 • Tindakan Khusus 1</div>
+      <h1>Terapi Kognitif pada Lansia</h1>
+      <p>Pendekatan terapi yang membantu lansia memperbaiki cara berpikir agar lebih realistis, adaptif, dan sesuai dengan kondisi yang dihadapi saat ini.</p>
+    </div>
+    <div class="content-wrap">
+      <div class="card anim" style="animation-delay:.06s">
+        <h2><span class="icon">🧠</span>Pengertian Terapi Kognitif</h2>
+        <div class="def-box">
+          <div class="term">Definisi</div>
+          <p>Terapi kognitif merupakan terapi jangka pendek, terstruktur, berorientasi terhadap masalah saat ini, dan bersifat terapi <span class="key">individu</span>.</p>
+        </div>
+        <p>Secara umum, terapi kognitif membantu lansia mengenali pola pikir yang keliru atau negatif — misalnya merasa tidak berguna, pesimis terhadap kondisi kesehatannya, atau kehilangan rasa percaya diri akibat proses penuaan — lalu membantu membentuk cara berpikir yang lebih realistis dan positif. Pendekatan ini banyak digunakan untuk mendampingi lansia yang mengalami gejala depresi ringan, kecemasan, atau kesulitan beradaptasi dengan perubahan hidup di usia senja.</p>
+      </div>
+
+      <div class="card anim" style="animation-delay:.12s">
+        <h2><span class="icon">🎯</span>Tujuan Terapi Kognitif</h2>
+        <ol class="nlist">
+          <li>Membantu klien dalam <strong>mengidentifikasi, menganalisis, dan menentang keakuratan kognisi negatif</strong> klien.</li>
+          <li>Menjadikan atau melibatkan klien sebagai <strong>subjek terhadap realitas</strong>.</li>
+          <li><strong>Memodifikasi proses pemikiran</strong> yang salah.</li>
+          <li>Membentuk kembali pikiran individu dengan <strong>menyangkal asumsi yang maladaptif</strong>.</li>
+        </ol>
+      </div>
+
+      <div class="card anim" style="animation-delay:.18s">
+        <h2><span class="icon">🧩</span>Contoh Terapi Kognitif pada Lansia</h2>
+        <div class="pilar-grid">
+          <div class="pilar-card"><div class="pilar-ico">🧩</div><div class="pilar-title">Terapi dengan Puzzle</div></div>
+          <div class="pilar-card"><div class="pilar-ico">❓</div><div class="pilar-title">Terapi Teka-teki</div></div>
+          <div class="pilar-card"><div class="pilar-ico">♟️</div><div class="pilar-title">Terapi Bermain Catur</div></div>
+          <div class="pilar-card"><div class="pilar-ico">✂️</div><div class="pilar-title">Terapi dengan Keterampilan</div></div>
+          <div class="pilar-card"><div class="pilar-ico">🤔</div><div class="pilar-title">Terapi Bermain Tebak-tebakan</div></div>
+          <div class="pilar-card"><div class="pilar-ico">📖</div><div class="pilar-title">Terapi Belajar</div></div>
+        </div>
+        <p style="margin-top:1rem">Aktivitas-aktivitas di atas dipilih karena melibatkan proses berpikir aktif seperti mengingat, menganalisis, dan memecahkan masalah, sehingga membantu menjaga fungsi kognitif lansia agar tidak menurun terlalu cepat sekaligus memberikan rasa senang dan pencapaian bagi mereka yang menjalaninya.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BAB 2 ================= -->
+  <div class="page" id="page-bab2">
+    <div class="ch-hero anim">
+      <div class="ch-label">BAB 2 • Tindakan Khusus 2</div>
+      <h1>Terapi Aktivitas Kelompok (TAK)</h1>
+      <p>Kegiatan kelompok yang dirancang khusus untuk memberikan terapi bagi seluruh anggota lansia di dalamnya melalui interaksi sosial yang terarah.</p>
+    </div>
+    <div class="content-wrap">
+      <div class="card anim" style="animation-delay:.06s">
+        <h2><span class="icon">👥</span>Pengertian TAK</h2>
+        <div class="def-box">
+          <div class="term">Definisi</div>
+          <p>Terapi Aktivitas Kelompok (TAK) adalah kegiatan yang ditujukan pada sekelompok klien lansia yang mana memiliki tujuan untuk bisa <span class="key">memberikan terapi bagi seluruh anggota</span> di dalam kelompok tersebut.</p>
+        </div>
+        <p>TAK biasanya difasilitasi oleh perawat dan dilaksanakan secara rutin di institusi pelayanan lansia, seperti panti werdha, posyandu lansia, maupun puskesmas. Melalui interaksi dalam kelompok, lansia diharapkan dapat mempertahankan kemampuan sosial, emosional, serta kognitifnya, sekaligus mengurangi rasa kesepian yang sering muncul pada usia lanjut.</p>
+      </div>
+
+      <div class="card anim" style="animation-delay:.12s">
+        <h2><span class="icon">🎯</span>Tujuan TAK</h2>
+        <ol class="nlist">
+          <li>Mengembangkan <strong>stimulasi persepsi</strong></li>
+          <li>Mengembangkan <strong>orientasi realitas</strong></li>
+          <li>Mengembangkan <strong>stimulasi sensoris</strong></li>
+          <li>Mengembangkan <strong>sosialisasi</strong></li>
+        </ol>
+      </div>
+
+      <div class="card anim" style="animation-delay:.18s">
+        <h2><span class="icon">📋</span>Prinsip Terapi Aktivitas Kelompok</h2>
+        <ul class="blist">
+          <li>Anggota memiliki <strong>gejala yang sama</strong></li>
+          <li>Anggota berasal dari <strong>kategori yang sama</strong></li>
+          <li>Anggota memiliki <strong>jenis kelamin yang sama</strong></li>
+          <li><strong>Kelompok umur</strong> anggota hampir sama</li>
+          <li><strong>Jumlah anggota yang efektif</strong> adalah 5 – 10 orang</li>
+        </ul>
+      </div>
+
+      <div class="card anim" style="animation-delay:.24s">
+        <h2><span class="icon">🎨</span>Jenis Terapi dalam TAK</h2>
+        <div class="indik-grid">
+          <div class="indik-card">
+            <div class="indik-cat">Stimulasi & Orientasi</div>
+            <ul>
+              <li>Stimulasi sensori (musik)</li>
+              <li>Stimulasi persepsi</li>
+              <li>Orientasi realitas</li>
+              <li>Sosialisasi</li>
+            </ul>
+          </div>
+          <div class="indik-card indik-gold">
+            <div class="indik-cat">Aktivitas Pendukung</div>
+            <ul>
+              <li>Terapi berkebun</li>
+              <li>Terapi dengan binatang</li>
+              <li>Terapi okupasi</li>
+              <li>Terapi keagamaan</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="card anim" style="animation-delay:.25s">
+        <h2><span class="icon">💛</span>Manfaat TAK bagi Lansia</h2>
+        <div class="summary">
+          <h3>✦ Manfaat Utama</h3>
+          <ul>
+            <li>Agar anggota di dalam kelompok merasa <strong>diakui, dimiliki, serta dihargai</strong> eksistensinya oleh anggota lainnya di dalam kelompok.</li>
+            <li>Membantu agar anggota kelompok lain saling berhubungan satu sama lain serta merubah sikap dan perilaku yang maladaptif dan destruktif.</li>
+            <li>Sebagai tempat yang digunakan untuk <strong>berbagi pengalaman</strong> serta saling memantau satu sama lain dalam menemukan solusi penyelesaian masalah.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= BAB 3 ================= -->
+  <div class="page" id="page-bab3">
+    <div class="ch-hero anim">
+      <div class="ch-label">BAB 3 • Tindakan Khusus 3</div>
+      <h1>Senam Lansia</h1>
+      <p>Bentuk aktivitas fisik ringan yang dirancang menyesuaikan kondisi tubuh lansia untuk menjaga kebugaran dan memperlambat proses degeneratif.</p>
+    </div>
+    <div class="content-wrap">
+      <div class="card anim" style="animation-delay:.06s">
+        <h2><span class="icon">🤸</span>Pengertian Senam Lansia</h2>
+        <div class="def-box">
+          <div class="term">Definisi</div>
+          <p>Senam lansia adalah olahraga <span class="key">ringan dan mudah dilakukan</span>, tidak memberatkan, yang diterapkan pada lansia.</p>
+        </div>
+        <p>Senam lansia dirancang khusus dengan memperhatikan kondisi fisik dan keterbatasan gerak yang umum terjadi pada usia lanjut, seperti penurunan kelenturan sendi dan kekuatan otot. Latihan ini bertujuan menjaga kebugaran tubuh, memperlambat proses degeneratif, serta meningkatkan kualitas hidup lansia secara keseluruhan.</p>
+      </div>
+
+      <div class="card anim" style="animation-delay:.12s">
+        <h2><span class="icon">📐</span>Prinsip Senam Lansia</h2>
+        <ol class="nlist">
+          <li>Gerakan bersifat <strong>dinamis (berubah-ubah)</strong></li>
+          <li>Bersifat <strong>progresif (bertahap meningkat)</strong></li>
+          <li>Adanya <strong>pemanasan dan pendinginan</strong> pada setiap latihan</li>
+          <li>Lama latihan berlangsung <strong>15–60 menit</strong></li>
+          <li>Frekuensi latihan per minggu <strong>minimal 3 kali</strong></li>
+        </ol>
+      </div>
+
+      <div class="card anim" style="animation-delay:.18s">
+        <h2><span class="icon">💪</span>Manfaat Senam Lansia</h2>
+        <ul class="blist">
+          <li>Mempermudah untuk <strong>menyesuaikan kesehatan jasmani</strong> dalam kehidupan (adaptasi).</li>
+          <li>Fungsi <strong>melindungi</strong>, yaitu memperbaiki tenaga cadangan dalam fungsinya terhadap bertambahnya tuntutan, misalnya sakit.</li>
+          <li><strong>Memperlancar proses degenerasi</strong> karena perubahan usia.</li>
+        </ul>
+      </div>
+
+      <div class="card anim" style="animation-delay:.24s">
+        <h2><span class="icon">🏃</span>Jenis-jenis Senam Lansia</h2>
+        <div class="kasus-grid">
+          <div class="kasus-item">Senam Kebugaran Lansia</div>
+          <div class="kasus-item">Senam Otak</div>
+          <div class="kasus-item">Jalan Sehat</div>
+          <div class="kasus-item">Senam Osteoporosis</div>
+          <div class="kasus-item">Senam DM</div>
+          <div class="kasus-item">Senam Hipertensi</div>
+        </div>
+        <p style="margin-top:1rem">Setiap jenis senam memiliki fokus yang berbeda — misalnya senam otak untuk melatih koordinasi dan fungsi kognitif, senam osteoporosis untuk menjaga kepadatan tulang, serta senam DM dan hipertensi untuk membantu mengontrol kadar gula darah dan tekanan darah lansia secara non-farmakologis.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FLASHCARD ================= -->
+  <div class="page" id="page-flashcard">
+    <div class="ch-hero anim">
+      <div class="ch-label">LATIHAN</div>
+      <h1>Flashcard Belajar</h1>
+      <p>Klik kartu untuk membalik dan melihat jawabannya. Gunakan flashcard ini untuk menguji pemahamanmu tentang prosedur tindakan khusus keperawatan pada lansia.</p>
+    </div>
+    <div class="fc-grid" id="fcGrid"></div>
+  </div>
+
+</main>
+
+<!-- ================= QUIZ MODAL ================= -->
+<div class="quiz-overlay" id="quizOverlay" onclick="closeQuiz()"></div>
+<div class="quiz-modal" id="quizModal">
+  <div class="qm-head">
+    <span class="qm-title">📝 Quiz</span>
+    <button class="qm-close" onclick="closeQuiz()">✕</button>
+  </div>
+  <div class="qm-progress-bar"><div class="qm-progress-fill" id="qProgress" style="width:0%"></div></div>
+  <div id="qScreen">
+    <div class="qm-body">
+      <div class="qm-counter" id="qCounter"></div>
+      <div class="qm-q" id="qText"></div>
+      <div class="qm-opts" id="qOpts"></div>
+      <div class="qm-feedback" id="qFeedback"></div>
+    </div>
+    <div class="qm-nav">
+      <button class="qm-btn qm-btn-sec" id="qPrevBtn" onclick="prevQuestion()">← Sebelumnya</button>
+      <button class="qm-btn qm-btn-prim" id="qNextBtn" onclick="nextQuestion()">Selanjutnya →</button>
+    </div>
+  </div>
+  <div class="qm-result" id="qResult" style="display:none">
+    <div class="result-icon" id="rIcon"></div>
+    <div class="result-score" id="rScore"></div>
+    <div class="result-msg" id="rMsg"></div>
+    <div class="result-detail" id="rDetail"></div>
+    <div class="result-actions">
+      <button class="qm-btn qm-btn-prim" onclick="retryQuiz()">🔄 Coba Lagi</button>
+      <button class="qm-btn qm-btn-sec" onclick="closeQuiz()">Kembali</button>
+    </div>
+  </div>
+</div>
+<script>
+const flashcards = [
+  { chapter:"BAB 1", q:"Apa definisi terapi kognitif?", a:"Terapi kognitif adalah terapi <strong>jangka pendek, terstruktur, berorientasi pada masalah saat ini</strong>, dan bersifat terapi <strong>individu</strong>, yang membantu lansia memperbaiki pola pikir yang keliru." },
+  { chapter:"BAB 1", q:"Sebutkan salah satu tujuan terapi kognitif pada lansia.", a:"Salah satunya adalah membantu klien <strong>mengidentifikasi, menganalisis, dan menentang keakuratan kognisi negatif</strong> yang dimilikinya." },
+  { chapter:"BAB 1", q:"Sebutkan 3 contoh terapi kognitif pada lansia.", a:"Contohnya antara lain <strong>terapi puzzle, terapi bermain catur, dan terapi belajar</strong> (selain itu ada juga teka-teki, keterampilan, dan tebak-tebakan)." },
+  { chapter:"BAB 1", q:"Mengapa permainan seperti puzzle dan catur bermanfaat bagi lansia?", a:"Karena melibatkan proses berpikir aktif seperti mengingat, menganalisis, dan memecahkan masalah, sehingga membantu menjaga fungsi kognitif lansia agar tidak cepat menurun." },
+  { chapter:"BAB 2", q:"Apa yang dimaksud dengan Terapi Aktivitas Kelompok (TAK)?", a:"TAK adalah kegiatan yang ditujukan pada <strong>sekelompok klien lansia</strong> dengan tujuan memberikan terapi bagi <strong>seluruh anggota</strong> di dalam kelompok tersebut." },
+  { chapter:"BAB 2", q:"Sebutkan tujuan dari TAK.", a:"TAK bertujuan mengembangkan <strong>stimulasi persepsi, orientasi realitas, stimulasi sensoris</strong>, dan <strong>sosialisasi</strong> pada lansia." },
+  { chapter:"BAB 2", q:"Apa saja prinsip pembentukan kelompok dalam TAK?", a:"Anggota sebaiknya memiliki <strong>gejala yang sama, kategori sama, jenis kelamin sama, kelompok umur hampir sama</strong>, dan jumlah anggota efektif <strong>5–10 orang</strong>." },
+  { chapter:"BAB 2", q:"Berapa jumlah anggota yang efektif dalam satu kelompok TAK?", a:"Jumlah anggota yang efektif adalah <strong>5 sampai 10 orang</strong>." },
+  { chapter:"BAB 2", q:"Sebutkan beberapa jenis terapi dalam TAK.", a:"Antara lain <strong>stimulasi sensori (musik), orientasi realitas, terapi berkebun, terapi dengan binatang, terapi okupasi</strong>, dan <strong>terapi keagamaan</strong>." },
+  { chapter:"BAB 2", q:"Apa manfaat TAK bagi lansia?", a:"TAK membuat lansia merasa <strong>diakui dan dihargai</strong> dalam kelompok, membantu mengubah perilaku maladaptif, serta menjadi tempat <strong>berbagi pengalaman</strong> dan saling memantau." },
+  { chapter:"BAB 3", q:"Apa definisi senam lansia?", a:"Senam lansia adalah olahraga <strong>ringan, mudah dilakukan</strong>, dan tidak memberatkan yang diterapkan khusus pada lansia." },
+  { chapter:"BAB 3", q:"Sebutkan prinsip-prinsip senam lansia.", a:"Gerakan bersifat <strong>dinamis</strong> dan <strong>progresif</strong>, ada <strong>pemanasan & pendinginan</strong>, durasi <strong>15–60 menit</strong>, dan frekuensi <strong>minimal 3x per minggu</strong>." },
+  { chapter:"BAB 3", q:"Berapa lama durasi ideal senam lansia dalam satu sesi?", a:"Durasi latihan berlangsung antara <strong>15 hingga 60 menit</strong>." },
+  { chapter:"BAB 3", q:"Sebutkan jenis-jenis senam lansia.", a:"Antara lain <strong>senam kebugaran lansia, senam otak, jalan sehat, senam osteoporosis, senam DM</strong>, dan <strong>senam hipertensi</strong>." },
+];
+
+/* ============================================================
+   FORMAT DATA QUIZ
+   {q: "pertanyaan", opts: ["A","B","C","D"], ans: INDEX_BENAR (0-3)}
+   Soal dikocok acak tiap sesi.
+   ============================================================ */
+const quizData = [
+  { q: "Apa karakteristik utama dari terapi kognitif?", opts: ["Jangka panjang dan tidak terstruktur","Jangka pendek, terstruktur, berorientasi pada masalah saat ini, dan bersifat individu","Dilakukan dalam kelompok besar","Tidak memerlukan struktur tertentu"], ans: 1 },
+  { q: "Berikut ini yang BUKAN merupakan tujuan terapi kognitif adalah...", opts: ["Mengidentifikasi kognisi negatif klien","Memodifikasi proses pemikiran yang salah","Membentuk kembali pikiran individu","Meningkatkan kekuatan otot lansia"], ans: 3 },
+  { q: "Berikut yang merupakan contoh terapi kognitif pada lansia adalah...", opts: ["Senam osteoporosis","Terapi bermain catur","Terapi keagamaan","Terapi berkebun"], ans: 1 },
+  { q: "Terapi puzzle dan teka-teki pada lansia bertujuan untuk...", opts: ["Meningkatkan kekuatan otot","Melatih fungsi kognitif seperti daya ingat dan pemecahan masalah","Menurunkan tekanan darah","Memperbaiki postur tubuh"], ans: 1 },
+  { q: "Terapi kognitif berfokus pada hubungan antara...", opts: ["Pikiran, perasaan, dan perilaku","Otot, tulang, dan sendi","Makanan, gizi, dan energi","Lingkungan, sosial, dan ekonomi"], ans: 0 },
+  { q: "Apa kepanjangan dari TAK?", opts: ["Terapi Aktivitas Khusus","Terapi Aktivitas Kelompok","Tindakan Aktivitas Kelompok","Terapi Adaptasi Kelompok"], ans: 1 },
+  { q: "Terapi Aktivitas Kelompok (TAK) ditujukan untuk...", opts: ["Satu klien secara individu","Sekelompok klien lansia agar seluruh anggota memperoleh terapi","Tenaga kesehatan saja","Keluarga klien di rumah"], ans: 1 },
+  { q: "Berikut yang BUKAN merupakan tujuan TAK adalah...", opts: ["Mengembangkan stimulasi persepsi","Mengembangkan orientasi realitas","Mengembangkan stimulasi sensoris","Meningkatkan kemampuan finansial lansia"], ans: 3 },
+  { q: "Salah satu prinsip pembentukan kelompok dalam TAK adalah...", opts: ["Anggota harus berasal dari daerah yang sama","Gejala dan kategori anggota sama","Anggota harus berjumlah lebih dari 20 orang","Tidak memperhatikan jenis kelamin anggota"], ans: 1 },
+  { q: "Jumlah anggota yang efektif dalam satu kelompok TAK adalah...", opts: ["1-3 orang","5-10 orang","15-20 orang","Lebih dari 25 orang"], ans: 1 },
+  { q: "Contoh jenis TAK yang menggunakan musik termasuk dalam kategori...", opts: ["Stimulasi sensori","Orientasi realitas","Terapi keagamaan","Terapi okupasi"], ans: 0 },
+  { q: "Terapi berkebun dan terapi dengan binatang merupakan contoh dari...", opts: ["Terapi kognitif","Jenis terapi dalam TAK","Senam lansia","Terapi farmakologi"], ans: 1 },
+  { q: "Manfaat TAK bagi lansia antara lain...", opts: ["Membuat lansia merasa diakui dan dihargai dalam kelompok","Mengisolasi lansia dari lingkungan sosial","Mengurangi interaksi antar anggota","Menghilangkan kebutuhan terapi individu"], ans: 0 },
+  { q: "Senam lansia merupakan jenis olahraga yang...", opts: ["Berat dan memerlukan alat khusus","Ringan, mudah dilakukan, dan tidak memberatkan","Hanya bisa dilakukan oleh atlet","Membutuhkan durasi lebih dari 3 jam"], ans: 1 },
+  { q: "Salah satu prinsip senam lansia adalah gerakan bersifat...", opts: ["Statis dan monoton","Dinamis atau berubah-ubah","Sangat cepat tanpa pemanasan","Tidak terstruktur"], ans: 1 },
+  { q: "Berapa lama durasi latihan senam lansia yang disarankan?", opts: ["5-10 menit","15-60 menit","90-120 menit","Lebih dari 3 jam"], ans: 1 },
+  { q: "Frekuensi latihan senam lansia per minggu minimal adalah...", opts: ["1 kali","2 kali","3 kali","Setiap hari tanpa istirahat"], ans: 2 },
+  { q: "Salah satu manfaat senam lansia adalah...", opts: ["Memperlancar proses degenerasi karena perubahan usia","Mempercepat proses penuaan","Menurunkan daya tahan tubuh","Mengurangi fleksibilitas sendi"], ans: 0 },
+  { q: "Berikut yang termasuk jenis senam lansia adalah...", opts: ["Senam osteoporosis","Senam aerobik kompetitif","Senam bela diri","Senam akrobatik"], ans: 0 },
+  { q: "Setiap latihan senam lansia harus diawali dan diakhiri dengan...", opts: ["Latihan beban berat","Pemanasan dan pendinginan","Lari cepat","Istirahat total"], ans: 1 },
+];
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+function navigate(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  const btn  = document.getElementById('nav-'  + pageId);
+  if (page) {
+    // reset semua .anim sebelum halaman baru aktif (force-reflow)
+    const animEls = page.querySelectorAll('.anim');
+    animEls.forEach(el => { el.style.animation = 'none'; });
+    page.classList.add('active');
+    void page.offsetHeight; // force reflow
+    animEls.forEach(el => { el.style.animation = ''; });
+  }
+  if (btn)  btn.classList.add('active');
+  const main = document.querySelector('.main');
+  if (main) main.scrollTop = 0;
+  window.scrollTo(0, 0);
+  closeSidebar();
+  if (pageId === 'flashcard') buildFlashcards();
+}
+
+/* ============================================================
+   SIDEBAR TOGGLE (mobile)
+   ============================================================ */
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sbOverlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sbOverlay').classList.remove('show');
+}
+
+/* ============================================================
+   FLASHCARD ENGINE
+   - Render semua kartu sebagai grid
+   - Klik kartu → flip 3D 180°
+   - Auto-equalize tinggi kartu (front vs back)
+   ============================================================ */
+function buildFlashcards() {
+  const grid = document.getElementById('fcGrid');
+  if (grid.children.length > 0) return; // sudah ter-render
+  grid.innerHTML = '';
+  flashcards.forEach((fc, i) => {
+    grid.innerHTML += `
+      <div class="fc-container anim" style="animation-delay:${0.05 + i*0.04}s" onclick="flipCard(this)">
+        <div class="fc-inner">
+          <div class="fc-face fc-front">
+            <div>
+              <div class="fc-chapter">${fc.chapter}</div>
+              <div class="fc-question">${fc.q}</div>
+            </div>
+            <div class="fc-hint">Klik untuk lihat jawaban 🔄</div>
+          </div>
+          <div class="fc-face fc-back">
+            <div>
+              <div class="fc-flip-hint">↩ Klik untuk kembali</div>
+              <div class="fc-answer">${fc.a}</div>
+            </div>
+          </div>
+        </div>
+      </div>`;
+  });
+  // Auto-equalize card heights
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.fc-container').forEach(container => {
+      const inner = container.querySelector('.fc-inner');
+      const front = container.querySelector('.fc-front');
+      const back  = container.querySelector('.fc-back');
+      back.style.transform  = 'none';
+      back.style.visibility = 'hidden';
+      back.style.position   = 'relative';
+      front.style.position  = 'relative';
+      const h = Math.max(front.scrollHeight, back.scrollHeight, 180);
+      back.style.transform  = '';
+      back.style.visibility = '';
+      back.style.position   = '';
+      front.style.position  = '';
+      inner.style.minHeight = h + 'px';
+    });
+  });
+}
+function flipCard(el) { el.classList.toggle('flipped'); }
+
+/* ============================================================
+   QUIZ ENGINE
+   - Soal dikocok acak saat openQuiz()
+   - Pilih jawaban → langsung feedback + highlight benar/salah
+   - Prev/Next navigation
+   - Skor akhir: pass ≥60% → confetti
+   ============================================================ */
+let qCurrent = 0, qAnswers = [], qShuffled = [], qAnswered = false;
+
+function openQuiz() {
+  qShuffled = [...quizData].sort(() => Math.random() - .5);
+  qCurrent  = 0;
+  qAnswers  = new Array(qShuffled.length).fill(-1);
+  qAnswered = false;
+  document.getElementById('qScreen').style.display = '';
+  document.getElementById('qResult').style.display = 'none';
+  document.getElementById('quizModal').classList.add('show');
+  document.getElementById('quizOverlay').classList.add('show');
+  renderQuestion();
+}
+function closeQuiz() {
+  document.getElementById('quizModal').classList.remove('show');
+  document.getElementById('quizOverlay').classList.remove('show');
+}
+function renderQuestion() {
+  const total = qShuffled.length;
+  const q     = qShuffled[qCurrent];
+  document.getElementById('qCounter').textContent = `Soal ${qCurrent + 1} dari ${total}`;
+  document.getElementById('qProgress').style.width = ((qCurrent + 1) / total * 100) + '%';
+  document.getElementById('qText').textContent = q.q;
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'none';
+  fb.className = 'qm-feedback';
+  const opts    = document.getElementById('qOpts');
+  opts.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qm-opt';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span>${opt}`;
+    btn.onclick = () => selectAnswer(i);
+    const chosen = qAnswers[qCurrent];
+    if (chosen !== -1) {
+      btn.disabled = true;
+      if (i === q.ans)                    btn.classList.add('correct');
+      if (i === chosen && chosen !== q.ans) btn.classList.add('wrong');
+      if (i === chosen)                   btn.classList.add('selected');
+      showFeedback(chosen === q.ans);
+    }
+    opts.appendChild(btn);
+  });
+  const prevBtn = document.getElementById('qPrevBtn');
+  const nextBtn = document.getElementById('qNextBtn');
+  prevBtn.style.visibility = qCurrent > 0 ? 'visible' : 'hidden';
+  if (qCurrent === total - 1) {
+    nextBtn.textContent = 'Lihat Hasil 🎉';
+    nextBtn.className   = 'qm-btn qm-btn-gold';
+  } else {
+    nextBtn.textContent = 'Selanjutnya →';
+    nextBtn.className   = 'qm-btn qm-btn-prim';
+  }
+}
+function selectAnswer(idx) {
+  if (qAnswers[qCurrent] !== -1) return;
+  qAnswers[qCurrent] = idx;
+  const q    = qShuffled[qCurrent];
+  const btns = document.querySelectorAll('.qm-opt');
+  btns.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans)                  btn.classList.add('correct');
+    if (i === idx && idx !== q.ans)   { btn.classList.add('wrong'); btn.classList.add('shake'); }
+    if (i === idx)                    btn.classList.add('selected');
+  });
+  showFeedback(idx === q.ans);
+}
+function showFeedback(correct) {
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'block';
+  if (correct) {
+    fb.className = 'qm-feedback correct-fb';
+    fb.innerHTML = '✅ Jawaban kamu <strong>benar</strong>! Bagus sekali.';
+  } else {
+    const letter = ['A','B','C','D'][qShuffled[qCurrent].ans];
+    fb.className = 'qm-feedback wrong-fb';
+    fb.innerHTML = `❌ Jawaban <strong>kurang tepat</strong>. Jawaban yang benar: Opsi <strong>${letter}</strong>.`;
+  }
+}
+function nextQuestion() {
+  if (qCurrent < qShuffled.length - 1) { qCurrent++; renderQuestion(); }
+  else showResult();
+}
+function prevQuestion() {
+  if (qCurrent > 0) { qCurrent--; renderQuestion(); }
+}
+function showResult() {
+  const total   = qShuffled.length;
+  const correct = qAnswers.filter((a, i) => a === qShuffled[i].ans).length;
+  const pct     = Math.round(correct / total * 100);
+  const pass    = pct >= 60;
+  document.getElementById('qScreen').style.display = 'none';
+  document.getElementById('qResult').style.display = 'block';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('rIcon').textContent   = pass ? '🎉' : '📚';
+  document.getElementById('rScore').textContent  = pct + '%';
+  document.getElementById('rScore').className    = 'result-score ' + (pass ? 'pass' : 'fail');
+  document.getElementById('rMsg').textContent    = pass ? 'Selamat! Kamu lulus!' : 'Terus semangat belajar!';
+  document.getElementById('rDetail').textContent = `Benar ${correct} dari ${total} soal`;
+  if (pass) startConfetti();
+}
+function retryQuiz() { openQuiz(); }
+
+/* ============================================================
+   CONFETTI (canvas-based)
+   ============================================================ */
+let confettiRunning = false;
+function startConfetti() {
+  if (confettiRunning) return;
+  confettiRunning = true;
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx    = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const colors = ['#0d9488','#14b8a6','#f59e0b','#fbbf24','#60a5fa','#a78bfa','#f472b6','#22c55e'];
+  const pieces = Array.from({length: 140}, () => ({
+    x:   Math.random() * canvas.width,
+    y:   Math.random() * -canvas.height,
+    w:   6 + Math.random() * 8,
+    h:   3 + Math.random() * 5,
+    r:   Math.random() * Math.PI * 2,
+    dr:  (Math.random() - .5) * .12,
+    dy:  2.5 + Math.random() * 4,
+    dx:  (Math.random() - .5) * 2,
+    col: colors[Math.floor(Math.random() * colors.length)]
+  }));
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.y += p.dy; p.x += p.dx; p.r += p.dr;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.r);
+      ctx.fillStyle = p.col;
+      ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    frame++;
+    if (frame < 200) requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, canvas.width, canvas.height); confettiRunning = false; }
+  }
+  draw();
+}
+
+/* ============================================================
+   SEARCH FUNCTIONALITY
+   Ganti searchPageMap sesuai struktur bab dokumen baru
+   ============================================================ */
+const searchPageMap = [
+  { page: 'home',      keywords: ['beranda','home','selamat datang','prosedur','lansia'] },
+  { page: 'bab1',      keywords: ['bab1','terapi kognitif','kognitif','puzzle','catur','teka-teki'] },
+  { page: 'bab2',      keywords: ['bab2','tak','terapi aktivitas kelompok','kelompok','stimulasi'] },
+  { page: 'bab3',      keywords: ['bab3','senam','senam lansia','olahraga','gimnastik'] },
+  { page: 'flashcard', keywords: ['flashcard','kartu','flip','latihan'] },
+];
+let searchTimeout = null;
+function handleSearch(val) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => doSearch(val.trim()), 200);
+}
+function doSearch(query) {
+  const noResult = document.getElementById('searchNoResult');
+  document.querySelectorAll('.search-highlight').forEach(el => { el.outerHTML = el.textContent; });
+  if (!query) { noResult.style.display = 'none'; return; }
+  const q = query.toLowerCase();
+  let targetPage = null;
+  for (const entry of searchPageMap) {
+    if (entry.keywords.some(k => k.includes(q) || q.includes(k))) { targetPage = entry.page; break; }
+  }
+  if (targetPage) navigate(targetPage);
+  const activePage = document.querySelector('.page.active');
+  if (!activePage) return;
+  const walker = document.createTreeWalker(activePage, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => {
+      if (['SCRIPT','STYLE','INPUT'].includes(n.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+      return n.textContent.toLowerCase().includes(q) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const re   = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+    const span = document.createElement('span');
+    span.innerHTML = node.textContent.replace(re, '<mark class="search-highlight">$1</mark>');
+    node.parentNode.replaceChild(span, node);
+  });
+  const first = activePage.querySelector('.search-highlight');
+  if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); noResult.style.display = 'none'; }
+  else noResult.style.display = 'block';
+}
+
+/* Init */
+navigate('home');
+</script>
+</body>
+</html>
