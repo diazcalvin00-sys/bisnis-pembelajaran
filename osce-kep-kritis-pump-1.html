@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSCE Keperawatan Kritis — Syringe & Infusion Pump</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-deep: #fdf2f6;
+    --bg-card: #ffffff;
+    --bg-elevated: #fce8f0;
+    --bg-hover: #fad5e5;
+    --accent-blue: #d63384;
+    --accent-teal: #e91e8c;
+    --accent-green: #2d9e6b;
+    --accent-amber: #c77700;
+    --accent-red: #d93025;
+    --border: rgba(214, 51, 132, 0.15);
+    --border-strong: rgba(214, 51, 132, 0.3);
+    --text-primary: #2d1b2e;
+    --text-secondary: #6b3d56;
+    --text-muted: #a0768a;
+    --text-label: #c2185b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-deep);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 40px 24px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%;
+    transform: translateX(-50%);
+    width: 500px; height: 200px;
+    background: radial-gradient(ellipse, rgba(214,51,132,0.10) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--text-label);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.1s forwards;
+  }
+
+  .header-title {
+    font-size: clamp(22px, 5vw, 32px);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.2s forwards;
+  }
+
+  .header-title span {
+    color: var(--accent-blue);
+  }
+
+  .header-sub {
+    margin-top: 10px;
+    color: var(--text-secondary);
+    font-size: 13px;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.3s forwards;
+  }
+
+  /* TABS */
+  .tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 24px 0;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.4s forwards;
+  }
+
+  .tabs {
+    display: flex;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .tab-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .tab-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-hover);
+  }
+
+  .tab-btn.active {
+    background: var(--accent-blue);
+    color: #fff;
+  }
+
+  /* PROGRESS BAR */
+  .progress-section {
+    padding: 20px 24px 0;
+    max-width: 720px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeUp 0.5s ease 0.5s forwards;
+  }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .progress-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .progress-count {
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  .progress-bar-track {
+    height: 4px;
+    background: var(--bg-elevated);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #d63384, #f06292);
+    border-radius: 99px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 0%;
+  }
+
+  /* MAIN CONTENT */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 24px 60px;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  /* SECTION CARD */
+  .section-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.4s ease forwards;
+  }
+
+  .section-card:nth-child(1) { animation-delay: 0.05s; }
+  .section-card:nth-child(2) { animation-delay: 0.10s; }
+  .section-card:nth-child(3) { animation-delay: 0.15s; }
+  .section-card:nth-child(4) { animation-delay: 0.20s; }
+  .section-card:nth-child(5) { animation-delay: 0.25s; }
+  .section-card:nth-child(6) { animation-delay: 0.30s; }
+
+  .section-header {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .section-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .icon-blue { background: rgba(214,51,132,0.12); color: var(--accent-blue); }
+  .icon-teal { background: rgba(233,30,140,0.10); color: var(--accent-teal); }
+  .icon-green { background: rgba(45,158,107,0.12); color: var(--accent-green); }
+  .icon-amber { background: rgba(199,119,0,0.12); color: var(--accent-amber); }
+  .icon-red { background: rgba(217,48,37,0.12); color: var(--accent-red); }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+  }
+
+  .section-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    padding: 2px 8px;
+    border-radius: 99px;
+  }
+
+  /* CHECKLIST ITEMS */
+  .checklist {
+    padding: 8px 0;
+  }
+
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    border-bottom: 1px solid rgba(214,51,132,0.07);
+  }
+
+  .checklist-item:last-child { border-bottom: none; }
+
+  .checklist-item:hover {
+    background: var(--bg-hover);
+  }
+
+  .checklist-item.checked {
+    opacity: 0.55;
+  }
+
+  .checklist-item.checked .item-text {
+    text-decoration: line-through;
+    color: var(--text-muted);
+  }
+
+  .checkbox {
+    width: 18px; height: 18px;
+    border: 1.5px solid var(--border-strong);
+    border-radius: 5px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+  }
+
+  .checklist-item.checked .checkbox {
+    background: var(--accent-green);
+    border-color: var(--accent-green);
+  }
+
+  .checkmark {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .checklist-item.checked .checkmark {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .item-text {
+    flex: 1;
+    font-size: 13.5px;
+    color: var(--text-primary);
+    line-height: 1.55;
+    transition: color 0.2s;
+  }
+
+  .item-note {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-style: italic;
+  }
+
+  /* INFO BOX */
+  .info-box {
+    margin: 0 20px 16px;
+    padding: 12px 16px;
+    background: rgba(214,51,132,0.06);
+    border: 1px solid rgba(214,51,132,0.2);
+    border-radius: 8px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .info-box strong {
+    color: var(--accent-blue);
+    font-weight: 600;
+  }
+
+  /* ALARM TABLE */
+  .alarm-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+
+  .alarm-table th {
+    text-align: left;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg-elevated);
+  }
+
+  .alarm-table td {
+    padding: 11px 20px;
+    border-bottom: 1px solid rgba(214,51,132,0.08);
+    vertical-align: top;
+  }
+
+  .alarm-table tr:last-child td { border-bottom: none; }
+
+  .alarm-table tr:hover td { background: var(--bg-hover); }
+
+  .alarm-name {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-amber);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .alarm-action {
+    color: var(--text-primary);
+    line-height: 1.5;
+  }
+
+  /* COMPARISON TABLE */
+  .compare-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+
+  .compare-table th {
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    background: var(--bg-elevated);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .compare-table th:first-child { text-align: left; color: var(--text-muted); font-weight: 400; min-width: 110px; }
+  .compare-table th:nth-child(2) { color: var(--accent-blue); }
+  .compare-table th:nth-child(3) { color: var(--accent-teal); }
+
+  .compare-table td {
+    padding: 11px 16px;
+    border-bottom: 1px solid rgba(214,51,132,0.08);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .compare-table td:first-child {
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .compare-table td:nth-child(2) { color: var(--text-primary); }
+  .compare-table td:nth-child(3) { color: var(--text-primary); }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:hover td { background: var(--bg-hover); }
+
+  .scroll-hint {
+    display: none;
+    text-align: right;
+    font-size: 11px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text-muted);
+    padding: 6px 20px 0;
+  }
+
+  @media (max-width: 520px) {
+    .scroll-hint { display: block; }
+  }
+
+  /* RESET BUTTON */
+  .reset-area {
+    text-align: center;
+    margin-top: 24px;
+  }
+
+  .reset-btn {
+    padding: 10px 28px;
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.02em;
+  }
+
+  .reset-btn:hover {
+    background: var(--bg-elevated);
+    color: var(--text-primary);
+    border-color: var(--accent-blue);
+  }
+
+  /* COMPLETE STATE */
+  .complete-banner {
+    display: none;
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    background: rgba(45,158,107,0.07);
+    border: 1px solid rgba(45,158,107,0.25);
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .complete-banner.show {
+    display: block;
+    animation: fadeUp 0.4s ease;
+  }
+
+  .complete-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--accent-green);
+    margin-bottom: 4px;
+  }
+
+  .complete-sub {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #fce8f0; }
+  ::-webkit-scrollbar-thumb { background: rgba(214,51,132,0.3); border-radius: 99px; }
+
+  @media (max-width: 480px) {
+    .tab-btn { padding: 9px 14px; font-size: 12px; }
+    .header { padding: 28px 16px 24px; }
+    .container { padding: 16px 16px 50px; }
+    .progress-section { padding: 16px 16px 0; }
+    .tabs-wrapper { padding: 0 16px; }
+    .alarm-table th:last-child,
+    .alarm-table td:last-child { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-label">OSCE Keperawatan Kritis</div>
+  <div class="header-title">Syringe Pump <span>&</span> Infusion Pump</div>
+  <div class="header-sub">Checklist prosedur — latihan mandiri untuk OSCE Juni 2026</div>
+</div>
+
+<div class="tabs-wrapper">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('syringe')">Syringe Pump</button>
+    <button class="tab-btn" onclick="switchTab('infusion')">Infusion Pump</button>
+    <button class="tab-btn" onclick="switchTab('compare')">Perbandingan</button>
+  </div>
+</div>
+
+<div class="progress-section">
+  <div class="progress-header">
+    <span class="progress-label">Progress checklist</span>
+    <span class="progress-count" id="progress-text">0 / 0</span>
+  </div>
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill" id="progress-bar"></div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ===== TAB: SYRINGE PUMP ===== -->
+  <div class="tab-content active" id="tab-syringe">
+
+    <div class="complete-banner" id="complete-syringe">
+      <div class="complete-title">Semua langkah selesai</div>
+      <div class="complete-sub">Syringe Pump sudah dikuasai. Siap OSCE.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-blue">01</div>
+        <div class="section-title">Persiapan Alat</div>
+        <div class="section-badge">Pre-prosedur</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cuci tangan 6 langkah (WHO) sebelum menyentuh alat apapun</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan syringe pump dan pastikan terhubung ke sumber listrik</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan spuit 20 cc atau 50 cc, extension tube, plester, sarung tangan</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan obat yang diresepkan dan pelarut (NaCl 0.9%)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Verifikasi program terapi: nama pasien, nama obat, dosis, rute, waktu pemberian</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Pakai sarung tangan, jelaskan prosedur ke pasien</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-teal">02</div>
+        <div class="section-title">Pengenceran Obat</div>
+        <div class="section-badge">Perhitungan</div>
+      </div>
+      <div class="info-box">
+        <strong>Contoh hitungan:</strong> Dopamin 5 mcg/kg/mnt — pasien 60 kg — sediaan 200 mg/5 ml — encerkan ke 50 cc NaCl<br>
+        Dosis = 5 x 60 = 300 mcg/mnt = 18 mg/jam<br>
+        Konsentrasi = 200 mg / 50 cc = 4 mg/cc<br>
+        Rate = 18 / 4 = <strong>4.5 ml/jam</strong>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Hitung dosis dan tentukan volume total pengenceran</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Aspirasi obat ke spuit, tambah NaCl 0.9% sampai volume target</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Label spuit: nama obat, konsentrasi (mg/cc atau mcg/cc), tanggal, nama perawat
+            <span class="item-note">Label ini wajib ada — di OSCE sering diperiksa</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Pasang extension tube ke spuit, priming selang (keluarkan udara)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-green">03</div>
+        <div class="section-title">Pemasangan ke Pump</div>
+        <div class="section-badge">Instalasi</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Tempatkan spuit di holder syringe pump, pastikan ukuran spuit sesuai tipe pump</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Kunci tuas penahan spuit (clamp/pengunci plunger)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Hubungkan ujung extension tube ke akses IV pasien (pastikan tidak ada udara)
+            <span class="item-note">Pastikan IV line paten, tidak ada phlebitis atau infiltrasi</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Nyalakan pump (power on), tunggu sampai display aktif</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-blue">04</div>
+        <div class="section-title">Setting & Start</div>
+        <div class="section-badge">Konfigurasi pump</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Input ukuran spuit yang digunakan (misal 50 cc)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Setting volume (jumlah cc dalam spuit)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Setting rate dalam ml/jam sesuai hasil perhitungan dosis
+            <span class="item-note">Pastikan angka yang diinput sudah double-check</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Tekan tombol START, konfirmasi pump berjalan (motor bergerak, display menunjukkan infusing)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Rapikan selang, plester di kulit pasien supaya tidak tertarik</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-green">05</div>
+        <div class="section-title">Monitoring & Evaluasi</div>
+        <div class="section-badge">Selama running</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Monitor tanda vital sesuai protokol (TD, HR, saturasi — terutama obat vasoaktif)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Periksa area insersi IV: tanda infiltrasi, phlebitis, ekstravasasi</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cek display pump: volume sisa, rate berjalan, alarm aktif</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Dokumentasi: jam mulai, obat, dosis, rate, respons pasien, nama perawat</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cuci tangan setelah prosedur selesai</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-amber">06</div>
+        <div class="section-title">Troubleshoot Alarm</div>
+        <div class="section-badge">Penting di OSCE</div>
+      </div>
+      <table class="alarm-table">
+        <thead>
+          <tr>
+            <th style="width:140px">Alarm</th>
+            <th>Tindakan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="alarm-name">OCCLUSION</span></td>
+            <td class="alarm-action">Cek selang tertekuk atau tersumbat. Periksa IV line. Jangan langsung release tanpa cek tekanan.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">AIR IN LINE</span></td>
+            <td class="alarm-action">Hentikan pump, keluarkan gelembung udara dari selang, baru jalankan kembali.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">NEAR EMPTY</span></td>
+            <td class="alarm-action">Siapkan spuit pengganti, lakukan penggantian tanpa jeda panjang (terutama vasoaktif).</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">EMPTY / KVO</span></td>
+            <td class="alarm-action">Pump masuk mode KVO (keep vein open). Segera ganti spuit atau hentikan sesuai order.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">DOOR OPEN</span></td>
+            <td class="alarm-action">Tutup penutup spuit holder dengan benar sampai bunyi klik.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reset-area">
+      <button class="reset-btn" onclick="resetTab('syringe')">Reset semua checklist</button>
+    </div>
+  </div>
+
+  <!-- ===== TAB: INFUSION PUMP ===== -->
+  <div class="tab-content" id="tab-infusion">
+
+    <div class="complete-banner" id="complete-infusion">
+      <div class="complete-title">Semua langkah selesai</div>
+      <div class="complete-sub">Infusion Pump sudah dikuasai. Siap OSCE.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-teal">01</div>
+        <div class="section-title">Persiapan Alat</div>
+        <div class="section-badge">Pre-prosedur</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cuci tangan 6 langkah</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan infusion pump dan pastikan terhubung ke listrik</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan set infus khusus untuk pump (pump set — bukan set infus biasa)
+            <span class="item-note">Pump set punya segmen khusus yang masuk ke peristaltic mechanism</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Siapkan cairan infus (cek: jenis, volume, kedaluwarsa, kejernihan)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Verifikasi order: jenis cairan, volume, rate, waktu habis</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Pakai sarung tangan, jelaskan prosedur ke pasien</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-blue">02</div>
+        <div class="section-title">Priming Set Infus</div>
+        <div class="section-badge">Sebelum loading</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Sambungkan spike ke kantong/botol cairan infus dengan satu gerakan tegas</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Isi drip chamber sampai 1/3 hingga 1/2 penuh (squeeze lalu lepas)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Buka roller clamp, biarkan cairan mengisi selang sampai ujung (priming)
+            <span class="item-note">Pastikan tidak ada gelembung udara tersisa di selang</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Tutup kembali roller clamp setelah priming selesai</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-green">03</div>
+        <div class="section-title">Loading ke Pump</div>
+        <div class="section-badge">Instalasi</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Buka pintu infusion pump</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Masukkan segmen pump set ke mekanisme peristaltic pump (perhatikan arah aliran: atas ke bawah)
+            <span class="item-note">Arah loading terbalik = cairan tidak mengalir atau backflow</span>
+          </div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Tutup pintu pump sampai bunyi klik (terkunci)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Sambungkan ujung selang ke akses IV pasien</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Buka roller clamp (pump yang mengontrol aliran, bukan clamp manual)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-teal">04</div>
+        <div class="section-title">Setting & Start</div>
+        <div class="section-badge">Konfigurasi pump</div>
+      </div>
+      <div class="info-box">
+        <strong>Perhitungan rate:</strong> Jika order NaCl 0.9% 500 ml habis dalam 5 jam → Rate = 500/5 = <strong>100 ml/jam</strong>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Nyalakan pump, tunggu display aktif</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Setting Rate (ml/jam) sesuai perhitungan</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Setting VTBI — Volume To Be Infused (total volume cairan dalam kantong/botol)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Tekan START, konfirmasi pump berjalan dan tidak ada alarm</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Rapikan selang, plester di area yang aman</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-green">05</div>
+        <div class="section-title">Monitoring & Dokumentasi</div>
+        <div class="section-badge">Selama running</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Pantau tanda vital dan keseimbangan cairan (input-output)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Periksa area insersi IV setiap 1-2 jam (infiltrasi, phlebitis)</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cek display: sisa VTBI, rate aktif, kondisi alarm</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Dokumentasi: jenis cairan, rate, VTBI, jam mulai, jam habis perkiraan, nama perawat</div>
+        </div>
+        <div class="checklist-item" onclick="toggle(this)">
+          <div class="checkbox"><svg class="checkmark" width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="item-text">Cuci tangan setelah prosedur</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-header">
+        <div class="section-icon icon-amber">06</div>
+        <div class="section-title">Troubleshoot Alarm</div>
+        <div class="section-badge">Penting di OSCE</div>
+      </div>
+      <table class="alarm-table">
+        <thead>
+          <tr>
+            <th style="width:140px">Alarm</th>
+            <th>Tindakan</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="alarm-name">OCCLUSION</span></td>
+            <td class="alarm-action">Cek selang tertekuk, roller clamp masih tertutup, atau jalur IV tersumbat. Jangan abaikan alarm ini.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">AIR IN LINE</span></td>
+            <td class="alarm-action">Hentikan pump, keluarkan gelembung, repriming segmen, jalankan kembali.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">DOOR OPEN</span></td>
+            <td class="alarm-action">Pastikan pintu pump tertutup dan terkunci dengan benar.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">VTBI COMPLETE</span></td>
+            <td class="alarm-action">VTBI sudah tercapai. Pump berhenti atau masuk KVO. Ganti cairan sesuai order atau hentikan infus.</td>
+          </tr>
+          <tr>
+            <td><span class="alarm-name">LOW BATTERY</span></td>
+            <td class="alarm-action">Sambungkan ke sumber listrik segera. Jangan tunggu sampai battery habis.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="reset-area">
+      <button class="reset-btn" onclick="resetTab('infusion')">Reset semua checklist</button>
+    </div>
+  </div>
+
+  <!-- ===== TAB: PERBANDINGAN ===== -->
+  <div class="tab-content" id="tab-compare">
+
+    <div class="section-card" style="animation-delay:0.05s">
+      <div class="section-header">
+        <div class="section-icon icon-blue">VS</div>
+        <div class="section-title">Syringe Pump vs Infusion Pump</div>
+        <div class="section-badge">Referensi cepat</div>
+      </div>
+      <div class="scroll-hint">geser ke kanan &rarr;</div>
+      <div class="compare-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Aspek</th>
+            <th>Syringe Pump</th>
+            <th>Infusion Pump</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Wadah cairan</td>
+            <td>Spuit 10–60 cc</td>
+            <td>Kantong/botol infus 100–1000 ml</td>
+          </tr>
+          <tr>
+            <td>Volume per sekali isi</td>
+            <td>Kecil (maks 60 cc)</td>
+            <td>Besar (ratusan ml)</td>
+          </tr>
+          <tr>
+            <td>Presisi rate</td>
+            <td>Sangat presisi (0.1 ml/jam)</td>
+            <td>Presisi (1 ml/jam ke atas)</td>
+          </tr>
+          <tr>
+            <td>Indikasi utama</td>
+            <td>Obat vasoaktif, insulin, sedasi, opioid — konsentrasi tinggi, volume kecil</td>
+            <td>Cairan maintenance, antibiotik, elektrolit, nutrisi parenteral</td>
+          </tr>
+          <tr>
+            <td>Contoh obat/cairan</td>
+            <td>Dopamin, norepinefrin, propofol, regular insulin, morfin</td>
+            <td>NaCl 0.9%, RL, D5%, KCl drip, albumin</td>
+          </tr>
+          <tr>
+            <td>Risiko jeda saat ganti</td>
+            <td>Tinggi — obat vasoaktif tidak boleh jeda panjang</td>
+            <td>Relatif lebih toleran</td>
+          </tr>
+          <tr>
+            <td>Setting utama</td>
+            <td>Ukuran spuit, volume, rate (ml/jam)</td>
+            <td>Rate (ml/jam), VTBI</td>
+          </tr>
+          <tr>
+            <td>Penggunaan di ICU</td>
+            <td>Hampir selalu untuk obat-obat titrasi</td>
+            <td>Untuk cairan dan obat intermiten</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+
+    <div class="section-card" style="animation-delay:0.10s">
+      <div class="section-header">
+        <div class="section-icon icon-red">!</div>
+        <div class="section-title">Yang Sering Salah di OSCE</div>
+        <div class="section-badge">Jangan sampai</div>
+      </div>
+      <div class="checklist">
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Lupa cuci tangan di awal dan akhir — langsung kena poin</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Tidak memasang label pada spuit (nama obat, konsentrasi, tanggal)</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Priming tidak tuntas — ada gelembung udara di selang saat disambung ke pasien</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Loading infusion pump set terbalik arah — cairan tidak mengalir</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Tidak verifikasi program terapi sebelum mulai (5 benar: pasien, obat, dosis, rute, waktu)</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Tidak menjelaskan ke pasien sebelum melakukan prosedur</div>
+        </div>
+        <div class="checklist-item" style="cursor:default">
+          <div class="checkbox" style="border-color:rgba(239,68,68,0.4); background:rgba(239,68,68,0.08)">
+            <svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 1L9 7M9 1L1 7" stroke="#ef4444" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div>
+          <div class="item-text" style="color:var(--text-secondary)">Tidak dokumentasi setelah prosedur selesai</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  let currentTab = 'syringe';
+
+  function switchTab(tab) {
+    // hide all content
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+
+    // show selected
+    document.getElementById('tab-' + tab).classList.add('active');
+    event.target.classList.add('active');
+
+    currentTab = tab;
+    updateProgress();
+  }
+
+  function toggle(item) {
+    item.classList.toggle('checked');
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const activeContent = document.querySelector('.tab-content.active');
+    if (!activeContent) return;
+
+    const allItems = activeContent.querySelectorAll('.checklist-item[onclick="toggle(this)"]');
+    const checkedItems = activeContent.querySelectorAll('.checklist-item[onclick="toggle(this)"].checked');
+
+    const total = allItems.length;
+    const checked = checkedItems.length;
+
+    const pct = total > 0 ? (checked / total) * 100 : 0;
+
+    document.getElementById('progress-bar').style.width = pct + '%';
+    document.getElementById('progress-text').textContent = checked + ' / ' + total;
+
+    // complete banner
+    const tabId = activeContent.id.replace('tab-', '');
+    const banner = document.getElementById('complete-' + tabId);
+    if (banner) {
+      if (total > 0 && checked === total) {
+        banner.classList.add('show');
+      } else {
+        banner.classList.remove('show');
+      }
+    }
+  }
+
+  function resetTab(tabName) {
+    const content = document.getElementById('tab-' + tabName);
+    content.querySelectorAll('.checklist-item.checked').forEach(item => item.classList.remove('checked'));
+    updateProgress();
+  }
+
+  // Init
+  updateProgress();
+</script>
+
+</body>
+</html>
