@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tes Verbal (TPA) - Materi Interaktif</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--bg:#fdf4f7;--bg2:#ffffff;--bg3:#fce7f0;--bg4:#fbd0e4;--border:#f4a7c4;--border2:#fbd0e4;--text:#1a0810;--text2:#6b2140;--text3:#9e4d6b;--teal:#059669;--teal-l:#10b981;--teal-g:rgba(5,150,105,.1);--gold:#c97a07;--gold-l:#f59e0b;--gold-g:rgba(245,158,11,.1);--green:#16a34a;--red:#dc2626;--blue:#7c3aed;--sidebar-w:268px;--radius:14px;--rsm:8px;--font-d:'Playfair Display',serif;--font-b:'Plus Jakarta Sans',sans-serif;--shadow:0 4px 12px rgba(219,39,119,.12);--shadow-sm:0 2px 8px rgba(219,39,119,.08)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}::-webkit-scrollbar-thumb:hover{background:var(--text3)}button{font-family:var(--font-b);cursor:pointer;border:none;outline:none}a{color:var(--teal-l);text-decoration:none}.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid var(--border2);display:flex;flex-direction:column;z-index:100;transition:transform .3s cubic-bezier(0.4,0,0.2,1);will-change:transform;overflow:hidden}.main{margin-left:var(--sidebar-w);min-height:100vh;transition:margin-left .3s ease}.mob-header{display:none;position:fixed;top:0;left:0;right:0;height:56px;background:var(--bg2);border-bottom:1px solid var(--border2);z-index:200;align-items:center;padding:0 1rem;gap:.75rem}.mob-title{flex:1;min-width:0;font-size:.9rem;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mob-ham{background:none;color:var(--text);font-size:1.35rem;padding:.25rem .4rem;border-radius:var(--rsm);transition:background .2s}.mob-ham:hover{background:var(--bg3)}.mob-quiz{background:var(--gold);color:#000;font-size:.78rem;font-weight:700;padding:.35rem .75rem;border-radius:99px;transition:opacity .2s}.mob-quiz:hover{opacity:.85}.req-mark{color:var(--red);margin-left:.2rem;font-weight:700}.sb-logo{padding:1.25rem 1.1rem 1rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid var(--border2);flex-shrink:0}.sb-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-l));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 0 16px var(--teal-g)}.sb-logo-text .t1{font-family:var(--font-d);font-size:.95rem;font-weight:700;color:var(--text);line-height:1.2}.sb-logo-text .t2{font-size:.7rem;color:var(--text3);margin-top:2px}.sb-scroll{flex:1;overflow-y:auto;padding:.6rem .7rem}.sb-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;padding:.75rem .5rem .35rem}.nav-btn{width:100%;text-align:left;padding:.6rem .75rem;border-radius:var(--rsm);background:none;color:var(--text2);font-size:.8rem;font-weight:500;display:flex;align-items:center;gap:.6rem;transition:all .18s;position:relative;overflow:hidden;min-width:0}.nav-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.nav-btn:hover{background:var(--bg3);color:var(--text)}.nav-btn.active{background:var(--teal-g);color:var(--teal-l);font-weight:600}.nav-btn.active::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:3px;border-radius:0 3px 3px 0;background:var(--teal-l)}.nav-ico{font-size:1rem;flex-shrink:0}.nav-ico svg,.nav-ico i[data-lucide]{width:16px;height:16px;stroke-width:2;vertical-align:middle}.sb-icon svg,.sb-icon i[data-lucide]{width:22px;height:22px;stroke:#fff;stroke-width:2}.nav-badge{margin-left:4px;flex-shrink:0;background:var(--bg4);color:var(--text3);font-size:.58rem;padding:1px 5px;border-radius:99px;font-weight:700;white-space:nowrap}.nav-btn.active .nav-badge{background:var(--teal-g);color:var(--teal-l)}.sb-footer{padding:.85rem .9rem 1rem;border-top:1px solid var(--border2);flex-shrink:0}.quiz-main-btn{width:100%;padding:.7rem 1rem;border-radius:var(--rsm);background:linear-gradient(135deg,var(--gold),#e69c0a);color:#0a0800;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:0 4px 18px rgba(245,158,11,.2);transition:all .2s;margin-bottom:.8rem}.quiz-main-btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(245,158,11,.3)}.sb-info{padding:.1rem .25rem}.sb-info .name{font-size:.75rem;font-weight:600;color:var(--text2)}.sb-info .sem{font-size:.68rem;color:var(--text3);margin-top:2px}.sb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(0.4,0,0.2,1)}.page{display:none;opacity:0}.page.active{display:block;animation:pageSlide .3s cubic-bezier(0.4,0,0.2,1) forwards}@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}@keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes slideInR{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}@keyframes pageSlide{from{opacity:0;transform:translateX(14px) translateY(4px)}to{opacity:1;transform:translateX(0) translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}.shake{animation:shake .35s cubic-bezier(0.4,0,0.2,1)}@keyframes correctPop{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}@keyframes sbGlow{0%,100%{box-shadow:0 4px 18px rgba(245,158,11,.2)}50%{box-shadow:0 6px 28px rgba(245,158,11,.45)}}@keyframes scoreCount{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes starsIn{from{opacity:0;transform:rotate(-20deg) scale(0)}to{opacity:1;transform:rotate(0) scale(1)}}.quiz-main-btn{animation:sbGlow 2.5s ease infinite}.anim{opacity:0;will-change:transform,opacity}.page.active .anim{animation:fadeUp .42s cubic-bezier(0.4,0,0.2,1) forwards}.page.active .anim:nth-child(1){animation-delay:.03s}.page.active .anim:nth-child(2){animation-delay:.07s}.page.active .anim:nth-child(3){animation-delay:.11s}.page.active .anim:nth-child(4){animation-delay:.14s}.page.active .anim:nth-child(5){animation-delay:.17s}.page.active .anim:nth-child(6){animation-delay:.20s}.page.active .anim:nth-child(7){animation-delay:.22s}.page.active .anim:nth-child(8){animation-delay:.24s}.page.active .anim:nth-child(9){animation-delay:.25s}.page.active .anim:nth-child(10){animation-delay:.25s}.page.active .anim:nth-child(n+11){animation-delay:.25s}.home-hero{padding:3.5rem 3rem 2.5rem;background:linear-gradient(160deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border2);position:relative;overflow:hidden}.home-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,var(--teal-g) 0%,transparent 70%);pointer-events:none}.home-hero::after{content:'';position:absolute;bottom:-80px;left:30%;width:250px;height:250px;background:radial-gradient(circle,var(--gold-g) 0%,transparent 70%);pointer-events:none}.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-g);border:1px solid rgba(20,184,166,.25);color:var(--teal-l);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:99px;letter-spacing:.05em;margin-bottom:1.2rem}.hero-title{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;color:var(--text);margin-bottom:.6rem}.hero-title span{color:var(--gold-l);font-style:italic}.hero-sub{font-size:.92rem;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:2rem}.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem}.hero-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:.73rem;font-weight:500;padding:.28rem .75rem;border-radius:99px}.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.75rem 3rem;background:var(--bg);border-bottom:1px solid var(--border2)}.stat-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.25rem;text-align:center;transition:border-color .22s,transform .22s,box-shadow .22s}.stat-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,148,136,.15)}.stat-num{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--teal-l);line-height:1}.stat-num.gold{color:var(--gold-l)}.stat-lbl{font-size:.72rem;color:var(--text2);margin-top:.4rem;font-weight:500}.chapters-section{padding:2rem 3rem 3rem}.sec-heading{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.3rem}.sec-sub{font-size:.8rem;color:var(--text2);margin-bottom:1.5rem}.chapter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}.ch-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.4rem;cursor:pointer;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden}.ch-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 10px 30px rgba(13,148,136,.18)}.ch-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold-l));opacity:0;transition:opacity .2s}.ch-card:hover::before{opacity:1}.ch-num{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal-l);text-transform:uppercase;margin-bottom:.5rem;background:var(--teal-g);display:inline-block;padding:.2rem .6rem;border-radius:99px}.ch-title{font-family:var(--font-d);font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}.ch-desc{font-size:.78rem;color:var(--text2);line-height:1.6}.ch-arrow{margin-top:1rem;color:var(--teal-l);font-size:.8rem;font-weight:600;display:flex;align-items:center;gap:.3rem}.ch-hero{padding:2.5rem 3rem 2rem;background:linear-gradient(160deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border2);position:relative;overflow:hidden}.ch-hero::after{content:'';position:absolute;top:-50px;right:-30px;width:220px;height:220px;background:radial-gradient(circle,var(--teal-g) 0%,transparent 70%)}.ch-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-g);border:1px solid rgba(20,184,166,.25);color:var(--teal-l);font-size:.7rem;font-weight:700;padding:.25rem .8rem;border-radius:99px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem}.ch-hero h1{font-family:var(--font-d);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--text);line-height:1.2;margin-bottom:.5rem}.ch-hero p{font-size:.88rem;color:var(--text2);max-width:520px}.content-wrap{padding:2rem 3rem 3rem}.card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.6rem;margin-bottom:1.25rem}.card h2{font-family:var(--font-d);font-size:1.18rem;font-weight:600;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}.card h2 .icon{width:32px;height:32px;border-radius:9px;background:var(--teal-g);border:1px solid rgba(20,184,166,.25);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}.card h3{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.7rem;margin-top:1.2rem}.card h3:first-child{margin-top:0}.card p{font-size:.85rem;color:var(--text2);line-height:1.75}.def-box{background:var(--bg3);border-left:3px solid var(--teal-l);border-radius:0 var(--rsm) var(--rsm) 0;padding:1rem 1.2rem;margin:.8rem 0}.def-box .term{font-weight:700;color:var(--teal-l);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}.def-box p{font-size:.84rem;color:var(--text);line-height:1.7}.def-box .key{color:var(--gold-l);font-weight:700}.def-gold{background:var(--bg3);border-left:3px solid var(--gold-l);border-radius:0 var(--rsm) var(--rsm) 0;padding:1rem 1.2rem;margin:.8rem 0}.def-gold .term{color:var(--gold-l);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}.def-gold p{font-size:.84rem;color:var(--text);line-height:1.7}.blist{list-style:none;padding:0}.blist li{font-size:.84rem;color:var(--text2);line-height:1.7;padding:.45rem 0 .45rem 1.3rem;position:relative;border-bottom:1px solid var(--border2)}.blist li:last-child{border-bottom:none}.blist li::before{content:'';position:absolute;left:0;top:.9rem;width:6px;height:6px;border-radius:50%;background:var(--teal-l)}.blist li strong{color:var(--text);font-weight:600}.nlist{list-style:none;padding:0;counter-reset:nc}.nlist li{font-size:.84rem;color:var(--text2);line-height:1.7;padding:.5rem .5rem .5rem 2.2rem;position:relative;border-bottom:1px solid var(--border2);counter-increment:nc}.nlist li:last-child{border-bottom:none}.nlist li::before{content:counter(nc);position:absolute;left:0;top:.55rem;width:20px;height:20px;border-radius:50%;background:var(--teal-g);border:1px solid rgba(20,184,166,.3);color:var(--teal-l);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center}.nlist li strong{color:var(--text);font-weight:600}.sub-sec{display:flex;align-items:center;gap:.7rem;margin:1.4rem 0 .8rem}.sub-sec-line{flex:1;height:1px;background:var(--border2)}.sub-sec-text{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;white-space:nowrap}.pill{display:inline-block;padding:.2rem .75rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.04em}.pill-teal{background:var(--teal-g);color:var(--teal-l);border:1px solid rgba(20,184,166,.25)}.pill-gold{background:var(--gold-g);color:var(--gold-l);border:1px solid rgba(245,158,11,.25)}.summary{background:linear-gradient(135deg,rgba(13,148,136,.12),rgba(245,158,11,.06));border:1px solid rgba(20,184,166,.25);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.25rem}.summary h3{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--teal-l);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}.summary ul{list-style:none;padding:0}.summary ul li{font-size:.83rem;color:var(--text2);line-height:1.7;padding:.35rem 0 .35rem 1.5rem;position:relative;border-bottom:1px solid rgba(20,184,166,.1)}.summary ul li:last-child{border-bottom:none}.summary ul li::before{content:'✦';position:absolute;left:0;color:var(--teal-l);font-size:.6rem;top:.55rem}.comp-table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:.8rem 0;border-radius:var(--rsm)}.comp-table{width:100%;min-width:480px;border-collapse:collapse;font-size:.82rem}.comp-table th{background:var(--bg3);color:var(--teal-l);padding:.7rem 1rem;text-align:left;font-weight:700;font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:2px solid var(--teal)}.comp-table td{padding:.65rem 1rem;color:var(--text2);border-bottom:1px solid var(--border2);line-height:1.6}.comp-table tr:last-child td{border-bottom:none}.comp-table tr:hover td{background:var(--bg3);color:var(--text)}.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;padding:2rem 3rem 3rem}.fc-container{perspective:1000px}.fc-inner{width:100%;min-height:180px;position:relative;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,.2,.2,1);cursor:pointer}.fc-container.flipped .fc-inner{transform:rotateY(180deg)}.fc-face{position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}.fc-front{background:var(--bg2);border:1px solid var(--border);justify-content:space-between}.fc-back{background:linear-gradient(135deg,rgba(13,148,136,.18),rgba(245,158,11,.08));border:1px solid rgba(20,184,166,.3);transform:rotateY(180deg);overflow-y:auto}.fc-chapter{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal-l);text-transform:uppercase;background:var(--teal-g);padding:.2rem .6rem;border-radius:99px;display:inline-block;margin-bottom:.7rem}.fc-question{font-size:.86rem;color:var(--text);line-height:1.65;font-weight:500;flex:1}.fc-hint{font-size:.68rem;color:var(--text3);margin-top:.8rem;text-align:right}.fc-answer{font-size:.83rem;color:var(--text);line-height:1.7;flex:1}.fc-answer strong{color:var(--teal-l)}.fc-flip-hint{font-size:.68rem;color:var(--teal-l);margin-bottom:.5rem}.quiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s cubic-bezier(0.4,0,0.2,1)}.quiz-overlay.show{opacity:1;pointer-events:auto}.quiz-modal{position:fixed;top:50%;left:50%;z-index:600;transform:translate(-50%,-46%);width:min(600px,94vw);max-height:90vh;overflow-y:auto;background:var(--bg2);border:1px solid var(--border);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:opacity .25s cubic-bezier(0.4,0,0.2,1),transform .25s cubic-bezier(0.4,0,0.2,1);will-change:transform,opacity}.quiz-modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.qm-head{padding:1.5rem 1.75rem 1rem;border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}.qm-title{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:.5rem}.qm-close{background:var(--bg3);color:var(--text2);width:32px;height:32px;border-radius:50%;font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center}.qm-close:hover{background:var(--red);color:#fff}.qm-progress-bar{height:4px;background:var(--bg3);border-radius:0}.qm-progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold-l));border-radius:0;transition:width .4s ease}.qm-body{padding:1.75rem}.qm-counter{font-size:.72rem;color:var(--text3);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.9rem}.qm-q{font-size:.95rem;color:var(--text);font-weight:500;line-height:1.65;margin-bottom:1.4rem}.qm-opts{display:flex;flex-direction:column;gap:.6rem}.qm-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rsm);padding:.8rem 1rem;font-size:.85rem;color:var(--text2);text-align:left;transition:all .18s;display:flex;align-items:flex-start;gap:.75rem;font-family:var(--font-b)}.qm-opt:hover:not(:disabled){border-color:var(--teal-l);color:var(--text);background:var(--bg4)}.qm-opt.selected{border-color:var(--teal-l);color:var(--text);background:var(--teal-g)}.qm-opt.correct{border-color:var(--green);background:rgba(34,197,94,.12);color:var(--text)}.qm-opt.wrong{border-color:var(--red);background:rgba(239,68,68,.12);color:var(--text)}.opt-letter{min-width:24px;height:24px;border-radius:6px;background:var(--bg4);border:1px solid var(--border);font-size:.72rem;font-weight:700;color:var(--text3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}.qm-opt.selected .opt-letter{background:var(--teal-g);border-color:var(--teal-l);color:var(--teal-l)}.qm-opt.correct .opt-letter{background:rgba(34,197,94,.15);border-color:var(--green);color:var(--green)}.qm-opt.wrong .opt-letter{background:rgba(239,68,68,.15);border-color:var(--red);color:var(--red)}.qm-feedback{margin-top:1rem;padding:.75rem 1rem;border-radius:var(--rsm);font-size:.82rem;display:none}.qm-feedback.correct-fb{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:var(--green)}.qm-feedback.wrong-fb{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);color:#f87171}.qm-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.75rem 1.5rem;gap:.75rem}.qm-btn{padding:.65rem 1.3rem;border-radius:var(--rsm);font-size:.83rem;font-weight:600;transition:all .2s;font-family:var(--font-b)}.qm-btn-sec{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}.qm-btn-sec:hover{background:var(--bg4);color:var(--text)}.qm-btn-prim{background:var(--teal);color:#fff}.qm-btn-prim:hover{background:var(--teal-l)}.qm-btn-gold{background:var(--gold);color:#000}.qm-btn-gold:hover{background:var(--gold-l)}.qm-result{padding:2rem 1.75rem 2.5rem;text-align:center}.result-icon{font-size:3.5rem;margin-bottom:1rem}.result-score{font-family:var(--font-d);font-size:3.5rem;font-weight:700;line-height:1;margin-bottom:.5rem}.result-score.pass{color:var(--green)}.result-score.fail{color:var(--red)}.result-msg{font-size:1rem;color:var(--text2);margin-bottom:.3rem}.result-detail{font-size:.82rem;color:var(--text3);margin-bottom:2rem}.result-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}.qm-timer-wrap{display:flex;align-items:center;gap:.6rem;margin-bottom:1.1rem}.qm-timer-track{flex:1;height:6px;background:var(--bg3);border-radius:99px;overflow:hidden}.qm-timer-fill{height:100%;width:100%;background:linear-gradient(90deg,var(--teal),var(--teal-l));border-radius:99px;transition:width 1s linear,background .3s}.qm-timer-fill.warn{background:linear-gradient(90deg,var(--gold),var(--gold-l))}.qm-timer-fill.danger{background:linear-gradient(90deg,var(--red),#f87171)}.qm-timer-text{font-size:.72rem;font-weight:700;color:var(--text3);min-width:78px;text-align:right;display:flex;align-items:center;gap:.3rem;justify-content:flex-end}#confetti-canvas{position:fixed;inset:0;z-index:999;pointer-events:none}.search-wrap{padding:.6rem .7rem .4rem;position:relative}.search-input{width:100%;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rsm);padding:.48rem .75rem .48rem 2rem;color:var(--text);font-size:.78rem;font-family:var(--font-b);outline:none;transition:border-color .2s,background .2s;box-sizing:border-box}.search-input:focus{border-color:var(--teal);background:var(--bg3)}.search-input::placeholder{color:var(--text3)}.search-ico{position:absolute;left:1.15rem;top:50%;transform:translateY(-50%);font-size:.8rem;pointer-events:none;color:var(--text3);display:flex}.search-ico svg{width:14px;height:14px}.search-highlight{background:rgba(20,184,166,.25);border-radius:2px}.search-no-result{display:none;padding:.5rem .9rem;font-size:.72rem;color:var(--text3);text-align:center}.mob-print{background:none;border:1px solid var(--border2);border-radius:var(--rsm);color:var(--text2);font-size:.75rem;padding:.3rem .55rem;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:all .2s;white-space:nowrap}.mob-print:hover{background:var(--bg3);color:var(--text)}.btn-print-sb{width:100%;padding:.55rem 1rem;border-radius:var(--rsm);background:none;border:1px solid var(--border2);color:var(--text2);font-size:.8rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .2s;margin-bottom:.6rem;font-family:var(--font-b)}.btn-print-sb:hover{background:var(--bg3);color:var(--text);border-color:var(--border)}.mob-quiz,.quiz-main-btn,.case-banner-btn{display:inline-flex;align-items:center;gap:.4rem}.mob-quiz svg,.quiz-main-btn svg{width:16px;height:16px}@media (max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)}}@media (max-width:768px){.mob-header{display:flex}.sidebar{transform:translateX(-100%);z-index:300;top:0;height:100vh}.sidebar.open{transform:translateX(0);box-shadow:4px 0 40px rgba(0,0,0,.6)}.sb-overlay{z-index:299}.sb-overlay.show{opacity:1;pointer-events:auto}.main{margin-left:0;padding-top:56px}.home-hero{padding:2rem 1.25rem}.stats-row{padding:1.25rem}.chapters-section{padding:1.25rem}.content-wrap{padding:1.25rem}.ch-hero{padding:1.75rem 1.25rem}.fc-grid{padding:1.25rem}.chapter-grid{grid-template-columns:1fr}.comp-table{font-size:.78rem}.comp-table th,.comp-table td{padding:.55rem .75rem}}@media (max-width:480px){.stats-row{grid-template-columns:repeat(2,1fr);padding:1rem}}@media print{.mob-header,.sidebar,.sb-overlay,.quiz-modal,#confetti-canvas{display:none !important}body{background:#fff !important;color:#000 !important}.main{margin-left:0 !important;padding-top:0 !important}.page{display:none !important}.page.active{display:block !important}.card,.def-box,.def-gold,.summary,.ch-hero{background:#f9f9f9 !important;border:1px solid #ccc !important;color:#000 !important;box-shadow:none !important}h1,h2,h3,p,li,td,th,label{color:#000 !important}.comp-table th{background:#eee !important}.pill{border:1px solid #999 !important;background:#eee !important;color:#000 !important}.card{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+
+<header class="mob-header">
+  <button class="mob-ham" onclick="toggleSidebar()"><i data-lucide="menu"></i></button>
+  <div class="mob-title">Tes Verbal (TPA)</div>
+  <button class="mob-print" onclick="window.print()"><i data-lucide="printer"></i> Print</button>
+  <button class="mob-quiz" onclick="openQuiz()"><i data-lucide="pencil-line"></i> Quiz</button>
+</header>
+
+<div class="sb-overlay" id="sbOverlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="sb-logo">
+    <div class="sb-icon"><i data-lucide="spell-check"></i></div>
+    <div class="sb-logo-text">
+      <div class="t1">Tes Verbal</div>
+      <div class="t2">Tes Potensi Akademik</div>
+    </div>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-ico"><i data-lucide="search"></i></span>
+    <input type="text" class="search-input" placeholder="Cari materi..." oninput="handleSearch(this.value)">
+    <div class="search-no-result" id="searchNoResult">Tidak ditemukan</div>
+  </div>
+
+  <div class="sb-scroll">
+    <div class="sb-label">Materi Pembelajaran</div>
+    <button class="nav-btn active" id="nav-home" onclick="navigate('home')">
+      <span class="nav-ico"><i data-lucide="home"></i></span><span class="nav-label">Beranda</span>
+    </button>
+    <button class="nav-btn" id="nav-bab1" onclick="navigate('bab1')">
+      <span class="nav-ico"><i data-lucide="repeat"></i></span><span class="nav-label">Bab 1: Sinonim</span>
+    </button>
+    <button class="nav-btn" id="nav-bab2" onclick="navigate('bab2')">
+      <span class="nav-ico"><i data-lucide="arrow-left-right"></i></span><span class="nav-label">Bab 2: Antonim</span>
+    </button>
+    <button class="nav-btn" id="nav-bab3" onclick="navigate('bab3')">
+      <span class="nav-ico"><i data-lucide="link-2"></i></span><span class="nav-label">Bab 3: Analogi</span>
+    </button>
+    <button class="nav-btn" id="nav-bab4" onclick="navigate('bab4')">
+      <span class="nav-ico"><i data-lucide="shapes"></i></span><span class="nav-label">Bab 4: Pengelompokan</span>
+    </button>
+    <button class="nav-btn" id="nav-bab5" onclick="navigate('bab5')">
+      <span class="nav-ico"><i data-lucide="book-open-text"></i></span><span class="nav-label">Bab 5: Pemahaman Bacaan</span>
+    </button>
+
+    <div class="sb-label">Latihan</div>
+    <button class="nav-btn" id="nav-flashcard" onclick="navigate('flashcard')">
+      <span class="nav-ico"><i data-lucide="layers"></i></span><span class="nav-label">Flashcard</span>
+    </button>
+  </div>
+
+  <div class="sb-footer">
+    <button class="btn-print-sb" onclick="window.print()"><i data-lucide="printer"></i> Print</button>
+    <button class="quiz-main-btn" onclick="openQuiz()"><i data-lucide="pencil-line"></i> Mulai Quiz</button>
+    <div class="sb-info">
+      <div class="name">Roro Ayu Galuh M.</div>
+    </div>
+  </div>
+</aside>
+
+<main class="main" id="main">
+<div class="page active" id="page-home">
+  <div class="home-hero">
+    <div class="anim" style="font-size:.72rem;font-weight:600;letter-spacing:.05em;color:var(--text3);margin-bottom:.9rem">Roro Ayu Galuh M.</div>
+    <div class="hero-eyebrow anim"><i data-lucide="graduation-cap"></i> Tes Potensi Akademik</div>
+    <h1 class="hero-title anim">Tes <span>Verbal</span></h1>
+    <p class="hero-sub anim">Latihan sinonim, antonim, analogi, pengelompokan kata, dan pemahaman bacaan, lima jenis soal verbal yang paling sering keluar di tes beasiswa maupun seleksi akademik lainnya.</p>
+    <div class="hero-tags anim">
+      <span class="hero-tag">Sinonim</span>
+      <span class="hero-tag">Antonim</span>
+      <span class="hero-tag">Analogi</span>
+      <span class="hero-tag">Pengelompokan Kata</span>
+      <span class="hero-tag">Pemahaman Bacaan</span>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card anim" style="animation-delay:.05s"><div class="stat-num">5</div><div class="stat-lbl">Jenis Soal Verbal</div></div>
+    <div class="stat-card anim" style="animation-delay:.10s"><div class="stat-num gold">25</div><div class="stat-lbl">Bank Soal Latihan</div></div>
+    <div class="stat-card anim" style="animation-delay:.15s"><div class="stat-num">20</div><div class="stat-lbl">Soal per Sesi Quiz</div></div>
+    <div class="stat-card anim" style="animation-delay:.20s"><div class="stat-num gold">15</div><div class="stat-lbl">Kartu Flashcard</div></div>
+  </div>
+
+  <div class="chapters-section">
+    <div class="sec-heading anim">Daftar Bab</div>
+    <div class="sec-sub anim">Pelajari tiap jenis soal satu per satu, lengkap dengan tips dan contoh pembahasan.</div>
+    <div class="chapter-grid">
+      <div class="ch-card anim" onclick="navigate('bab1')">
+        <div class="ch-num">Bab 1</div>
+        <div class="ch-title">Sinonim (Persamaan Kata)</div>
+        <div class="ch-desc">Mencari kata dengan makna paling dekat dari kata yang diberikan.</div>
+        <div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right"></i></div>
+      </div>
+      <div class="ch-card anim" onclick="navigate('bab2')">
+        <div class="ch-num">Bab 2</div>
+        <div class="ch-title">Antonim (Lawan Kata)</div>
+        <div class="ch-desc">Mencari kata dengan makna berlawanan dari kata yang diberikan.</div>
+        <div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right"></i></div>
+      </div>
+      <div class="ch-card anim" onclick="navigate('bab3')">
+        <div class="ch-num">Bab 3</div>
+        <div class="ch-title">Analogi / Padanan Kata</div>
+        <div class="ch-desc">Menemukan pola hubungan antar kata lalu mencocokkan pola yang sama pada pilihan jawaban.</div>
+        <div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right"></i></div>
+      </div>
+      <div class="ch-card anim" onclick="navigate('bab4')">
+        <div class="ch-num">Bab 4</div>
+        <div class="ch-title">Pengelompokan Kata</div>
+        <div class="ch-desc">Menentukan satu kata yang tidak sekelompok dengan kata kata lainnya.</div>
+        <div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right"></i></div>
+      </div>
+      <div class="ch-card anim" onclick="navigate('bab5')">
+        <div class="ch-num">Bab 5</div>
+        <div class="ch-title">Pemahaman Bacaan</div>
+        <div class="ch-desc">Menangkap ide pokok dan kesimpulan dari satu paragraf bacaan atau lebih.</div>
+        <div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right"></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-bab1">
+  <div class="ch-hero">
+    <div class="ch-label">Bab 1</div>
+    <h1>Sinonim (Persamaan Kata)</h1>
+    <p>Menguji kepekaan terhadap makna kata yang mirip atau sama, salah satu jenis soal yang paling sering muncul di tes verbal.</p>
+  </div>
+  <div class="content-wrap">
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="book-marked"></i></span> Definisi dan Karakteristik</h2>
+      <div class="def-box">
+        <div class="term">Sinonim</div>
+        <p>Kata yang maknanya paling dekat atau sama dengan kata lain yang diberikan dalam soal. Peserta diminta memilih opsi yang paling mendekati makna kata kunci, bukan mencari kata yang identik seratus persen, karena dalam bahasa Indonesia jarang ada dua kata yang benar benar sama persis maknanya di semua konteks.</p>
+      </div>
+      <h3>Kenapa soal ini sering terasa sulit</h3>
+      <p>Soal sinonim biasanya memakai kata serapan atau istilah yang jarang dipakai sehari hari, seperti "konvergen", "remisi", atau "diskursus". Kosakata semacam ini jarang muncul dalam percakapan, jadi kalau tidak pernah membaca literatur formal, kata kata ini akan terasa asing walaupun sebenarnya cukup umum dipakai dalam tulisan akademik atau berita.</p>
+    </div>
+
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="lightbulb"></i></span> Tips Mengerjakan</h2>
+      <ul class="blist">
+        <li><strong>Telusuri arti dasar dulu.</strong> Kalau kata di soal berupa kata serapan atau istilah asing, coba pikirkan akar katanya sebelum mencocokkan ke pilihan jawaban.</li>
+        <li><strong>Perbanyak bacaan formal.</strong> Artikel, buku, atau berita berbahasa Indonesia yang serius membantu memperluas kosakata pasif, karena soal sinonim sering memakai kata yang jarang dipakai sehari hari.</li>
+        <li><strong>Eliminasi dulu yang jelas beda.</strong> Buang pilihan yang maknanya jauh berbeda sebelum menimbang dua opsi yang terdengar mirip.</li>
+        <li><strong>Coba masukkan ke kalimat.</strong> Kalau masih ragu di antara dua pilihan, bayangkan tiap pilihan menggantikan kata aslinya dalam sebuah kalimat, lalu rasakan mana yang nadanya paling pas.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 1</h3>
+      <p><strong>Konvergen</strong> artinya paling dekat dengan?</p>
+      <ol class="nlist">
+        <li>Bercabang</li>
+        <li><strong>Memusat</strong></li>
+        <li>Menyebar</li>
+        <li>Melebar</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Konvergen berarti mengarah atau bertemu ke satu titik, jadi maknanya paling dekat dengan "memusat".</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 2</h3>
+      <p><strong>Remisi</strong> artinya paling dekat dengan?</p>
+      <ol class="nlist">
+        <li>Repatriasi</li>
+        <li>Revaluasi</li>
+        <li>Rejuvenasi</li>
+        <li><strong>Pengurangan hukuman</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Remisi dikenal luas sebagai istilah hukum untuk potongan masa hukuman, jadi jawabannya adalah pengurangan hukuman.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 3</h3>
+      <p><strong>Hikmah</strong> artinya paling dekat dengan?</p>
+      <ol class="nlist">
+        <li>Hikayat</li>
+        <li>Puitis</li>
+        <li>Bijaksana</li>
+        <li><strong>Makna yang dalam</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Hikmah biasanya merujuk pada pelajaran atau makna tersembunyi di balik suatu kejadian, jadi jawabannya adalah makna yang dalam.</p>
+      </div>
+    </div>
+
+    <div class="summary anim">
+      <h3><i data-lucide="sparkles"></i> Ringkasan Bab 1</h3>
+      <ul>
+        <li>Sinonim adalah kata dengan makna paling dekat, bukan harus identik seratus persen.</li>
+        <li>Kosakata luas jadi modal utama, terutama untuk kata serapan yang jarang dipakai sehari hari.</li>
+        <li>Eliminasi pilihan yang jelas berbeda dulu sebelum menimbang opsi yang mirip.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-bab2">
+  <div class="ch-hero">
+    <div class="ch-label">Bab 2</div>
+    <h1>Antonim (Lawan Kata)</h1>
+    <p>Menguji kemampuan mengenali kata yang maknanya bertolak belakang dengan kata yang diberikan.</p>
+  </div>
+  <div class="content-wrap">
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="book-marked"></i></span> Definisi dan Karakteristik</h2>
+      <div class="def-box">
+        <div class="term">Antonim</div>
+        <p>Kata yang maknanya berlawanan dengan kata yang diberikan dalam soal. Beda dengan sinonim yang mencari kemiripan, di sini peserta justru diminta menemukan kata dengan makna paling bertolak belakang di antara pilihan yang tersedia.</p>
+      </div>
+      <h3>Jebakan yang sering muncul</h3>
+      <p>Beberapa pilihan jawaban sengaja dibuat mirip secara bunyi atau bentuk kata dengan jawaban benar, padahal maknanya jauh berbeda. Selain itu ada juga pilihan yang sebenarnya sinonim dari kata soal, bukan antonimnya, ini jebakan paling umum karena otak kadang keburu memilih kata yang "familiar" tanpa mengecek dulu arah maknanya.</p>
+    </div>
+
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="lightbulb"></i></span> Tips Mengerjakan</h2>
+      <ul class="blist">
+        <li><strong>Pastikan dulu arti kata soal.</strong> Sebelum mencari lawannya, pastikan paham betul makna kata yang ditanyakan, salah paham di awal bikin salah pilih di akhir.</li>
+        <li><strong>Waspadai sinonim yang menyamar.</strong> Cek tiap pilihan, apakah itu benar benar berlawanan makna atau justru mirip dengan kata soal.</li>
+        <li><strong>Perhatikan tingkat kata.</strong> Antonim yang tepat biasanya setara secara register, kata formal berlawanan dengan kata formal juga, bukan dengan kata percakapan sehari hari.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 1</h3>
+      <p>Lawan kata dari <strong>Landai</strong> adalah?</p>
+      <ol class="nlist">
+        <li>Datar</li>
+        <li><strong>Curam</strong></li>
+        <li>Sedang</li>
+        <li>Luas</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Landai berarti kemiringan yang tidak terlalu tajam, jadi lawan katanya adalah curam yang berarti kemiringan tajam.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 2</h3>
+      <p>Lawan kata dari <strong>Konveks</strong> adalah?</p>
+      <ol class="nlist">
+        <li>Cembung</li>
+        <li>Bundar</li>
+        <li>Kompleks</li>
+        <li><strong>Cekung</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Konveks berarti cembung, jadi lawan katanya adalah cekung.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 3</h3>
+      <p>Lawan kata dari <strong>Eternal</strong> adalah?</p>
+      <ol class="nlist">
+        <li>Abadi</li>
+        <li>Selamanya</li>
+        <li><strong>Fana</strong></li>
+        <li>Lama</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Eternal berarti abadi atau kekal, jadi lawan katanya adalah fana yang berarti sementara atau tidak abadi.</p>
+      </div>
+    </div>
+
+    <div class="summary anim">
+      <h3><i data-lucide="sparkles"></i> Ringkasan Bab 2</h3>
+      <ul>
+        <li>Pastikan makna kata soal dipahami betul sebelum mencari lawannya.</li>
+        <li>Waspadai pilihan yang sebenarnya sinonim, bukan antonim, dari kata soal.</li>
+        <li>Antonim yang tepat biasanya setara tingkat formalitasnya dengan kata soal.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-bab3">
+  <div class="ch-hero">
+    <div class="ch-label">Bab 3</div>
+    <h1>Analogi / Padanan Kata</h1>
+    <p>Menemukan pola hubungan antara dua kata, lalu mencari pasangan kata lain dengan pola hubungan yang sama.</p>
+  </div>
+  <div class="content-wrap">
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="book-marked"></i></span> Definisi dan Karakteristik</h2>
+      <div class="def-box">
+        <div class="term">Analogi</div>
+        <p>Soal yang menyajikan sepasang kata dengan hubungan tertentu, lalu meminta peserta mencari pasangan kata lain yang punya pola hubungan persis sama. Kuncinya bukan di makna masing masing kata, tapi di jenis hubungan yang menghubungkan keduanya.</p>
+      </div>
+      <h3>Jenis hubungan yang sering muncul</h3>
+      <ul class="blist">
+        <li><strong>Sebab akibat.</strong> Contoh: awan menyebabkan hujan.</li>
+        <li><strong>Alat dan fungsi.</strong> Contoh: pena dipakai untuk menulis.</li>
+        <li><strong>Profesi dan tempat kerja.</strong> Contoh: dokter bekerja di rumah sakit.</li>
+        <li><strong>Bagian dari keseluruhan.</strong> Contoh: halaman merupakan bagian dari buku.</li>
+        <li><strong>Kondisi dan tindakan pemenuhannya.</strong> Contoh: haus diatasi dengan minum.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="lightbulb"></i></span> Tips Mengerjakan</h2>
+      <ul class="blist">
+        <li><strong>Tentukan dulu jenis hubungannya.</strong> Sebelum melihat pilihan jawaban, rumuskan dulu hubungan pasangan kata di soal dengan kalimat sederhana, misalnya "kata pertama menyebabkan kata kedua".</li>
+        <li><strong>Cocokkan pola, bukan topik.</strong> Pasangan jawaban yang benar belum tentu berasal dari topik yang sama dengan soal, yang penting jenis hubungannya identik.</li>
+        <li><strong>Perhatikan urutan kata.</strong> Kalau soal berpola "alat : fungsi", jawaban juga harus mengikuti urutan yang sama, bukan terbalik.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 1</h3>
+      <p><strong>Haus : Minum</strong> = Ngantuk : ...</p>
+      <ol class="nlist">
+        <li>Bahan baku produk</li>
+        <li><strong>Tidur</strong></li>
+        <li>Segar</li>
+        <li>Lelah</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Hubungan haus dan minum adalah kondisi dan tindakan yang dilakukan untuk mengatasinya. Sama halnya, orang ngantuk mengatasinya dengan tidur.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 2</h3>
+      <p><strong>Dokter : Rumah Sakit</strong> = Guru : ...</p>
+      <ol class="nlist">
+        <li>Buku</li>
+        <li><strong>Sekolah</strong></li>
+        <li>Murid</li>
+        <li>Papan tulis</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Hubungan dokter dan rumah sakit adalah profesi dengan tempat kerjanya, sama seperti guru dengan sekolah.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 3</h3>
+      <p><strong>Koloni : Penjajah</strong> = ...</p>
+      <ol class="nlist">
+        <li><strong>Jajahan</strong></li>
+        <li>Dijajah</li>
+        <li>Imperialisme</li>
+        <li>Penindasan</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Koloni berarti daerah jajahan yang dikuasai oleh penjajah, jadi kata yang paling dekat sesuai konteks ini adalah "jajahan".</p>
+      </div>
+    </div>
+
+    <div class="summary anim">
+      <h3><i data-lucide="sparkles"></i> Ringkasan Bab 3</h3>
+      <ul>
+        <li>Fokus pada jenis hubungan antar kata, bukan makna kata secara terpisah.</li>
+        <li>Rumuskan hubungan soal dengan kalimat sederhana sebelum melihat pilihan.</li>
+        <li>Urutan kata dalam pasangan jawaban harus mengikuti pola yang sama dengan soal.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-bab4">
+  <div class="ch-hero">
+    <div class="ch-label">Bab 4</div>
+    <h1>Pengelompokan Kata</h1>
+    <p>Menentukan satu kata yang tidak termasuk dalam kelompok yang sama dengan kata kata lainnya.</p>
+  </div>
+  <div class="content-wrap">
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="book-marked"></i></span> Definisi dan Karakteristik</h2>
+      <div class="def-box">
+        <div class="term">Pengelompokan Kata</div>
+        <p>Soal menyajikan empat kata, tiga di antaranya memiliki kesamaan kategori tertentu, sementara satu kata lainnya berbeda kategori meskipun kadang terlihat mirip secara topik. Tugasnya adalah menemukan kata yang tidak sekelompok itu.</p>
+      </div>
+      <h3>Dasar pengelompokan yang sering dipakai</h3>
+      <p>Kategori pengelompokan bisa berdasarkan jenis (karya sastra versus karya ilmiah), bagian tubuh versus benda, cara kerja suatu alat (dipukul, dipetik, digesek, ditiup), atau fungsi suatu benda (alat hitung versus alat penunjuk waktu). Semakin spesifik kategori yang dikenali, semakin cepat kata yang berbeda bisa ditemukan.</p>
+    </div>
+
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="lightbulb"></i></span> Tips Mengerjakan</h2>
+      <ul class="blist">
+        <li><strong>Cari benang merah dulu.</strong> Lihat tiga kata yang paling mirip terlebih dahulu, tentukan kategori yang menyatukan mereka, baru cek kata keempat.</li>
+        <li><strong>Jangan terpaku topik permukaan.</strong> Kata yang terlihat setopik belum tentu sekelompok, misalnya sama sama "alat musik" tapi beda cara memainkannya.</li>
+        <li><strong>Perhatikan tingkat spesifik kategori.</strong> Kadang jawaban tepat justru ditentukan oleh kategori yang lebih detail, bukan kategori besar yang terlalu umum.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 1</h3>
+      <p>Manakah kata yang tidak termasuk dalam kelompok yang sama?</p>
+      <ol class="nlist">
+        <li>Novel</li>
+        <li>Puisi</li>
+        <li>Cerpen</li>
+        <li><strong>Skripsi</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Novel, puisi, dan cerpen sama sama termasuk karya sastra, sedangkan skripsi adalah karya ilmiah, bukan karya sastra.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 2</h3>
+      <p>Manakah kata yang tidak termasuk dalam kelompok yang sama?</p>
+      <ol class="nlist">
+        <li>Kaki</li>
+        <li>Tangan</li>
+        <li>Kepala</li>
+        <li><strong>Baju</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Kaki, tangan, dan kepala termasuk bagian tubuh manusia, sedangkan baju adalah benda pakaian, bukan bagian tubuh.</p>
+      </div>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal 3</h3>
+      <p>Manakah kata yang tidak termasuk dalam kelompok yang sama?</p>
+      <ol class="nlist">
+        <li>Gitar</li>
+        <li>Biola</li>
+        <li>Kecapi</li>
+        <li><strong>Drum</strong></li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Gitar, biola, dan kecapi dimainkan dengan cara dipetik atau digesek pada senar, sedangkan drum dimainkan dengan cara dipukul.</p>
+      </div>
+    </div>
+
+    <div class="summary anim">
+      <h3><i data-lucide="sparkles"></i> Ringkasan Bab 4</h3>
+      <ul>
+        <li>Tentukan dulu kategori yang menyatukan tiga kata yang paling mirip.</li>
+        <li>Kata setopik belum tentu sekelompok, cek juga cara kerja atau fungsinya.</li>
+        <li>Kategori yang lebih spesifik sering jadi kunci menemukan jawaban yang tepat.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-bab5">
+  <div class="ch-hero">
+    <div class="ch-label">Bab 5</div>
+    <h1>Pemahaman Bacaan (Literasi)</h1>
+    <p>Membaca satu paragraf atau lebih, lalu menjawab pertanyaan berdasarkan isi bacaan tersebut.</p>
+  </div>
+  <div class="content-wrap">
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="book-marked"></i></span> Definisi dan Karakteristik</h2>
+      <div class="def-box">
+        <div class="term">Pemahaman Bacaan</div>
+        <p>Peserta membaca satu paragraf atau lebih, kemudian menjawab pertanyaan berdasarkan isi bacaan tersebut. Jenis soal ini sering muncul di tes beasiswa karena melatih kemampuan menangkap ide pokok dan kesimpulan dari bacaan yang panjang dalam waktu terbatas.</p>
+      </div>
+      <h3>Aturan paling penting</h3>
+      <p>Jawaban harus murni berdasarkan apa yang tertulis di teks, bukan berdasarkan pengetahuan pribadi di luar bacaan. Sekalipun peserta tahu fakta lain tentang topik yang dibahas, kalau fakta itu tidak disebutkan dalam paragraf, jangan dijadikan dasar jawaban.</p>
+    </div>
+
+    <div class="card anim">
+      <h2><span class="icon"><i data-lucide="lightbulb"></i></span> Tips Mengerjakan</h2>
+      <ul class="blist">
+        <li><strong>Baca gambaran umum dulu.</strong> Baca judul dan kalimat pertama tiap paragraf untuk menangkap gambaran umum, baru masuk ke detail kalau memang dibutuhkan untuk menjawab pertanyaan spesifik.</li>
+        <li><strong>Jawab murni dari teks.</strong> Jangan menjawab berdasarkan pengetahuan pribadi di luar bacaan, sekalipun terasa benar secara umum.</li>
+        <li><strong>Kenali kata kunci pertanyaan.</strong> Pertanyaan "ide pokok" beda kebutuhannya dengan pertanyaan "penyebab" atau "kesimpulan", sesuaikan bagian teks yang dicari dengan jenis pertanyaannya.</li>
+      </ul>
+    </div>
+
+    <div class="card anim">
+      <h3>Contoh Soal</h3>
+      <div class="def-gold">
+        <div class="term">Bacaan</div>
+        <p>Program beasiswa berbasis potensi semakin diminati karena tidak mensyaratkan nilai akademik minimal. Program semacam ini dinilai lebih adil karena memberi kesempatan kepada siapa saja yang punya semangat belajar tinggi, terlepas dari nilai rapor atau IPK di masa lalu.</p>
+      </div>
+      <p>Pertanyaan: apa ide pokok bacaan di atas?</p>
+      <ol class="nlist">
+        <li>Beasiswa berbasis potensi hanya untuk mahasiswa ber-IPK tinggi</li>
+        <li><strong>Beasiswa berbasis potensi memberi kesempatan lebih adil tanpa syarat nilai akademik</strong></li>
+        <li>Nilai rapor menentukan kelulusan beasiswa</li>
+        <li>Semangat belajar tidak penting dalam seleksi beasiswa</li>
+      </ol>
+      <div class="def-box">
+        <div class="term">Pembahasan</div>
+        <p>Ide pokok bacaan menekankan bahwa beasiswa jenis ini dianggap lebih adil karena tidak mensyaratkan nilai akademik, melainkan menilai semangat belajar calon penerima.</p>
+      </div>
+    </div>
+
+    <div class="summary anim">
+      <h3><i data-lucide="sparkles"></i> Strategi Umum Menghadapi Tes Verbal</h3>
+      <ul>
+        <li>Perbanyak membaca artikel atau berita berbahasa Indonesia yang formal, supaya terbiasa dengan kosakata tingkat lanjut yang sering muncul di soal sinonim dan antonim.</li>
+        <li>Untuk soal analogi, latihan menentukan jenis hubungan kata (sebab akibat, alat dan fungsi, bagian dan keseluruhan) akan sangat membantu mempercepat waktu pengerjaan.</li>
+        <li>Untuk soal pemahaman bacaan, latihan membaca cepat sambil menangkap ide pokok tiap paragraf, karena tes beasiswa biasanya memberi bacaan yang cukup panjang dengan waktu terbatas.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="page" id="page-flashcard">
+  <div class="ch-hero">
+    <div class="ch-label">Latihan</div>
+    <h1>Flashcard</h1>
+    <p>Kartu bolak balik untuk menguji ingatan cepat soal definisi, tips, dan contoh kunci dari tiap bab.</p>
+  </div>
+  <div class="fc-grid" id="fcGrid"></div>
+</div>
+
+</main>
+
+<div class="quiz-overlay" id="quizOverlay" onclick="closeQuiz()"></div>
+<div class="quiz-modal" id="quizModal">
+  <div class="qm-head">
+    <span class="qm-title"><i data-lucide="clipboard-list"></i> Quiz</span>
+    <button class="qm-close" onclick="closeQuiz()">✕</button>
+  </div>
+  <div class="qm-progress-bar"><div class="qm-progress-fill" id="qProgress" style="width:0%"></div></div>
+  <div id="qScreen">
+    <div class="qm-body">
+      <div class="qm-counter" id="qCounter"></div>
+      <div class="qm-timer-wrap" id="qTimerWrap">
+        <div class="qm-timer-track"><div class="qm-timer-fill" id="qTimerFill"></div></div>
+        <div class="qm-timer-text" id="qTimerText"><i data-lucide="timer"></i> 30 detik</div>
+      </div>
+      <div class="qm-q" id="qText"></div>
+      <div class="qm-opts" id="qOpts"></div>
+      <div class="qm-feedback" id="qFeedback"></div>
+    </div>
+    <div class="qm-nav">
+      <button class="qm-btn qm-btn-sec" id="qPrevBtn" onclick="prevQuestion()">← Sebelumnya</button>
+      <button class="qm-btn qm-btn-prim" id="qNextBtn" onclick="nextQuestion()">Selanjutnya →</button>
+    </div>
+  </div>
+  <div class="qm-result" id="qResult" style="display:none">
+    <div class="result-icon" id="rIcon"></div>
+    <div class="result-score" id="rScore"></div>
+    <div class="result-msg" id="rMsg"></div>
+    <div class="result-detail" id="rDetail"></div>
+    <div class="result-actions">
+      <button class="qm-btn qm-btn-prim" onclick="retryQuiz()"><i data-lucide="refresh-cw"></i> Coba Lagi</button>
+      <button class="qm-btn qm-btn-sec" onclick="closeQuiz()">Kembali</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const flashcards = [
+{ chapter:"BAB 1", q:"Apa itu sinonim dalam konteks tes verbal?", a:"Kata yang maknanya <strong>paling dekat atau sama</strong> dengan kata yang diberikan di soal." },
+{ chapter:"BAB 1", q:"Kenapa soal sinonim sering terasa susah?", a:"Karena biasanya memakai <strong>kata serapan atau istilah jarang</strong> dipakai sehari hari, jadi butuh kosakata yang luas." },
+{ chapter:"BAB 1", q:"Konvergen artinya paling dekat dengan?", a:"<strong>Memusat</strong>. Konvergen berarti mengarah atau bertemu ke satu titik." },
+{ chapter:"BAB 2", q:"Apa itu antonim?", a:"Kata yang maknanya <strong>berlawanan</strong> dengan kata yang diberikan." },
+{ chapter:"BAB 2", q:"Lawan kata dari Landai adalah?", a:"<strong>Curam</strong>. Landai berarti kemiringan yang tidak terlalu tajam, curam berarti sebaliknya." },
+{ chapter:"BAB 2", q:"Lawan kata dari Konveks adalah?", a:"<strong>Cekung</strong>. Konveks berarti cembung, jadi lawannya cekung." },
+{ chapter:"BAB 3", q:"Apa yang perlu ditentukan lebih dulu saat mengerjakan soal analogi?", a:"<strong>Jenis hubungan</strong> pasangan kata di soal, misalnya sebab akibat, alat dan fungsi, atau profesi dan tempat kerja." },
+{ chapter:"BAB 3", q:"Dokter : Rumah Sakit = Guru : ...?", a:"<strong>Sekolah</strong>. Hubungannya adalah profesi dengan tempat kerjanya." },
+{ chapter:"BAB 3", q:"Haus : Minum = Ngantuk : ...?", a:"<strong>Tidur</strong>. Hubungannya adalah kondisi dan tindakan untuk mengatasinya." },
+{ chapter:"BAB 4", q:"Apa tujuan soal pengelompokan kata?", a:"Mencari <strong>satu kata yang tidak sekelompok</strong> dengan kata kata lainnya." },
+{ chapter:"BAB 4", q:"Dari Novel, Puisi, Cerpen, Skripsi, mana yang beda sendiri?", a:"<strong>Skripsi</strong>. Tiga lainnya karya sastra, skripsi karya ilmiah." },
+{ chapter:"BAB 4", q:"Dari Kaki, Tangan, Kepala, Baju, mana yang beda sendiri?", a:"<strong>Baju</strong>. Tiga lainnya bagian tubuh, baju adalah benda pakaian." },
+{ chapter:"BAB 5", q:"Apa strategi awal membaca soal pemahaman bacaan yang panjang?", a:"Baca <strong>judul dan kalimat pertama</strong> tiap paragraf dulu untuk menangkap gambaran umum." },
+{ chapter:"BAB 5", q:"Kesalahan umum apa yang harus dihindari saat menjawab soal bacaan?", a:"Menjawab berdasarkan <strong>pengetahuan pribadi di luar teks</strong>, padahal jawaban harus murni dari isi bacaan." },
+{ chapter:"BAB 5", q:"Kenapa latihan membaca cepat penting untuk tes ini?", a:"Karena tes verbal biasanya memberi bacaan <strong>panjang dengan waktu terbatas</strong>." },
+];
+
+const quizData = [
+{ q: "\"Argumen\" paling dekat maknanya dengan?", opts: ["Bantahan","Alasan","Pertengkaran","Kesimpulan"], ans: 1 },
+{ q: "\"Fluktuatif\" paling dekat maknanya dengan?", opts: ["Stabil","Naik terus menerus","Tidak menentu, naik turun","Menurun"], ans: 2 },
+{ q: "\"Diskursus\" paling dekat maknanya dengan?", opts: ["Debat sengit","Wacana atau pembahasan","Keputusan akhir","Kesepakatan bersama"], ans: 1 },
+{ q: "\"Empati\" paling dekat maknanya dengan?", opts: ["Simpati semata","Ikut merasakan apa yang dirasakan orang lain","Acuh tak acuh","Menghakimi"], ans: 1 },
+{ q: "\"Preseden\" paling dekat maknanya dengan?", opts: ["Kejadian yang akan datang","Contoh kasus terdahulu yang jadi acuan","Ramalan","Keputusan akhir"], ans: 1 },
+{ q: "Lawan kata dari \"Ekspansi\" adalah?", opts: ["Perluasan","Penyempitan","Percepatan","Pertumbuhan"], ans: 1 },
+{ q: "Lawan kata dari \"Gersang\" adalah?", opts: ["Kering","Tandus","Subur","Panas"], ans: 2 },
+{ q: "Lawan kata dari \"Skeptis\" adalah?", opts: ["Ragu ragu","Percaya atau yakin","Curiga","Bimbang"], ans: 1 },
+{ q: "Lawan kata dari \"Mayoritas\" adalah?", opts: ["Sebagian besar","Minoritas","Keseluruhan","Rata rata"], ans: 1 },
+{ q: "Lawan kata dari \"Implisit\" adalah?", opts: ["Tersirat","Eksplisit","Rahasia","Ambigu"], ans: 1 },
+{ q: "Petani : Sawah = Nelayan : ...", opts: ["Ikan","Laut","Jaring","Perahu"], ans: 1 },
+{ q: "Kunci : Gembok = Password : ...", opts: ["Komputer","Akun","Hacker","Internet"], ans: 1 },
+{ q: "Jarum : Menjahit = Pena : ...", opts: ["Kertas","Menulis","Tinta","Buku"], ans: 1 },
+{ q: "Awan : Hujan = Api : ...", opts: ["Panas","Asap","Kayu bakar","Korek"], ans: 1 },
+{ q: "Telur : Ayam = Kepompong : ...", opts: ["Ulat","Kupu kupu","Daun","Sayap"], ans: 1 },
+{ q: "Manakah kata yang tidak termasuk dalam kelompok yang sama? Apel, Jeruk, Wortel, Mangga", opts: ["Apel","Jeruk","Wortel","Mangga"], ans: 2 },
+{ q: "Manakah kata yang tidak termasuk dalam kelompok yang sama? Elang, Merpati, Kelelawar, Bangau", opts: ["Elang","Merpati","Kelelawar","Bangau"], ans: 2 },
+{ q: "Manakah kata yang tidak termasuk dalam kelompok yang sama? Sendok, Garpu, Pisau, Piring", opts: ["Sendok","Garpu","Pisau","Piring"], ans: 3 },
+{ q: "Manakah kata yang tidak termasuk dalam kelompok yang sama? Gitar, Biola, Kecapi, Drum", opts: ["Gitar","Biola","Kecapi","Drum"], ans: 3 },
+{ q: "Manakah kata yang tidak termasuk dalam kelompok yang sama? Kalkulator, Sempoa, Jam tangan, Mistar hitung", opts: ["Kalkulator","Sempoa","Jam tangan","Mistar hitung"], ans: 2 },
+{ q: "Bacaan: Riset menunjukkan bahwa mahasiswa yang rutin membuat catatan tulisan tangan cenderung lebih mudah mengingat materi dibanding yang hanya mengetik. Proses menulis tangan memaksa otak memproses informasi lebih dalam sebelum dituangkan ke kertas. Apa gagasan utama bacaan tersebut?", opts: ["Mengetik lebih cepat dari menulis tangan","Menulis tangan membantu pengingatan karena otak memproses informasi lebih dalam","Semua mahasiswa harus berhenti mengetik","Riset ini tidak bisa dipercaya"], ans: 1 },
+{ q: "Bacaan: Harga bahan bakar minyak dunia mengalami kenaikan signifikan dalam tiga bulan terakhir, dipicu oleh terbatasnya pasokan dari beberapa negara produsen utama. Kondisi ini berdampak pada naiknya biaya transportasi di berbagai sektor. Apa penyebab utama kenaikan harga BBM menurut bacaan?", opts: ["Permintaan yang menurun","Terbatasnya pasokan dari negara produsen utama","Kebijakan pajak baru","Nilai tukar mata uang"], ans: 1 },
+{ q: "Bacaan: Tidur yang cukup terbukti memengaruhi konsentrasi dan daya ingat seseorang. Orang yang tidur kurang dari enam jam per malam cenderung lebih sulit fokus dibanding yang tidur tujuh hingga delapan jam. Kesimpulan yang paling tepat dari bacaan di atas adalah?", opts: ["Tidur tidak berpengaruh pada konsentrasi","Durasi tidur berkaitan dengan kemampuan fokus dan daya ingat","Semua orang harus tidur delapan jam","Tidur singkat lebih baik untuk otak"], ans: 1 },
+{ q: "Bacaan: Penggunaan energi terbarukan seperti panel surya semakin diminati karena biaya pemasangannya terus menurun, sementara efisiensinya justru meningkat dari tahun ke tahun. Mengapa panel surya semakin diminati menurut bacaan?", opts: ["Karena wajib dipasang pemerintah","Karena biayanya turun dan efisiensinya naik","Karena tidak butuh perawatan sama sekali","Karena harganya paling murah dari semua sumber energi"], ans: 1 },
+{ q: "Bacaan: Banyak perusahaan kini menerapkan sistem kerja hibrida, memberi karyawan kebebasan memilih bekerja dari kantor atau dari rumah. Sistem ini dinilai meningkatkan kepuasan kerja tanpa mengorbankan produktivitas, asal komunikasi tim tetap terjaga. Syarat apa yang disebutkan bacaan agar sistem kerja hibrida tetap produktif?", opts: ["Karyawan harus rajin lembur","Komunikasi tim harus tetap terjaga","Semua karyawan wajib ke kantor tiap hari","Perusahaan harus mengurangi jumlah karyawan"], ans: 1 },
+];
+
+function navigate(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  const btn  = document.getElementById('nav-'  + pageId);
+  if (page) {
+    page.querySelectorAll('.anim').forEach(el => {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+    page.classList.add('active');
+  }
+  if (btn)  btn.classList.add('active');
+  const main = document.querySelector('.main');
+  if (main) main.scrollTop = 0;
+  window.scrollTo(0, 0);
+  closeSidebar();
+  if (pageId === 'flashcard') buildFlashcards();
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sbOverlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sbOverlay').classList.remove('show');
+}
+
+function buildFlashcards() {
+  const grid = document.getElementById('fcGrid');
+  if (grid.children.length > 0) return;
+  grid.innerHTML = '';
+  flashcards.forEach((fc, i) => {
+    grid.innerHTML += `
+    <div class="fc-container anim" style="animation-delay:${0.05 + i*0.04}s" onclick="flipCard(this)">
+      <div class="fc-inner">
+        <div class="fc-face fc-front">
+          <div>
+            <div class="fc-chapter">${fc.chapter}</div>
+            <div class="fc-question">${fc.q}</div>
+          </div>
+          <div class="fc-hint">Klik untuk lihat jawaban</div>
+        </div>
+        <div class="fc-face fc-back">
+          <div>
+            <div class="fc-flip-hint">↩ Klik untuk kembali</div>
+            <div class="fc-answer">${fc.a}</div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  });
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.fc-container').forEach(container => {
+      const inner = container.querySelector('.fc-inner');
+      const front = container.querySelector('.fc-front');
+      const back  = container.querySelector('.fc-back');
+      back.style.transform  = 'none';
+      back.style.visibility = 'hidden';
+      back.style.position   = 'relative';
+      front.style.position  = 'relative';
+      const h = Math.max(front.scrollHeight, back.scrollHeight, 180);
+      back.style.transform  = '';
+      back.style.visibility = '';
+      back.style.position   = '';
+      front.style.position  = '';
+      inner.style.minHeight = h + 'px';
+    });
+  });
+}
+function flipCard(el) { el.classList.toggle('flipped'); }
+
+const Q_TOTAL_SHOWN = 20;
+const Q_TIME_LIMIT = 30;
+let qCurrent = 0, qAnswers = [], qShuffled = [], qTimerInterval = null, qTimeLeft = Q_TIME_LIMIT;
+
+function openQuiz() {
+  qShuffled = [...quizData].sort(() => Math.random() - .5).slice(0, Q_TOTAL_SHOWN);
+  qCurrent  = 0;
+  qAnswers  = new Array(qShuffled.length).fill(-1);
+  document.getElementById('qScreen').style.display = '';
+  document.getElementById('qResult').style.display = 'none';
+  document.getElementById('quizModal').classList.add('show');
+  document.getElementById('quizOverlay').classList.add('show');
+  renderQuestion();
+}
+function closeQuiz() {
+  clearInterval(qTimerInterval);
+  document.getElementById('quizModal').classList.remove('show');
+  document.getElementById('quizOverlay').classList.remove('show');
+}
+
+function startQuestionTimer() {
+  clearInterval(qTimerInterval);
+  qTimeLeft = Q_TIME_LIMIT;
+  document.getElementById('qTimerWrap').style.display = 'flex';
+  updateTimerUI();
+  qTimerInterval = setInterval(() => {
+    qTimeLeft--;
+    updateTimerUI();
+    if (qTimeLeft <= 0) {
+      clearInterval(qTimerInterval);
+      handleTimeUp();
+    }
+  }, 1000);
+}
+function updateTimerUI() {
+  const fill = document.getElementById('qTimerFill');
+  const text = document.getElementById('qTimerText');
+  const pct  = Math.max(0, (qTimeLeft / Q_TIME_LIMIT) * 100);
+  fill.style.width = pct + '%';
+  fill.classList.remove('warn','danger');
+  if (qTimeLeft <= 10) fill.classList.add('danger');
+  else if (qTimeLeft <= 20) fill.classList.add('warn');
+  text.innerHTML = '<i data-lucide="timer"></i> ' + Math.max(0, qTimeLeft) + ' detik';
+  if (window.lucide) lucide.createIcons();
+}
+function handleTimeUp() {
+  document.querySelectorAll('.qm-opt').forEach(b => b.disabled = true);
+  const opts = document.getElementById('qOpts');
+  opts.classList.remove('shake');
+  void opts.offsetWidth;
+  opts.classList.add('shake');
+  setTimeout(() => { showTimeUpResult(); }, 550);
+}
+function showTimeUpResult() {
+  document.getElementById('qScreen').style.display = 'none';
+  document.getElementById('qResult').style.display = 'block';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('rIcon').innerHTML = '<i data-lucide="alarm-clock-off"></i>';
+  if (window.lucide) lucide.createIcons();
+  document.getElementById('rScore').textContent = 'Waktu Habis';
+  document.getElementById('rScore').className   = 'result-score fail';
+  document.getElementById('rMsg').textContent    = 'Yah, waktu buat soal ini sudah habis.';
+  document.getElementById('rDetail').textContent = 'Sesuai aturan, quiz dimulai lagi dari soal pertama.';
+}
+
+function renderQuestion() {
+  const total = qShuffled.length;
+  const q     = qShuffled[qCurrent];
+  document.getElementById('qCounter').textContent = `Soal ${qCurrent + 1} dari ${total}`;
+  document.getElementById('qProgress').style.width = ((qCurrent + 1) / total * 100) + '%';
+  document.getElementById('qText').textContent = q.q;
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'none';
+  fb.className = 'qm-feedback';
+  const opts    = document.getElementById('qOpts');
+  opts.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qm-opt';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span>${opt}`;
+    btn.onclick = () => selectAnswer(i);
+    const chosen = qAnswers[qCurrent];
+    if (chosen !== -1) {
+      btn.disabled = true;
+      if (i === q.ans)                      btn.classList.add('correct');
+      if (i === chosen && chosen !== q.ans) btn.classList.add('wrong');
+      if (i === chosen)                     btn.classList.add('selected');
+      showFeedback(chosen === q.ans);
+    }
+    opts.appendChild(btn);
+  });
+
+  const prevBtn = document.getElementById('qPrevBtn');
+  const nextBtn = document.getElementById('qNextBtn');
+  prevBtn.style.visibility = qCurrent > 0 ? 'visible' : 'hidden';
+  if (qCurrent === total - 1) {
+    nextBtn.textContent = 'Lihat Hasil →';
+    nextBtn.className   = 'qm-btn qm-btn-gold';
+  } else {
+    nextBtn.textContent = 'Selanjutnya →';
+    nextBtn.className   = 'qm-btn qm-btn-prim';
+  }
+
+  if (qAnswers[qCurrent] === -1) {
+    startQuestionTimer();
+  } else {
+    clearInterval(qTimerInterval);
+    document.getElementById('qTimerWrap').style.display = 'none';
+  }
+}
+function selectAnswer(idx) {
+  if (qAnswers[qCurrent] !== -1) return;
+  clearInterval(qTimerInterval);
+  qAnswers[qCurrent] = idx;
+  const q    = qShuffled[qCurrent];
+  const btns = document.querySelectorAll('.qm-opt');
+  btns.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans)                  btn.classList.add('correct');
+    if (i === idx && idx !== q.ans) {
+      btn.classList.add('wrong');
+      btn.classList.remove('shake');
+      void btn.offsetWidth;
+      btn.classList.add('shake');
+    }
+    if (i === idx)                    btn.classList.add('selected');
+  });
+  document.getElementById('qTimerWrap').style.display = 'none';
+  showFeedback(idx === q.ans);
+}
+function showFeedback(correct) {
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'block';
+  if (correct) {
+    fb.className = 'qm-feedback correct-fb';
+    fb.innerHTML = 'Jawaban kamu benar. Bagus sekali.';
+  } else {
+    const letter = ['A','B','C','D'][qShuffled[qCurrent].ans];
+    fb.className = 'qm-feedback wrong-fb';
+    fb.innerHTML = `Jawaban kurang tepat. Jawaban yang benar: Opsi <strong>${letter}</strong>.`;
+  }
+}
+function nextQuestion() {
+  if (qCurrent < qShuffled.length - 1) { qCurrent++; renderQuestion(); }
+  else showResult();
+}
+function prevQuestion() {
+  if (qCurrent > 0) { qCurrent--; renderQuestion(); }
+}
+function showResult() {
+  clearInterval(qTimerInterval);
+  document.getElementById('qTimerWrap').style.display = 'none';
+  const total   = qShuffled.length;
+  const correct = qAnswers.filter((a, i) => a === qShuffled[i].ans).length;
+  const pct     = Math.round(correct / total * 100);
+  const pass    = pct >= 60;
+  document.getElementById('qScreen').style.display = 'none';
+  document.getElementById('qResult').style.display = 'block';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('rIcon').innerHTML = pass
+    ? '<i data-lucide="trophy"></i>'
+    : '<i data-lucide="book-open"></i>';
+  if (window.lucide) lucide.createIcons();
+  document.getElementById('rScore').textContent  = pct + '%';
+  document.getElementById('rScore').className    = 'result-score ' + (pass ? 'pass' : 'fail');
+  document.getElementById('rMsg').textContent    = pass ? 'Selamat! Kamu lulus!' : 'Terus semangat belajar!';
+  document.getElementById('rDetail').textContent = `Benar ${correct} dari ${total} soal`;
+  if (pass) startConfetti();
+}
+function retryQuiz() { openQuiz(); }
+
+let confettiRunning = false;
+function startConfetti() {
+  if (confettiRunning) return;
+  confettiRunning = true;
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx    = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const colors = ['#059669','#10b981','#f59e0b','#fbbf24','#f4a7c4','#7c3aed','#f472b6','#16a34a'];
+  const pieces = Array.from({length: 140}, () => ({
+    x:   Math.random() * canvas.width,
+    y:   Math.random() * -canvas.height,
+    w:   6 + Math.random() * 8,
+    h:   3 + Math.random() * 5,
+    r:   Math.random() * Math.PI * 2,
+    dr:  (Math.random() - .5) * .12,
+    dy:  2.5 + Math.random() * 4,
+    dx:  (Math.random() - .5) * 2,
+    col: colors[Math.floor(Math.random() * colors.length)]
+  }));
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.y += p.dy; p.x += p.dx; p.r += p.dr;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.r);
+      ctx.fillStyle = p.col;
+      ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    frame++;
+    if (frame < 200) requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, canvas.width, canvas.height); confettiRunning = false; }
+  }
+  draw();
+}
+
+const searchPageMap = [
+  { page: 'home',      keywords: ['beranda','home','selamat datang'] },
+  { page: 'bab1',      keywords: ['bab1','sinonim','persamaan kata'] },
+  { page: 'bab2',      keywords: ['bab2','antonim','lawan kata'] },
+  { page: 'bab3',      keywords: ['bab3','analogi','padanan kata'] },
+  { page: 'bab4',      keywords: ['bab4','pengelompokan kata'] },
+  { page: 'bab5',      keywords: ['bab5','pemahaman bacaan','literasi'] },
+  { page: 'flashcard', keywords: ['flashcard','kartu','flip','latihan'] },
+];
+let searchTimeout = null;
+function handleSearch(val) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => doSearch(val.trim()), 200);
+}
+function doSearch(query) {
+  const noResult = document.getElementById('searchNoResult');
+  document.querySelectorAll('.search-highlight').forEach(el => { el.outerHTML = el.textContent; });
+  if (!query) { noResult.style.display = 'none'; return; }
+  const q = query.toLowerCase();
+  let targetPage = null;
+  for (const entry of searchPageMap) {
+    if (entry.keywords.some(k => k.includes(q) || q.includes(k))) { targetPage = entry.page; break; }
+  }
+  if (targetPage) navigate(targetPage);
+  const activePage = document.querySelector('.page.active');
+  if (!activePage) return;
+  const walker = document.createTreeWalker(activePage, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => {
+      if (['SCRIPT','STYLE','INPUT'].includes(n.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+      return n.textContent.toLowerCase().includes(q) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const re   = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+    const span = document.createElement('span');
+    span.innerHTML = node.textContent.replace(re, '<mark class="search-highlight">$1</mark>');
+    node.parentNode.replaceChild(span, node);
+  });
+  const first = activePage.querySelector('.search-highlight');
+  if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); noResult.style.display = 'none'; }
+  else noResult.style.display = 'block';
+}
+
+navigate('home');
+lucide.createIcons();
+</script>
+</body>
+</html>
