@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tes Gambar & Penalaran Figural - Roro Ayu Galuh M.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{--bg:#fdf4f7;--bg2:#ffffff;--bg3:#fce7f0;--bg4:#fbd0e4;--border:#f4a7c4;--border2:#fbd0e4;--text:#1a0810;--text2:#6b2140;--text3:#9e4d6b;--teal:#059669;--teal-l:#10b981;--teal-g:rgba(5,150,105,.1);--gold:#c97a07;--gold-l:#f59e0b;--gold-g:rgba(245,158,11,.1);--green:#16a34a;--red:#dc2626;--blue:#7c3aed;--sidebar-w:268px;--radius:14px;--rsm:8px;--font-d:'Playfair Display',serif;--font-b:'Plus Jakarta Sans',sans-serif;--shadow:0 4px 12px rgba(219,39,119,.12);--shadow-sm:0 2px 8px rgba(219,39,119,.08)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-b);background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh;overflow-x:hidden}::-webkit-scrollbar{width:6px;height:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}::-webkit-scrollbar-thumb:hover{background:var(--text3)}button{font-family:var(--font-b);cursor:pointer;border:none;outline:none}a{color:var(--teal-l);text-decoration:none}.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-w);height:100vh;background:var(--bg2);border-right:1px solid var(--border2);display:flex;flex-direction:column;z-index:100;transition:transform .3s cubic-bezier(0.4,0,0.2,1);will-change:transform;overflow:hidden}.main{margin-left:var(--sidebar-w);min-height:100vh;transition:margin-left .3s ease}.mob-header{display:none;position:fixed;top:0;left:0;right:0;height:56px;background:var(--bg2);border-bottom:1px solid var(--border2);z-index:200;align-items:center;padding:0 1rem;gap:.75rem}.mob-title{flex:1;min-width:0;font-size:.78rem;line-height:1.3;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.mob-ham{background:none;color:var(--text);font-size:1.35rem;padding:.25rem .4rem;border-radius:var(--rsm);transition:background .2s}.mob-ham:hover{background:var(--bg3)}.mob-quiz{background:var(--gold);color:#000;font-size:.78rem;font-weight:700;padding:.35rem .75rem;border-radius:99px;transition:opacity .2s;display:flex;align-items:center;gap:.35rem}.mob-quiz:hover{opacity:.85}.req-mark{color:var(--red);margin-left:.2rem;font-weight:700}.sb-logo{padding:1.25rem 1.1rem 1rem;display:flex;align-items:center;gap:.8rem;border-bottom:1px solid var(--border2);flex-shrink:0}.sb-icon{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal-l));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;box-shadow:0 0 16px var(--teal-g)}.sb-logo-text .t1{font-family:var(--font-d);font-size:.95rem;font-weight:700;color:var(--text);line-height:1.2}.sb-logo-text .t2{font-size:.7rem;color:var(--text3);margin-top:2px}.sb-scroll{flex:1;overflow-y:auto;padding:.6rem .7rem}.sb-label{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;padding:.75rem .5rem .35rem}.nav-btn{width:100%;text-align:left;padding:.6rem .75rem;border-radius:var(--rsm);background:none;color:var(--text2);font-size:.8rem;font-weight:500;display:flex;align-items:center;gap:.6rem;transition:all .18s;position:relative;overflow:hidden;min-width:0}.nav-label{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.nav-btn:hover{background:var(--bg3);color:var(--text)}.nav-btn.active{background:var(--teal-g);color:var(--teal-l);font-weight:600}.nav-btn.active::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:3px;border-radius:0 3px 3px 0;background:var(--teal-l)}.nav-ico{font-size:1rem;flex-shrink:0;display:flex;align-items:center}.nav-ico svg,.nav-ico i[data-lucide]{width:16px;height:16px;stroke-width:2;vertical-align:middle}.sb-icon svg,.sb-icon i[data-lucide]{width:22px;height:22px;stroke:#fff;stroke-width:2}.nav-badge{margin-left:4px;flex-shrink:0;background:var(--bg4);color:var(--text3);font-size:.58rem;padding:1px 5px;border-radius:99px;font-weight:700;white-space:nowrap}.nav-btn.active .nav-badge{background:var(--teal-g);color:var(--teal-l)}.sb-footer{padding:.85rem .9rem 1rem;border-top:1px solid var(--border2);flex-shrink:0}.quiz-main-btn{width:100%;padding:.7rem 1rem;border-radius:var(--rsm);background:linear-gradient(135deg,var(--gold),#e69c0a);color:#0a0800;font-weight:700;font-size:.85rem;display:flex;align-items:center;justify-content:center;gap:.5rem;box-shadow:0 4px 18px rgba(245,158,11,.2);transition:all .2s;margin-bottom:.8rem}.quiz-main-btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(245,158,11,.3)}.sb-info{padding:.1rem .25rem}.sb-info .name{font-size:.75rem;font-weight:600;color:var(--text2)}.sb-info .sem{font-size:.68rem;color:var(--text3);margin-top:2px}.sb-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;opacity:0;pointer-events:none;transition:opacity .3s cubic-bezier(0.4,0,0.2,1)}.page{display:none;opacity:0}.page.active{display:block;animation:pageSlide .3s cubic-bezier(0.4,0,0.2,1) forwards}@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes scaleIn{from{opacity:0;transform:scale(.94)}to{opacity:1;transform:scale(1)}}@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}@keyframes slideUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}@keyframes slideInR{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}@keyframes pageSlide{from{opacity:0;transform:translateX(14px) translateY(4px)}to{opacity:1;transform:translateX(0) translateY(0)}}@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}.shake{animation:shake .35s cubic-bezier(0.4,0,0.2,1)}@keyframes correctPop{0%{transform:scale(1)}40%{transform:scale(1.04)}100%{transform:scale(1)}}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}@keyframes sbGlow{0%,100%{box-shadow:0 4px 18px rgba(245,158,11,.2)}50%{box-shadow:0 6px 28px rgba(245,158,11,.45)}}@keyframes scoreCount{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}@keyframes starsIn{from{opacity:0;transform:rotate(-20deg) scale(0)}to{opacity:1;transform:rotate(0) scale(1)}}.quiz-main-btn{animation:sbGlow 2.5s ease infinite}.anim{opacity:0;will-change:transform,opacity}.page.active .anim{animation:fadeUp .42s cubic-bezier(0.4,0,0.2,1) forwards}.page.active .anim:nth-child(1){animation-delay:.03s}.page.active .anim:nth-child(2){animation-delay:.07s}.page.active .anim:nth-child(3){animation-delay:.11s}.page.active .anim:nth-child(4){animation-delay:.14s}.page.active .anim:nth-child(5){animation-delay:.17s}.page.active .anim:nth-child(6){animation-delay:.20s}.page.active .anim:nth-child(7){animation-delay:.22s}.page.active .anim:nth-child(8){animation-delay:.24s}.page.active .anim:nth-child(9){animation-delay:.25s}.page.active .anim:nth-child(10){animation-delay:.25s}.page.active .anim:nth-child(n+11){animation-delay:.25s}.home-hero{padding:3.5rem 3rem 2.5rem;background:linear-gradient(160deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border2);position:relative;overflow:hidden}.home-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:300px;height:300px;background:radial-gradient(circle,var(--teal-g) 0%,transparent 70%);pointer-events:none}.home-hero::after{content:'';position:absolute;bottom:-80px;left:30%;width:250px;height:250px;background:radial-gradient(circle,var(--gold-g) 0%,transparent 70%);pointer-events:none}.client-line{font-size:.8rem;color:var(--text3);font-weight:600;margin-bottom:1rem;position:relative}.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-g);border:1px solid rgba(16,185,129,.25);color:var(--teal-l);font-size:.75rem;font-weight:600;padding:.3rem .85rem;border-radius:99px;letter-spacing:.05em;margin-bottom:1.2rem}.hero-title{font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;color:var(--text);margin-bottom:.6rem}.hero-title span{color:var(--gold-l);font-style:italic}.hero-sub{font-size:.92rem;color:var(--text2);max-width:540px;line-height:1.7;margin-bottom:2rem}.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem}.hero-tag{background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:.73rem;font-weight:500;padding:.28rem .75rem;border-radius:99px}.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;padding:1.75rem 3rem;background:var(--bg);border-bottom:1px solid var(--border2)}.stat-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.25rem;text-align:center;transition:border-color .22s,transform .22s,box-shadow .22s}.stat-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 8px 24px rgba(5,150,105,.12)}.stat-num{font-family:var(--font-d);font-size:2.2rem;font-weight:700;color:var(--teal-l);line-height:1}.stat-num.gold{color:var(--gold-l)}.stat-lbl{font-size:.72rem;color:var(--text2);margin-top:.4rem;font-weight:500}.chapters-section{padding:2rem 3rem 3rem}.sec-heading{font-family:var(--font-d);font-size:1.3rem;font-weight:700;color:var(--text);margin-bottom:.3rem}.sec-sub{font-size:.8rem;color:var(--text2);margin-bottom:1.5rem}.chapter-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}.ch-card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.4rem;cursor:pointer;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden}.ch-card:hover{border-color:var(--teal);transform:translateY(-3px);box-shadow:0 10px 30px rgba(5,150,105,.15)}.ch-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold-l));opacity:0;transition:opacity .2s}.ch-card:hover::before{opacity:1}.ch-num{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal-l);text-transform:uppercase;margin-bottom:.5rem;background:var(--teal-g);display:inline-block;padding:.2rem .6rem;border-radius:99px}.ch-title{font-family:var(--font-d);font-size:1.05rem;font-weight:600;color:var(--text);margin-bottom:.5rem;line-height:1.3}.ch-desc{font-size:.78rem;color:var(--text2);line-height:1.6}.ch-arrow{margin-top:1rem;color:var(--teal-l);font-size:.8rem;font-weight:600;display:flex;align-items:center;gap:.3rem}.ch-hero{padding:2.5rem 3rem 2rem;background:linear-gradient(160deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border2);position:relative;overflow:hidden}.ch-hero::after{content:'';position:absolute;top:-50px;right:-30px;width:220px;height:220px;background:radial-gradient(circle,var(--teal-g) 0%,transparent 70%)}.ch-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--teal-g);border:1px solid rgba(16,185,129,.25);color:var(--teal-l);font-size:.7rem;font-weight:700;padding:.25rem .8rem;border-radius:99px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.8rem}.ch-hero h1{font-family:var(--font-d);font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;color:var(--text);line-height:1.2;margin-bottom:.5rem}.ch-hero p{font-size:.88rem;color:var(--text2);max-width:520px}.content-wrap{padding:2rem 3rem 3rem}.card{background:var(--bg2);border:1px solid var(--border2);border-radius:var(--radius);padding:1.6rem;margin-bottom:1.25rem}.card h2{font-family:var(--font-d);font-size:1.18rem;font-weight:600;color:var(--text);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}.card h2 .icon{width:32px;height:32px;border-radius:9px;background:var(--teal-g);border:1px solid rgba(16,185,129,.25);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}.card h3{font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:.7rem;margin-top:1.2rem}.card h3:first-child{margin-top:0}.card p{font-size:.85rem;color:var(--text2);line-height:1.75}.def-box{background:var(--bg3);border-left:3px solid var(--teal-l);border-radius:0 var(--rsm) var(--rsm) 0;padding:1rem 1.2rem;margin:.8rem 0}.def-box .term{font-weight:700;color:var(--teal-l);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}.def-box p{font-size:.84rem;color:var(--text);line-height:1.7}.def-box .key{color:var(--gold-l);font-weight:700}.def-gold{background:var(--bg3);border-left:3px solid var(--gold-l);border-radius:0 var(--rsm) var(--rsm) 0;padding:1rem 1.2rem;margin:.8rem 0}.def-gold .term{color:var(--gold-l);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem}.def-gold p{font-size:.84rem;color:var(--text);line-height:1.7}.blist{list-style:none;padding:0}.blist li{font-size:.84rem;color:var(--text2);line-height:1.7;padding:.45rem 0 .45rem 1.3rem;position:relative;border-bottom:1px solid var(--border2)}.blist li:last-child{border-bottom:none}.blist li::before{content:'';position:absolute;left:0;top:.9rem;width:6px;height:6px;border-radius:50%;background:var(--teal-l)}.blist li strong{color:var(--text);font-weight:600}.nlist{list-style:none;padding:0;counter-reset:nc}.nlist li{font-size:.84rem;color:var(--text2);line-height:1.7;padding:.5rem .5rem .5rem 2.2rem;position:relative;border-bottom:1px solid var(--border2);counter-increment:nc}.nlist li:last-child{border-bottom:none}.nlist li::before{content:counter(nc);position:absolute;left:0;top:.55rem;width:20px;height:20px;border-radius:50%;background:var(--teal-g);border:1px solid rgba(16,185,129,.3);color:var(--teal-l);font-size:.68rem;font-weight:700;display:flex;align-items:center;justify-content:center}.nlist li strong{color:var(--text);font-weight:600}.sub-sec{display:flex;align-items:center;gap:.7rem;margin:1.4rem 0 .8rem}.sub-sec-line{flex:1;height:1px;background:var(--border2)}.sub-sec-text{font-size:.72rem;font-weight:700;letter-spacing:.1em;color:var(--text3);text-transform:uppercase;white-space:nowrap}.pill{display:inline-block;padding:.2rem .75rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.04em}.pill-teal{background:var(--teal-g);color:var(--teal-l);border:1px solid rgba(16,185,129,.25)}.pill-gold{background:var(--gold-g);color:var(--gold-l);border:1px solid rgba(245,158,11,.25)}.summary{background:linear-gradient(135deg,rgba(5,150,105,.1),rgba(245,158,11,.06));border:1px solid rgba(16,185,129,.25);border-radius:var(--radius);padding:1.5rem;margin-bottom:1.25rem}.summary h3{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--teal-l);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}.summary ul{list-style:none;padding:0}.summary ul li{font-size:.83rem;color:var(--text2);line-height:1.7;padding:.35rem 0 .35rem 1.5rem;position:relative;border-bottom:1px solid rgba(16,185,129,.1)}.summary ul li:last-child{border-bottom:none}.summary ul li::before{content:'✦';position:absolute;left:0;color:var(--teal-l);font-size:.6rem;top:.55rem}.fc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;padding:2rem 3rem 3rem}.fc-container{perspective:1000px}.fc-inner{width:100%;min-height:180px;position:relative;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,.2,.2,1);cursor:pointer}.fc-container.flipped .fc-inner{transform:rotateY(180deg)}.fc-face{position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;justify-content:flex-start;overflow:hidden}.fc-front{background:var(--bg2);border:1px solid var(--border);justify-content:space-between}.fc-back{background:linear-gradient(135deg,rgba(5,150,105,.16),rgba(245,158,11,.08));border:1px solid rgba(16,185,129,.3);transform:rotateY(180deg);overflow-y:auto}.fc-chapter{font-size:.65rem;font-weight:700;letter-spacing:.1em;color:var(--teal-l);text-transform:uppercase;background:var(--teal-g);padding:.2rem .6rem;border-radius:99px;display:inline-block;margin-bottom:.7rem}.fc-question{font-size:.86rem;color:var(--text);line-height:1.65;font-weight:500;flex:1}.fc-hint{font-size:.68rem;color:var(--text3);margin-top:.8rem;text-align:right}.fc-answer{font-size:.83rem;color:var(--text);line-height:1.7;flex:1}.fc-answer strong{color:var(--teal-l)}.fc-flip-hint{font-size:.68rem;color:var(--teal-l);margin-bottom:.5rem}#confetti-canvas{position:fixed;inset:0;z-index:999;pointer-events:none}.search-wrap{padding:.6rem .7rem .4rem;position:relative}.search-input{width:100%;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rsm);padding:.48rem .75rem .48rem 2rem;color:var(--text);font-size:.78rem;font-family:var(--font-b);outline:none;transition:border-color .2s,background .2s;box-sizing:border-box}.search-input:focus{border-color:var(--teal);background:var(--bg3)}.search-input::placeholder{color:var(--text3)}.search-ico{position:absolute;left:1.15rem;top:50%;transform:translateY(-50%);font-size:.8rem;pointer-events:none;color:var(--text3);display:flex}.search-highlight{background:rgba(16,185,129,.25);border-radius:2px}.search-no-result{display:none;padding:.5rem .9rem;font-size:.72rem;color:var(--text3);text-align:center}.mob-print{background:none;border:1px solid var(--border2);border-radius:var(--rsm);color:var(--text2);font-size:.75rem;padding:.3rem .55rem;cursor:pointer;display:flex;align-items:center;gap:.3rem;transition:all .2s;white-space:nowrap}.mob-print:hover{background:var(--bg3);color:var(--text)}.btn-print-sb{width:100%;padding:.55rem 1rem;border-radius:var(--rsm);background:none;border:1px solid var(--border2);color:var(--text2);font-size:.8rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .2s;margin-bottom:.6rem;font-family:var(--font-b)}.btn-print-sb:hover{background:var(--bg3);color:var(--text);border-color:var(--border)}.quiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;backdrop-filter:blur(4px);opacity:0;pointer-events:none;transition:opacity .25s cubic-bezier(0.4,0,0.2,1)}.quiz-overlay.show{opacity:1;pointer-events:auto}.quiz-modal{position:fixed;top:50%;left:50%;z-index:600;transform:translate(-50%,-46%);width:min(600px,94vw);max-height:90vh;overflow-y:auto;background:var(--bg2);border:1px solid var(--border);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s cubic-bezier(0.4,0,0.2,1),transform .25s cubic-bezier(0.4,0,0.2,1);will-change:transform,opacity}.quiz-modal.show{opacity:1;pointer-events:auto;transform:translate(-50%,-50%)}.qm-head{padding:1.5rem 1.75rem 1rem;border-bottom:1px solid var(--border2);display:flex;align-items:center;justify-content:space-between}.qm-title{font-family:var(--font-d);font-size:1.2rem;font-weight:700;color:var(--text);display:flex;align-items:center;gap:.5rem}.qm-close{background:var(--bg3);color:var(--text2);width:32px;height:32px;border-radius:50%;font-size:1rem;transition:all .2s;display:flex;align-items:center;justify-content:center}.qm-close:hover{background:var(--red);color:#fff}.qm-progress-bar{height:4px;background:var(--bg3);border-radius:0}.qm-progress-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--gold-l));border-radius:0;transition:width .4s ease}.qm-body{padding:1.75rem}.qm-counter{font-size:.72rem;color:var(--text3);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.6rem}.qm-timer{display:flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:700;color:var(--text2);margin-bottom:.5rem}.qm-timer i{width:15px;height:15px}.qm-timer.warn{color:var(--gold-l)}.qm-timer.danger{color:var(--red);animation:pulse 1s ease infinite}.qm-timer-bar{height:4px;background:var(--bg4);border-radius:99px;overflow:hidden;margin-bottom:1.2rem}.qm-timer-fill{height:100%;background:var(--teal-l);border-radius:99px;transition:width 1s linear,background .3s}.qm-timer-fill.warn{background:var(--gold-l)}.qm-timer-fill.danger{background:var(--red)}.qm-visual{display:none;justify-content:center;align-items:center;flex-wrap:wrap;gap:1rem;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rsm);padding:1.1rem;margin-bottom:1.2rem;min-height:70px}.qm-q{font-size:.95rem;color:var(--text);font-weight:500;line-height:1.65;margin-bottom:1.4rem}.qm-opts{display:flex;flex-direction:column;gap:.6rem}.qm-opt{background:var(--bg3);border:1.5px solid var(--border);border-radius:var(--rsm);padding:.8rem 1rem;font-size:.85rem;color:var(--text2);text-align:left;transition:all .18s;display:flex;align-items:center;gap:.75rem;font-family:var(--font-b)}.qm-opt:hover:not(:disabled){border-color:var(--teal-l);color:var(--text);background:var(--bg4)}.qm-opt.selected{border-color:var(--teal-l);color:var(--text);background:var(--teal-g)}.qm-opt.correct{border-color:var(--green);background:rgba(22,163,74,.12);color:var(--text)}.qm-opt.wrong{border-color:var(--red);background:rgba(220,38,38,.12);color:var(--text)}.opt-letter{min-width:24px;height:24px;border-radius:6px;background:var(--bg4);border:1px solid var(--border);font-size:.72rem;font-weight:700;color:var(--text3);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .18s}.qm-opt.selected .opt-letter{background:var(--teal-g);border-color:var(--teal-l);color:var(--teal-l)}.qm-opt.correct .opt-letter{background:rgba(22,163,74,.15);border-color:var(--green);color:var(--green)}.qm-opt.wrong .opt-letter{background:rgba(220,38,38,.15);border-color:var(--red);color:var(--red)}.qm-feedback{margin-top:1rem;padding:.75rem 1rem;border-radius:var(--rsm);font-size:.82rem;display:none}.qm-feedback.correct-fb{background:rgba(22,163,74,.1);border:1px solid rgba(22,163,74,.3);color:var(--green)}.qm-feedback.wrong-fb{background:rgba(220,38,38,.1);border:1px solid rgba(220,38,38,.3);color:#dc2626}.qm-nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.75rem 1.5rem;gap:.75rem}.qm-btn{padding:.65rem 1.3rem;border-radius:var(--rsm);font-size:.83rem;font-weight:600;transition:all .2s;font-family:var(--font-b)}.qm-btn-sec{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}.qm-btn-sec:hover{background:var(--bg4);color:var(--text)}.qm-btn-prim{background:var(--teal);color:#fff}.qm-btn-prim:hover{background:var(--teal-l)}.qm-btn-gold{background:var(--gold);color:#000}.qm-btn-gold:hover{background:var(--gold-l)}.qm-result{padding:2rem 1.75rem 2.5rem;text-align:center}.result-icon{font-size:3.5rem;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;color:var(--teal-l)}.result-icon svg{width:56px;height:56px}.result-score{font-family:var(--font-d);font-size:3.2rem;font-weight:700;line-height:1;margin-bottom:.5rem}.result-score.pass{color:var(--green)}.result-score.fail{color:var(--red)}.result-msg{font-size:1rem;color:var(--text2);margin-bottom:.3rem}.result-detail{font-size:.82rem;color:var(--text3);margin-bottom:2rem}.result-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}.fig-row{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:wrap;padding:1.4rem;background:var(--bg3);border:1px solid var(--border2);border-radius:var(--rsm);margin:1rem 0}.fig-item{display:flex;flex-direction:column;align-items:center;gap:.5rem}.fig-label{font-size:.68rem;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.04em}.fig-arrow-lg{font-size:2.2rem;color:var(--teal-l);line-height:1;display:inline-block}.fig-empty{display:flex;align-items:center;justify-content:center;border:2px dashed var(--border);border-radius:var(--rsm);color:var(--text3);font-weight:700;background:var(--bg4)}.fig-matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;max-width:300px;margin:1rem auto}.fig-cell{aspect-ratio:1;background:var(--bg4);border:1px solid var(--border2);border-radius:var(--rsm);display:flex;align-items:center;justify-content:center;gap:.3rem;flex-wrap:wrap;padding:.5rem}.fig-letter{font-family:var(--font-d);font-weight:700;color:var(--text);line-height:1}.fig-opts-row{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;margin:.8rem 0}.fig-opt{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:.9rem;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--rsm);min-width:80px}.fig-opt.is-correct{border-color:var(--green);background:rgba(22,163,74,.08)}.fig-opt-letter{font-size:.68rem;font-weight:700;color:var(--text3)}@media (max-width:900px){.stats-row{grid-template-columns:repeat(2,1fr)}}@media (max-width:768px){.mob-header{display:flex}.sidebar{transform:translateX(-100%);z-index:300;top:0;height:100vh}.sidebar.open{transform:translateX(0);box-shadow:4px 0 40px rgba(0,0,0,.25)}.sb-overlay{z-index:299}.sb-overlay.show{opacity:1;pointer-events:auto}.main{margin-left:0;padding-top:56px}.home-hero{padding:2rem 1.25rem}.stats-row{padding:1.25rem}.chapters-section{padding:1.25rem}.content-wrap{padding:1.25rem}.ch-hero{padding:1.75rem 1.25rem}.fc-grid{padding:1.25rem}.chapter-grid{grid-template-columns:1fr}}@media (max-width:480px){.stats-row{grid-template-columns:repeat(2,1fr);padding:1rem}.fig-row{padding:1rem;gap:.8rem}}@media print{.mob-header,.sidebar,.sb-overlay,.quiz-modal,#confetti-canvas{display:none !important}body{background:#fff !important;color:#000 !important}.main{margin-left:0 !important;padding-top:0 !important}.page{display:none !important}.page.active{display:block !important}.card,.def-box,.def-gold,.summary,.ch-hero,.fig-row,.fig-cell,.fig-opt{background:#f9f9f9 !important;border:1px solid #ccc !important;color:#000 !important;box-shadow:none !important}h1,h2,h3,p,li,td,th,label{color:#000 !important}.card{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<canvas id="confetti-canvas"></canvas>
+
+<header class="mob-header">
+<button class="mob-ham" onclick="toggleSidebar()"><i data-lucide="menu"></i></button>
+<div class="mob-title">Tes Gambar Figural</div>
+<button class="mob-print" onclick="window.print()"><i data-lucide="printer"></i> Print</button>
+<button class="mob-quiz" id="mobQuizBtn" onclick="openQuiz()"><i data-lucide="clipboard-list"></i> Quiz</button>
+</header>
+
+<div class="sb-overlay" id="sbOverlay" onclick="closeSidebar()"></div>
+
+<aside class="sidebar" id="sidebar">
+<div class="sb-logo">
+<div class="sb-icon"><i data-lucide="shapes"></i></div>
+<div class="sb-logo-text">
+<div class="t1">Tes Gambar Figural</div>
+<div class="t2">Latihan Penalaran Spasial</div>
+</div>
+</div>
+
+<div class="search-wrap">
+<span class="search-ico"><i data-lucide="search" style="width:14px;height:14px"></i></span>
+<input type="text" class="search-input" placeholder="Cari materi..." oninput="handleSearch(this.value)">
+</div>
+
+<div class="sb-scroll">
+<div class="sb-label">Menu Utama</div>
+<button class="nav-btn" id="nav-home" onclick="navigate('home')">
+<span class="nav-ico"><i data-lucide="home"></i></span>
+<span class="nav-label">Beranda</span>
+</button>
+
+<div class="sb-label">Materi Pembelajaran</div>
+<button class="nav-btn" id="nav-bab1" onclick="navigate('bab1')">
+<span class="nav-ico"><i data-lucide="repeat"></i></span>
+<span class="nav-label">Deret Pola Gambar</span>
+</button>
+<button class="nav-btn" id="nav-bab2" onclick="navigate('bab2')">
+<span class="nav-ico"><i data-lucide="arrow-left-right"></i></span>
+<span class="nav-label">Analogi Gambar</span>
+</button>
+<button class="nav-btn" id="nav-bab3" onclick="navigate('bab3')">
+<span class="nav-ico"><i data-lucide="scan-search"></i></span>
+<span class="nav-label">Klasifikasi Gambar</span>
+</button>
+<button class="nav-btn" id="nav-bab4" onclick="navigate('bab4')">
+<span class="nav-ico"><i data-lucide="flip-horizontal"></i></span>
+<span class="nav-label">Bayangan Cermin</span>
+</button>
+<button class="nav-btn" id="nav-bab5" onclick="navigate('bab5')">
+<span class="nav-ico"><i data-lucide="grid-3x3"></i></span>
+<span class="nav-label">Matriks 3x3</span>
+</button>
+
+<div class="sb-label">Evaluasi</div>
+<button class="nav-btn" id="nav-flashcard" onclick="navigate('flashcard')">
+<span class="nav-ico"><i data-lucide="layers"></i></span>
+<span class="nav-label">Flashcard</span>
+<span class="nav-badge">15</span>
+</button>
+</div>
+
+<div class="sb-footer">
+<button class="btn-print-sb" onclick="window.print()">
+<i data-lucide="printer"></i> Print
+</button>
+<button class="quiz-main-btn" onclick="openQuiz()">
+<i data-lucide="clipboard-list"></i> Quiz (20 Soal)
+</button>
+<div class="sb-info">
+<div class="name">Roro Ayu Galuh M.</div>
+<div class="sem">Persiapan Tes Potensi Akademik</div>
+</div>
+</div>
+</aside>
+
+<main class="main" id="main">
+
+<div class="page active" id="page-home">
+<div class="home-hero">
+<div class="client-line anim">Roro Ayu Galuh M.</div>
+<div class="hero-eyebrow anim"><i data-lucide="shapes" style="width:14px;height:14px"></i> Persiapan Tes Potensi Akademik</div>
+<h1 class="hero-title anim">Tes Gambar <span>& Penalaran Figural</span></h1>
+<p class="hero-sub anim">Latihan lima jenis soal gambar yang paling sering keluar di tes beasiswa dan seleksi berbasis TPA. Tiap jenis dibahas lengkap dengan cara berpikirnya, contoh soal bergambar, dan bank soal untuk mengasah kecepatan mengenali pola dalam waktu terbatas.</p>
+<div class="hero-tags anim">
+<span class="hero-tag">Deret Gambar</span>
+<span class="hero-tag">Analogi Gambar</span>
+<span class="hero-tag">Klasifikasi Gambar</span>
+<span class="hero-tag">Bayangan Cermin</span>
+<span class="hero-tag">Matriks 3x3</span>
+</div>
+</div>
+
+<div class="stats-row">
+<div class="stat-card anim"><div class="stat-num">5</div><div class="stat-lbl">Jenis Soal Gambar</div></div>
+<div class="stat-card anim"><div class="stat-num gold">20</div><div class="stat-lbl">Soal Latihan Quiz</div></div>
+<div class="stat-card anim"><div class="stat-num">15</div><div class="stat-lbl">Flashcard Recall</div></div>
+<div class="stat-card anim"><div class="stat-num gold">30</div><div class="stat-lbl">Detik per Soal</div></div>
+</div>
+
+<div class="chapters-section">
+<div class="sec-heading anim">Daftar Bab</div>
+<div class="sec-sub anim">Pelajari urut dari bab 1 supaya cara berpikirnya mengalir, atau langsung loncat ke bab yang masih terasa sulit.</div>
+<div class="chapter-grid">
+<div class="ch-card anim" onclick="navigate('bab1')">
+<div class="ch-num">Bab 1</div>
+<div class="ch-title">Deret Pola Gambar</div>
+<div class="ch-desc">Menentukan gambar selanjutnya dari perubahan jumlah, ukuran, arah, atau bagian yang terisi.</div>
+<div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+</div>
+<div class="ch-card anim" onclick="navigate('bab2')">
+<div class="ch-num">Bab 2</div>
+<div class="ch-title">Analogi Gambar</div>
+<div class="ch-desc">Menemukan hubungan antara gambar pertama dan kedua, lalu menerapkan pola yang sama.</div>
+<div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+</div>
+<div class="ch-card anim" onclick="navigate('bab3')">
+<div class="ch-num">Bab 3</div>
+<div class="ch-title">Klasifikasi Gambar</div>
+<div class="ch-desc">Mencari satu gambar yang berbeda sendiri dibanding gambar lain dalam satu kelompok.</div>
+<div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+</div>
+<div class="ch-card anim" onclick="navigate('bab4')">
+<div class="ch-num">Bab 4</div>
+<div class="ch-title">Bayangan Cermin</div>
+<div class="ch-desc">Menentukan bentuk bayangan gambar kalau dicerminkan secara horizontal atau vertikal.</div>
+<div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+</div>
+<div class="ch-card anim" onclick="navigate('bab5')">
+<div class="ch-num">Bab 5</div>
+<div class="ch-title">Matriks 3x3</div>
+<div class="ch-desc">Mengisi kotak kosong dalam matriks sembilan kotak berdasarkan pola baris dan kolom.</div>
+<div class="ch-arrow">Mulai Belajar <i data-lucide="arrow-right" style="width:14px;height:14px"></i></div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="page" id="page-bab1">
+<div class="ch-hero">
+<div class="ch-label anim">Bab 1</div>
+<h1 class="anim">Deret Pola Gambar</h1>
+<p class="anim">Mengenali arah perubahan dalam satu rangkaian gambar untuk menebak gambar berikutnya.</p>
+</div>
+<div class="content-wrap">
+
+<div class="card anim">
+<h2><span class="icon"><i data-lucide="repeat" style="width:16px;height:16px"></i></span>Apa Itu Deret Pola Gambar</h2>
+<p>Soal jenis ini menyajikan tiga atau empat gambar yang disusun berurutan, lalu kamu diminta menentukan gambar berikutnya berdasarkan pola yang berlaku di sepanjang deret tersebut. Perubahan yang terjadi bisa lewat penambahan atau pengurangan jumlah bentuk, pembesaran atau pengecilan ukuran, perputaran arah, atau perubahan bagian yang terisi pada satu bentuk yang sama.</p>
+<div class="def-box">
+<div class="term">Kunci Soal Deret Gambar</div>
+<p>Yang diuji bukan kemampuan menggambar, tapi kemampuan melihat <span class="key">satu unsur yang berubah secara konsisten</span> dari satu gambar ke gambar berikutnya, lalu memperkirakan langkah selanjutnya dari pola itu.</p>
+</div>
+<h3>Cara Mengerjakan</h3>
+<ul class="blist">
+<li>Perhatikan satu per satu unsur yang mungkin berubah, apakah bentuknya berputar, jumlahnya bertambah atau berkurang, ukurannya membesar atau mengecil, atau posisinya bergeser.</li>
+<li>Biasanya hanya ada satu atau dua unsur yang berubah secara konsisten di tiap gambar, jangan coba analisis semua kemungkinan sekaligus karena justru bikin bingung.</li>
+<li>Kalau pola di dua gambar pertama sudah kelihatan, cocokkan lagi ke gambar ketiga sebelum menyimpulkan gambar keempat, supaya polanya benar benar konsisten bukan kebetulan.</li>
+</ul>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 1: Deret Jumlah Bentuk</h3>
+<p>Perhatikan deret segitiga berikut. Berapa jumlah segitiga pada gambar keempat?</p>
+<div class="fig-row">
+<div class="fig-item"><div style="display:flex;gap:3px"><div style="width:34px;height:34px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div></div><div class="fig-label">Gambar 1</div></div>
+<div class="fig-item"><div style="display:flex;gap:3px"><div style="width:30px;height:30px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div><div style="width:30px;height:30px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div></div><div class="fig-label">Gambar 2</div></div>
+<div class="fig-item"><div style="display:flex;gap:3px"><div style="width:26px;height:26px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div><div style="width:26px;height:26px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div><div style="width:26px;height:26px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div></div><div class="fig-label">Gambar 3</div></div>
+<div class="fig-item"><div class="fig-empty" style="width:110px;height:34px;font-size:1.3rem">?</div><div class="fig-label">Gambar 4</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Polanya jumlah segitiga bertambah satu di tiap gambar berikutnya (satu, dua, tiga), jadi gambar keempat berisi <span class="key">empat segitiga</span> menghadap atas.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 2: Deret Bagian Terisi</h3>
+<p>Perhatikan deret lingkaran berikut. Bagaimana bentuk gambar selanjutnya?</p>
+<div class="fig-row">
+<div class="fig-item"><div style="width:50px;height:50px;border-radius:50%;background:var(--teal-l);border:1px solid var(--border2)"></div><div class="fig-label">Penuh</div></div>
+<div class="fig-item"><div style="width:50px;height:50px;border-radius:50%;background:conic-gradient(var(--teal-l) 0deg 180deg, var(--bg4) 180deg 360deg);border:1px solid var(--border2)"></div><div class="fig-label">Setengah</div></div>
+<div class="fig-item"><div style="width:50px;height:50px;border-radius:50%;background:conic-gradient(var(--teal-l) 0deg 90deg, var(--bg4) 90deg 360deg);border:1px solid var(--border2)"></div><div class="fig-label">Seperempat</div></div>
+<div class="fig-item"><div class="fig-empty" style="width:50px;height:50px;border-radius:50%">?</div><div class="fig-label">Selanjutnya</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Bagian yang terisi berkurang setengah dari sebelumnya, dari penuh ke setengah lalu ke seperempat, jadi gambar selanjutnya adalah lingkaran dengan <span class="key">seperdelapan bagian terisi</span>.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 3: Deret Arah atau Rotasi</h3>
+<p>Sebuah anak panah berputar searah jarum jam sebesar 90 derajat di tiap gambar berikutnya, dimulai dari menghadap atas. Ke arah mana anak panah menghadap pada gambar keempat?</p>
+<div class="fig-row">
+<div class="fig-item"><div class="fig-arrow-lg" style="transform:rotate(0deg)">&#8593;</div><div class="fig-label">Gambar 1</div></div>
+<div class="fig-item"><div class="fig-arrow-lg" style="transform:rotate(90deg)">&#8593;</div><div class="fig-label">Gambar 2</div></div>
+<div class="fig-item"><div class="fig-arrow-lg" style="transform:rotate(180deg)">&#8593;</div><div class="fig-label">Gambar 3</div></div>
+<div class="fig-item"><div class="fig-empty" style="width:50px;height:50px">?</div><div class="fig-label">Gambar 4</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Gambar pertama menghadap atas, gambar kedua menghadap kanan setelah diputar 90 derajat searah jarum jam, gambar ketiga menghadap bawah, sehingga gambar keempat menghadap <span class="key">kiri</span>.</p>
+</div>
+</div>
+
+<div class="summary anim">
+<h3><i data-lucide="lightbulb" style="width:18px;height:18px"></i>Catatan Tambahan</h3>
+<ul>
+<li>Kalau unsur yang berubah ada dua sekaligus, misalnya jumlah dan ukuran, pastikan urutan perubahan keduanya konsisten di tiap langkah, bukan cuma cocok di satu gambar saja.</li>
+<li>Latih diri membaca deret dari kiri ke kanan dulu sebelum melihat opsi jawaban, supaya tidak terpengaruh opsi yang sengaja dibuat mirip untuk menjebak.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-bab2">
+<div class="ch-hero">
+<div class="ch-label anim">Bab 2</div>
+<h1 class="anim">Analogi Gambar</h1>
+<p class="anim">Menemukan hubungan perubahan antara sepasang gambar, lalu menerapkannya ke pasangan lain.</p>
+</div>
+<div class="content-wrap">
+
+<div class="card anim">
+<h2><span class="icon"><i data-lucide="arrow-left-right" style="width:16px;height:16px"></i></span>Apa Itu Analogi Gambar</h2>
+<p>Analogi gambar mirip dengan analogi kata, hanya saja yang dibandingkan berupa bentuk visual. Kamu diberi satu pasang gambar yang punya hubungan tertentu, lalu diminta mencari pasangan gambar lain dengan hubungan yang serupa. Hubungan itu bisa berupa perubahan ukuran, warna, jumlah, atau rotasi.</p>
+<div class="def-box">
+<div class="term">Cara Menemukan Polanya</div>
+<p>Tentukan dulu jenis perubahan yang terjadi dari gambar pertama ke gambar kedua, baru terapkan jenis perubahan yang sama pada gambar ketiga untuk menentukan gambar keempat. Bentuk dasarnya boleh beda, tapi arah perubahannya harus sama.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 1</h3>
+<p>Gambar 1 adalah kotak kecil berwarna putih. Gambar 2 adalah kotak besar berwarna hitam. Gambar 3 adalah lingkaran kecil berwarna putih. Gambar manakah yang menjadi pasangannya?</p>
+<div class="fig-row">
+<div class="fig-item"><div style="width:26px;height:26px;background:#fff;border:2px solid var(--text3)"></div><div class="fig-label">Gambar 1</div></div>
+<div class="fig-arrow-lg">&#8594;</div>
+<div class="fig-item"><div style="width:46px;height:46px;background:#1a0810"></div><div class="fig-label">Gambar 2</div></div>
+<div class="fig-arrow-lg" style="color:var(--gold-l)">::</div>
+<div class="fig-item"><div style="width:26px;height:26px;border-radius:50%;background:#fff;border:2px solid var(--text3)"></div><div class="fig-label">Gambar 3</div></div>
+<div class="fig-arrow-lg">&#8594;</div>
+<div class="fig-item"><div class="fig-empty" style="width:46px;height:46px;border-radius:50%">?</div><div class="fig-label">Gambar 4</div></div>
+</div>
+<p style="margin-bottom:.6rem"><strong style="color:var(--text)">Pilihan jawaban:</strong></p>
+<div class="fig-opts-row">
+<div class="fig-opt"><span class="fig-opt-letter">A</span><div style="width:44px;height:44px;border-radius:50%;background:#fff;border:2px solid var(--text3)"></div></div>
+<div class="fig-opt is-correct"><span class="fig-opt-letter">B</span><div style="width:44px;height:44px;border-radius:50%;background:#1a0810"></div></div>
+<div class="fig-opt"><span class="fig-opt-letter">C</span><div style="width:26px;height:26px;border-radius:50%;background:#1a0810"></div></div>
+<div class="fig-opt"><span class="fig-opt-letter">D</span><div style="width:44px;height:44px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:#1a0810"></div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Jawaban yang benar adalah <span class="key">pilihan B, lingkaran besar berwarna hitam</span>. Pola dari gambar 1 ke gambar 2 adalah ukuran membesar dan warna berubah dari putih ke hitam, sedangkan bentuknya tetap sama, kotak ke kotak. Jadi untuk gambar 3 ke gambar 4, bentuknya tetap lingkaran, tapi ukurannya membesar dan warnanya berubah jadi hitam.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 2</h3>
+<p>Gambar 1 adalah segitiga dengan satu titik di dalamnya. Gambar 2 adalah segitiga dengan dua titik di dalamnya. Gambar 3 adalah persegi dengan satu garis di dalamnya. Apa isi gambar 4?</p>
+<div class="fig-row">
+<div class="fig-item"><div style="position:relative;width:40px;height:40px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l);display:flex;align-items:flex-end;justify-content:center;padding-bottom:6px"><div style="width:6px;height:6px;border-radius:50%;background:#fff"></div></div><div class="fig-label">Gambar 1</div></div>
+<div class="fig-arrow-lg">&#8594;</div>
+<div class="fig-item"><div style="position:relative;width:40px;height:40px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l);display:flex;align-items:flex-end;justify-content:center;gap:3px;padding-bottom:6px"><div style="width:6px;height:6px;border-radius:50%;background:#fff"></div><div style="width:6px;height:6px;border-radius:50%;background:#fff"></div></div><div class="fig-label">Gambar 2</div></div>
+<div class="fig-arrow-lg" style="color:var(--gold-l)">::</div>
+<div class="fig-item"><div style="width:40px;height:40px;background:var(--gold-l);display:flex;align-items:center;justify-content:center"><div style="width:22px;height:2px;background:#fff"></div></div><div class="fig-label">Gambar 3</div></div>
+<div class="fig-arrow-lg">&#8594;</div>
+<div class="fig-item"><div class="fig-empty" style="width:40px;height:40px">?</div><div class="fig-label">Gambar 4</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Pola dari gambar 1 ke gambar 2 adalah jumlah unsur di dalam bentuk bertambah satu, dari satu titik jadi dua titik, sedangkan bentuk luarnya tetap sama. Diterapkan ke gambar 3, persegi dengan satu garis, gambar 4 seharusnya persegi dengan <span class="key">dua garis</span> di dalamnya.</p>
+</div>
+</div>
+
+<div class="summary anim">
+<h3><i data-lucide="lightbulb" style="width:18px;height:18px"></i>Catatan Tambahan</h3>
+<ul>
+<li>Soal analogi gambar sering menyisipkan opsi jawaban yang benar bentuknya tapi salah satu unsur perubahannya, misalnya ukuran benar tapi warnanya tidak berubah. Cek semua unsur, jangan cuma satu.</li>
+<li>Kalau ragu antara dua opsi, coba tuliskan pola perubahannya dalam satu kalimat singkat, seperti "ukuran membesar, warna jadi gelap", lalu cocokkan kalimat itu ke tiap opsi.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-bab3">
+<div class="ch-hero">
+<div class="ch-label anim">Bab 3</div>
+<h1 class="anim">Klasifikasi Gambar</h1>
+<p class="anim">Mencari gambar yang berbeda sendiri dari kelompoknya.</p>
+</div>
+<div class="content-wrap">
+
+<div class="card anim">
+<h2><span class="icon"><i data-lucide="scan-search" style="width:16px;height:16px"></i></span>Apa Itu Klasifikasi Gambar</h2>
+<p>Pada soal jenis ini kamu diberi beberapa gambar dalam satu kelompok, biasanya empat gambar, lalu diminta mencari satu gambar yang berbeda sendiri dari gambar lainnya. Perbedaannya sering kali kecil dan mudah terlewat kalau tidak diperhatikan dengan teliti.</p>
+<div class="def-box">
+<div class="term">Yang Perlu Diperiksa</div>
+<p>Perhatikan jumlah sisi, jumlah sudut, arah bayangan atau kemiringan, dan ada tidaknya garis tambahan pada tiap gambar. Tiga gambar biasanya berbagi satu ciri yang sama, sementara satu gambar melanggar ciri itu.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 1</h3>
+<p>Empat gambar berikut berupa bangun datar: segitiga sama sisi, persegi, segilima, dan segitiga siku siku. Manakah gambar yang berbeda sendiri?</p>
+<div class="fig-opts-row">
+<div class="fig-opt"><span class="fig-opt-letter">A</span><div style="width:50px;height:50px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--teal-l)"></div><div class="fig-label">Sama Sisi</div></div>
+<div class="fig-opt"><span class="fig-opt-letter">B</span><div style="width:50px;height:50px;background:var(--teal-l)"></div><div class="fig-label">Persegi</div></div>
+<div class="fig-opt"><span class="fig-opt-letter">C</span><div style="width:50px;height:50px;clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);background:var(--teal-l)"></div><div class="fig-label">Segilima</div></div>
+<div class="fig-opt is-correct"><span class="fig-opt-letter">D</span><div style="width:50px;height:50px;clip-path:polygon(0% 0%,0% 100%,100% 100%);background:var(--gold-l)"></div><div class="fig-label">Siku Siku</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Segitiga siku siku (pilihan D) berbeda sendiri, karena tiga gambar lainnya, segitiga sama sisi, persegi, dan segilima, adalah bangun beraturan dengan panjang sisi dan besar sudut yang sama, sedangkan <span class="key">segitiga siku siku bukan bangun beraturan</span>.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 2</h3>
+<p>Empat gambar berikut berupa bintang dengan jumlah ujung berbeda beda. Tiga di antaranya punya ujung berjumlah genap, satu punya ujung ganjil. Perhatikan pola jumlah ujungnya, manakah yang berbeda sendiri?</p>
+<div class="fig-opts-row">
+<div class="fig-opt"><span class="fig-opt-letter">A</span><div class="fig-label" style="font-size:1.4rem;color:var(--teal-l)">&#10022;</div><div class="fig-label">4 Ujung</div></div>
+<div class="fig-opt is-correct"><span class="fig-opt-letter">B</span><div class="fig-label" style="font-size:1.4rem;color:var(--gold-l)">&#10023;</div><div class="fig-label">5 Ujung</div></div>
+<div class="fig-opt"><span class="fig-opt-letter">C</span><div class="fig-label" style="font-size:1.4rem;color:var(--teal-l)">&#10022;</div><div class="fig-label">4 Ujung</div></div>
+<div class="fig-opt"><span class="fig-opt-letter">D</span><div class="fig-label" style="font-size:1.4rem;color:var(--teal-l)">&#10022;</div><div class="fig-label">4 Ujung</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Pilihan A, C, dan D sama sama punya empat ujung, sedangkan pilihan B punya <span class="key">lima ujung</span>, jadi itulah yang berbeda sendiri. Soal seperti ini menuntut kamu menghitung dengan teliti, bukan cuma menebak dari kesan sekilas.</p>
+</div>
+</div>
+
+<div class="summary anim">
+<h3><i data-lucide="lightbulb" style="width:18px;height:18px"></i>Catatan Tambahan</h3>
+<ul>
+<li>Soal klasifikasi gambar biasanya lebih cepat dikerjakan dibanding matriks 3x3, karena polanya cukup dibandingkan antar empat gambar saja, tidak perlu cek dua arah sekaligus.</li>
+<li>Kalau semua gambar terlihat mirip di pandangan pertama, coba bandingkan berpasangan, gambar 1 dengan 2, lalu 3 dengan 4, baru cari yang menyimpang dari pasangan mayoritas.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-bab4">
+<div class="ch-hero">
+<div class="ch-label anim">Bab 4</div>
+<h1 class="anim">Bayangan Cermin</h1>
+<p class="anim">Menentukan bentuk bayangan gambar setelah dicerminkan horizontal atau vertikal.</p>
+</div>
+<div class="content-wrap">
+
+<div class="card anim">
+<h2><span class="icon"><i data-lucide="flip-horizontal" style="width:16px;height:16px"></i></span>Apa Itu Bayangan Cermin</h2>
+<p>Soal jenis ini meminta kamu membayangkan bentuk pantulan sebuah gambar kalau gambar itu dicerminkan, baik secara horizontal, seperti melihat pantulan di cermin yang berdiri di samping, maupun secara vertikal, seperti melihat pantulan di permukaan air.</p>
+<div class="def-box">
+<div class="term">Cermin Horizontal</div>
+<p>Bagian kiri dan kanan gambar bertukar posisi, sedangkan bagian atas dan bawahnya tetap sama. Bayangkan gambar dibalik dari sisi kiri ke kanan.</p>
+</div>
+<div class="def-gold">
+<div class="term">Cermin Vertikal</div>
+<p>Bagian atas dan bawah gambar bertukar posisi, sedangkan bagian kiri dan kanannya tetap sama. Bayangkan gambar dibalik dari sisi atas ke bawah.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 1: Cermin Horizontal</h3>
+<p>Sebuah huruf "P" dicerminkan secara horizontal, seperti dipantulkan cermin di sampingnya. Bagaimana bentuk bayangannya?</p>
+<div class="fig-row">
+<div class="fig-item"><div class="fig-letter" style="font-size:2.6rem">P</div><div class="fig-label">Asli</div></div>
+<div class="fig-arrow-lg">&#8594;</div>
+<div class="fig-item"><div class="fig-letter" style="font-size:2.6rem;transform:scaleX(-1);display:inline-block">P</div><div class="fig-label">Bayangan Horizontal</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Huruf P yang awalnya menghadap kanan, dengan bagian lengkungnya di sisi kanan garis tegak, akan berubah menghadap kiri setelah dicerminkan horizontal, sehingga bagian lengkungnya <span class="key">berpindah ke sisi kiri garis tegak</span>.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 2: Cermin Vertikal</h3>
+<p>Sebuah huruf "b" dicerminkan secara vertikal, seperti dipantulkan permukaan air di bawahnya. Bagaimana bentuk bayangannya?</p>
+<div class="fig-row">
+<div class="fig-item"><div class="fig-letter" style="font-size:2.6rem">b</div><div class="fig-label">Asli</div></div>
+<div class="fig-arrow-lg" style="transform:rotate(90deg)">&#8594;</div>
+<div class="fig-item"><div class="fig-letter" style="font-size:2.6rem;transform:scaleY(-1);display:inline-block">b</div><div class="fig-label">Bayangan Vertikal</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Cermin vertikal membalik bagian atas dan bawah huruf, sedangkan posisi kiri kanannya tetap sama. Lingkaran huruf b yang awalnya di bagian bawah kanan akan berpindah ke <span class="key">bagian atas kanan</span> pada bayangannya.</p>
+</div>
+</div>
+
+<div class="summary anim">
+<h3><i data-lucide="lightbulb" style="width:18px;height:18px"></i>Catatan Tambahan</h3>
+<ul>
+<li>Cara paling aman menghindari salah arah adalah menentukan dulu sumbu cerminnya, garis tegak di samping untuk cermin horizontal, garis datar di bawah untuk cermin vertikal, baru bayangkan pantulannya.</li>
+<li>Huruf dan angka yang tidak simetris seperti P, b, 2, dan 3 paling sering dipakai di soal ini justru karena hasil pantulannya jelas berbeda dari bentuk aslinya.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-bab5">
+<div class="ch-hero">
+<div class="ch-label anim">Bab 5</div>
+<h1 class="anim">Gambar dalam Kotak (Matriks 3x3)</h1>
+<p class="anim">Mengisi kotak kosong berdasarkan pola yang berlaku di baris dan kolom sekaligus.</p>
+</div>
+<div class="content-wrap">
+
+<div class="card anim">
+<h2><span class="icon"><i data-lucide="grid-3x3" style="width:16px;height:16px"></i></span>Apa Itu Matriks 3x3</h2>
+<p>Soal ini menyajikan sembilan kotak yang disusun tiga baris dan tiga kolom, berisi gambar dengan pola tertentu. Salah satu kotak, biasanya kotak kesembilan di pojok kanan bawah, dikosongkan dan kamu diminta mengisinya sesuai pola yang berlaku.</p>
+<div class="def-box">
+<div class="term">Cara Mengerjakan</div>
+<p>Cek dulu pola secara horizontal per baris, lalu cek juga pola secara vertikal per kolom, karena biasanya polanya berlaku di kedua arah sekaligus. Unsur yang biasa berubah adalah jumlah bentuk, ukuran, arah, atau kombinasi warna.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 1: Pola Jumlah per Baris</h3>
+<p>Baris pertama berisi satu, dua, tiga lingkaran. Baris kedua berisi satu, dua, tiga kotak. Baris ketiga berisi satu, dua segitiga, dan kotak kosong yang perlu diisi. Apa isi kotak kosong tersebut?</p>
+<div class="fig-matrix">
+<div class="fig-cell"><div style="width:14px;height:14px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:12px;height:12px;border-radius:50%;background:var(--teal-l)"></div><div style="width:12px;height:12px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:10px;height:10px;border-radius:50%;background:var(--teal-l)"></div><div style="width:10px;height:10px;border-radius:50%;background:var(--teal-l)"></div><div style="width:10px;height:10px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:14px;height:14px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:12px;height:12px;background:var(--gold-l)"></div><div style="width:12px;height:12px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:10px;height:10px;background:var(--gold-l)"></div><div style="width:10px;height:10px;background:var(--gold-l)"></div><div style="width:10px;height:10px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:14px;height:14px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--blue)"></div></div>
+<div class="fig-cell"><div style="width:12px;height:12px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--blue)"></div><div style="width:12px;height:12px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--blue)"></div></div>
+<div class="fig-cell"><div class="fig-empty" style="width:100%;height:100%;font-size:1.2rem">?</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Tiap baris mengikuti pola jumlah yang bertambah satu di tiap kolom, satu, dua, tiga. Karena baris ketiga sudah berisi satu dan dua segitiga, kotak kosong tersebut berisi <span class="key">tiga segitiga</span>.</p>
+</div>
+</div>
+
+<div class="card anim">
+<h3>Contoh Soal 2: Pola Ukuran Dua Arah</h3>
+<p>Tiap baris berisi bentuk yang sama dengan ukuran mengecil dari kiri ke kanan, sementara tiap kolom juga konsisten dari segi bentuknya. Berdasarkan pola ini, kotak apa yang cocok mengisi bagian kosong di baris ketiga kolom ketiga?</p>
+<div class="fig-matrix">
+<div class="fig-cell"><div style="width:34px;height:34px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:22px;height:22px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:12px;height:12px;border-radius:50%;background:var(--teal-l)"></div></div>
+<div class="fig-cell"><div style="width:34px;height:34px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:22px;height:22px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:12px;height:12px;background:var(--gold-l)"></div></div>
+<div class="fig-cell"><div style="width:34px;height:34px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--blue)"></div></div>
+<div class="fig-cell"><div style="width:22px;height:22px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--blue)"></div></div>
+<div class="fig-cell"><div class="fig-empty" style="width:100%;height:100%;font-size:1.2rem">?</div></div>
+</div>
+<div class="def-gold">
+<div class="term">Pembahasan</div>
+<p>Kolom ketiga konsisten berisi bentuk berukuran paling kecil di tiap baris, dan baris ketiga konsisten berisi segitiga. Jadi kotak kosong berisi <span class="key">segitiga kecil berwarna biru</span>, mengikuti ukuran kolom dan bentuk baris sekaligus.</p>
+</div>
+</div>
+
+<div class="summary anim">
+<h3><i data-lucide="lightbulb" style="width:18px;height:18px"></i>Strategi Umum Menghadapi Tes Gambar</h3>
+<ul>
+<li>Latih diri untuk fokus pada satu perubahan dalam satu waktu, jangan coba menganalisis semua kemungkinan perubahan sekaligus karena bisa bikin bingung dan buang waktu.</li>
+<li>Kerjakan soal klasifikasi gambar dan bayangan cermin lebih dulu karena biasanya lebih cepat diselesaikan, baru sisakan waktu lebih banyak untuk matriks 3x3 yang butuh analisis dua arah.</li>
+<li>Kalau memungkinkan, latihan rutin dengan buku psikotes bergambar asli supaya lebih terbiasa dengan variasi bentuk yang sebenarnya muncul di tes, karena bank soal ini pakai simbol sederhana untuk melatih cara berpikirnya dulu.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<div class="page" id="page-flashcard">
+<div class="ch-hero">
+<div class="ch-label anim">Evaluasi</div>
+<h1 class="anim">Flashcard</h1>
+<p class="anim">Uji ingatan kamu soal cara berpikir tiap jenis soal gambar. Klik kartu untuk membalik dan lihat jawabannya.</p>
+</div>
+<div class="fc-grid" id="fcGrid"></div>
+</div>
+
+</main>
+
+<div class="quiz-overlay" id="quizOverlay" onclick="closeQuiz()"></div>
+<div class="quiz-modal" id="quizModal">
+<div class="qm-head">
+<span class="qm-title"><i data-lucide="clipboard-list"></i> Quiz</span>
+<button class="qm-close" onclick="closeQuiz()">&#10005;</button>
+</div>
+<div class="qm-progress-bar"><div class="qm-progress-fill" id="qProgress" style="width:0%"></div></div>
+<div id="qScreen">
+<div class="qm-body">
+<div class="qm-counter" id="qCounter"></div>
+<div class="qm-timer" id="qTimerRow"><i data-lucide="timer"></i><span id="qTimerText">30 detik tersisa</span></div>
+<div class="qm-timer-bar" id="qTimerBarWrap"><div class="qm-timer-fill" id="qTimerFill" style="width:100%"></div></div>
+<div class="qm-q" id="qText"></div>
+<div class="qm-visual" id="qVisual"></div>
+<div class="qm-opts" id="qOpts"></div>
+<div class="qm-feedback" id="qFeedback"></div>
+</div>
+<div class="qm-nav">
+<button class="qm-btn qm-btn-sec" id="qPrevBtn" onclick="prevQuestion()">&#8592; Sebelumnya</button>
+<button class="qm-btn qm-btn-prim" id="qNextBtn" onclick="nextQuestion()">Selanjutnya &#8594;</button>
+</div>
+</div>
+<div class="qm-result" id="qResult" style="display:none">
+<div class="result-icon" id="rIcon"></div>
+<div class="result-score" id="rScore"></div>
+<div class="result-msg" id="rMsg"></div>
+<div class="result-detail" id="rDetail"></div>
+<div class="result-actions">
+<button class="qm-btn qm-btn-prim" onclick="retryQuiz()"><i data-lucide="refresh-cw"></i> Coba Lagi</button>
+<button class="qm-btn qm-btn-sec" onclick="closeQuiz()">Kembali</button>
+</div>
+</div>
+</div>
+
+<script>
+function shapeHTML(type, size, color, extra) {
+  let style = 'width:' + size + 'px;height:' + size + 'px;background:' + color + ';';
+  if (type === 'circle') style += 'border-radius:50%;';
+  else if (type === 'triangle') style += 'clip-path:polygon(50% 0%,0% 100%,100% 100%);';
+  else if (type === 'rightTriangle') style += 'clip-path:polygon(0% 0%,0% 100%,100% 100%);';
+  else if (type === 'pentagon') style += 'clip-path:polygon(50% 0%,100% 38%,82% 100%,18% 100%,0% 38%);';
+  else if (type === 'hexagon') style += 'clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);';
+  if (extra) style += extra;
+  return '<div style="' + style + '"></div>';
+}
+function multiShapes(type, count, size, color, gap) {
+  let s = '';
+  for (let i = 0; i < count; i++) s += shapeHTML(type, size, color);
+  return '<div style="display:flex;gap:' + (gap || 4) + 'px">' + s + '</div>';
+}
+function rowHTML(itemsArr) {
+  return '<div class="fig-row" style="padding:1rem">' + itemsArr.join('') + '</div>';
+}
+function itemHTML(inner, label) {
+  return '<div class="fig-item">' + inner + (label ? '<div class="fig-label">' + label + '</div>' : '') + '</div>';
+}
+function arrowHTML(deg, color) {
+  return '<div class="fig-arrow-lg" style="transform:rotate(' + deg + 'deg);' + (color ? ('color:' + color + ';') : '') + '">&#8593;</div>';
+}
+function circFracHTML(deg, size) {
+  size = size || 46;
+  return '<div style="width:' + size + 'px;height:' + size + 'px;border-radius:50%;background:conic-gradient(var(--teal-l) 0deg ' + deg + 'deg, var(--bg4) ' + deg + 'deg 360deg);border:1px solid var(--border2)"></div>';
+}
+function letterHTML(txt, axis, size) {
+  size = size || 2.2;
+  let t = '';
+  if (axis === 'h') t = 'transform:scaleX(-1);';
+  else if (axis === 'v') t = 'transform:scaleY(-1);';
+  return '<div class="fig-letter" style="font-size:' + size + 'rem;' + t + 'display:inline-block">' + txt + '</div>';
+}
+function emptyHTML(size) {
+  size = size || 46;
+  return '<div class="fig-empty" style="width:' + size + 'px;height:' + size + 'px;font-size:1.1rem">?</div>';
+}
+function matrixHTML(cells) {
+  return '<div class="fig-matrix" style="max-width:220px">' + cells.map(function(c){ return '<div class="fig-cell">' + c + '</div>'; }).join('') + '</div>';
+}
+function arrowRight() { return '<div class="fig-arrow-lg" style="transform:rotate(90deg)">&#8593;</div>'; }
+function analogySep() { return '<div class="fig-arrow-lg" style="color:var(--gold-l)">::</div>'; }
+
+const flashcards = [
+{ chapter:"Bab 1", q:"Apa yang perlu difokuskan pertama kali saat mengerjakan soal deret pola gambar?", a:"Fokus pada <strong>satu unsur yang berubah</strong> secara konsisten dulu, baru cek unsur lain kalau perlu." },
+{ chapter:"Bab 1", q:"Sebutkan tiga jenis perubahan yang paling sering diuji dalam deret pola gambar.", a:"Perubahan <strong>jumlah</strong>, <strong>ukuran</strong>, dan <strong>arah atau rotasi</strong> bentuk." },
+{ chapter:"Bab 2", q:"Apa perbedaan analogi gambar dengan analogi kata?", a:"Analogi gambar memakai <strong>bentuk visual</strong> sebagai pengganti kata, tapi cara mencari hubungannya sama." },
+{ chapter:"Bab 2", q:"Langkah pertama menyelesaikan soal analogi gambar adalah?", a:"Menentukan <strong>jenis perubahan</strong> dari gambar pertama ke gambar kedua, baru terapkan ke pasangan berikutnya." },
+{ chapter:"Bab 3", q:"Apa yang dicari dalam soal klasifikasi gambar?", a:"Satu gambar yang <strong>berbeda sendiri</strong> dari gambar gambar lain dalam satu kelompok." },
+{ chapter:"Bab 3", q:"Sebutkan dua hal yang perlu diperiksa teliti pada soal klasifikasi gambar.", a:"<strong>Jumlah sisi atau sudut</strong>, dan <strong>garis tambahan atau arah bayangan</strong> pada tiap gambar." },
+{ chapter:"Bab 4", q:"Apa yang terjadi pada gambar saat dicerminkan secara horizontal?", a:"Bagian <strong>kiri dan kanan bertukar posisi</strong>, sedangkan atas bawahnya tetap sama." },
+{ chapter:"Bab 4", q:"Apa yang terjadi pada gambar saat dicerminkan secara vertikal?", a:"Bagian <strong>atas dan bawah bertukar posisi</strong>, sedangkan kiri kanannya tetap sama." },
+{ chapter:"Bab 4", q:"Kenapa huruf seperti P dan b sering dipakai di soal bayangan cermin?", a:"Karena bentuknya <strong>tidak simetris</strong>, jadi hasil pantulannya jelas berbeda dari bentuk aslinya." },
+{ chapter:"Bab 5", q:"Apa yang membedakan soal matriks 3x3 dengan soal deret gambar biasa?", a:"Matriks 3x3 menuntut kamu mengecek pola di <strong>dua arah sekaligus</strong>, horizontal dan vertikal." },
+{ chapter:"Bab 5", q:"Kotak mana yang biasanya dikosongkan dalam soal matriks 3x3?", a:"Biasanya kotak <strong>kesembilan</strong>, di pojok kanan bawah matriks." },
+{ chapter:"Strategi", q:"Jenis soal gambar mana yang sebaiknya dikerjakan lebih dulu karena lebih cepat diselesaikan?", a:"Soal <strong>klasifikasi gambar</strong> dan <strong>bayangan cermin</strong>, sebelum matriks 3x3." },
+{ chapter:"Strategi", q:"Kenapa sebaiknya tidak menganalisis semua kemungkinan perubahan sekaligus dalam satu soal?", a:"Karena bisa bikin <strong>bingung dan buang waktu</strong>, padahal biasanya cuma satu atau dua unsur yang berubah konsisten." },
+{ chapter:"Bab 1", q:"Kalau bagian terisi sebuah lingkaran berkurang dari penuh, ke setengah, ke seperempat, apa bagian terisi selanjutnya?", a:"<strong>Seperdelapan</strong> bagian terisi, karena polanya berkurang setengah dari sebelumnya di tiap langkah." },
+{ chapter:"Bab 2", q:"Kalau ragu antara dua pilihan jawaban analogi gambar, apa yang bisa dilakukan?", a:"Tuliskan pola perubahannya dalam <strong>satu kalimat singkat</strong>, lalu cocokkan ke tiap pilihan jawaban." }
+];
+
+const quizData = [
+{ q:"Perhatikan pola jumlah kotak pada deret gambar berikut. Berapa jumlah kotak pada gambar keempat?",
+  img: rowHTML([itemHTML(multiShapes('square',2,22,'var(--teal-l)'),'Gambar 1'),itemHTML(multiShapes('square',3,20,'var(--teal-l)'),'Gambar 2'),itemHTML(multiShapes('square',4,18,'var(--teal-l)'),'Gambar 3'),itemHTML(emptyHTML(90),'Gambar 4')]),
+  opts:["5 kotak","6 kotak","4 kotak","7 kotak"], ans:0 },
+{ q:"Perhatikan pola bagian terisi pada deret lingkaran berikut. Bagaimana bentuk gambar keempat yang tepat?",
+  img: rowHTML([itemHTML(circFracHTML(90,44),'Gambar 1'),itemHTML(circFracHTML(180,44),'Gambar 2'),itemHTML(circFracHTML(270,44),'Gambar 3'),itemHTML(emptyHTML(44),'Gambar 4')]),
+  opts:["Terisi penuh (360 derajat)","Tetap tiga perempat","Kembali ke seperempat","Terisi setengah saja"], ans:0 },
+{ q:"Anak panah berputar 90 derajat searah jarum jam di tiap gambar berikutnya. Ke arah mana anak panah pada gambar keempat?",
+  img: rowHTML([itemHTML(arrowHTML(90),'Gambar 1'),itemHTML(arrowHTML(180),'Gambar 2'),itemHTML(arrowHTML(270),'Gambar 3'),itemHTML(emptyHTML(46),'Gambar 4')]),
+  opts:["Menghadap atas","Menghadap kanan","Menghadap bawah","Menghadap kiri"], ans:0 },
+{ q:"Saat mengerjakan soal deret pola gambar, langkah pertama yang paling tepat adalah...",
+  opts:["Menganalisis semua kemungkinan perubahan sekaligus supaya cepat","Memilih jawaban yang bentuknya paling mirip gambar terakhir","Fokus pada satu unsur yang berubah dulu, baru cek unsur lain kalau perlu","Menghitung jumlah opsi jawaban yang tersedia"], ans:2 },
+{ q:"Perhatikan pola ukuran lingkaran pada deret gambar berikut. Ukuran apa yang tepat untuk gambar keempat?",
+  img: rowHTML([itemHTML(shapeHTML('circle',40,'var(--gold-l)'),'Gambar 1'),itemHTML(shapeHTML('circle',30,'var(--gold-l)'),'Gambar 2'),itemHTML(shapeHTML('circle',20,'var(--gold-l)'),'Gambar 3'),itemHTML(emptyHTML(40),'Gambar 4')]),
+  opts:["Lebih kecil lagi dari gambar ketiga","Sama besar dengan gambar pertama","Sama besar dengan gambar ketiga","Lebih besar dari gambar pertama"], ans:0 },
+{ q:"Tentukan pasangan gambar 4 yang tepat berdasarkan pola pada gambar 1 dan 2.",
+  img: rowHTML([itemHTML(shapeHTML('triangle',26,'#fff','border:2px solid var(--text3);'),'Gambar 1'),itemHTML(arrowRight(),''),itemHTML(shapeHTML('triangle',46,'#1a0810'),'Gambar 2'),itemHTML(analogySep(),''),itemHTML(shapeHTML('square',26,'#fff','border:2px solid var(--text3);'),'Gambar 3'),itemHTML(arrowRight(),''),itemHTML(emptyHTML(46),'Gambar 4')]),
+  opts:[shapeHTML('square',34,'#fff','border:2px solid var(--text3);display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi besar putih', shapeHTML('square',34,'#1a0810','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi besar hitam', shapeHTML('square',20,'#1a0810','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi kecil hitam', shapeHTML('triangle',34,'#1a0810','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segitiga besar hitam'], ans:1 },
+{ q:"Pada soal analogi gambar, hubungan antara gambar pertama dan kedua sebaiknya diterapkan ke...",
+  opts:["Gambar ketiga untuk menentukan gambar keempat","Semua pilihan jawaban tanpa terkecuali","Gambar pertama itu sendiri","Urutan huruf pada pilihan jawaban"], ans:0 },
+{ q:"Berdasarkan pola perubahan jumlah unsur di dalam bentuk pada gambar 1 dan 2, apa isi gambar keempat yang tepat?",
+  img: rowHTML([itemHTML('<div style="width:36px;height:36px;border-radius:50%;background:var(--teal-l);display:flex;align-items:center;justify-content:center"><div style="width:18px;height:2px;background:#fff"></div></div>','Gambar 1'),itemHTML(arrowRight(),''),itemHTML('<div style="width:36px;height:36px;border-radius:50%;background:var(--teal-l);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px"><div style="width:18px;height:2px;background:#fff"></div><div style="width:18px;height:2px;background:#fff"></div></div>','Gambar 2'),itemHTML(analogySep(),''),itemHTML('<div style="width:36px;height:36px;clip-path:polygon(50% 0%,0% 100%,100% 100%);background:var(--gold-l);display:flex;align-items:flex-end;justify-content:center;padding-bottom:5px"><div style="width:6px;height:6px;border-radius:50%;background:#fff"></div></div>','Gambar 3'),itemHTML(arrowRight(),''),itemHTML(emptyHTML(40),'Gambar 4')]),
+  opts:["Segitiga dengan dua titik di dalamnya","Segitiga dengan satu titik saja, sama seperti gambar 3","Segitiga tanpa titik di dalamnya","Segitiga dengan satu garis di dalamnya"], ans:0 },
+{ q:"Kalau kamu ragu antara dua pilihan jawaban pada soal analogi gambar, cara paling efektif adalah...",
+  opts:["Memilih pilihan yang huruf urutannya lebih awal","Menuliskan pola perubahannya dalam satu kalimat singkat, lalu mencocokkan ke tiap pilihan","Memilih pilihan dengan warna paling gelap","Melewati soal tersebut tanpa dijawab"], ans:1 },
+{ q:"Gambar 1 ke gambar 2 menunjukkan rotasi 90 derajat searah jarum jam. Berdasarkan pola itu, ke arah mana gambar 4 seharusnya menghadap?",
+  img: rowHTML([itemHTML(arrowHTML(90),'Gambar 1'),itemHTML(arrowRight(),''),itemHTML(arrowHTML(180),'Gambar 2'),itemHTML(analogySep(),''),itemHTML(arrowHTML(0),'Gambar 3'),itemHTML(arrowRight(),''),itemHTML(emptyHTML(46),'Gambar 4')]),
+  opts:["Menghadap kanan","Menghadap kiri","Menghadap atas","Menghadap bawah"], ans:0 },
+{ q:"Manakah gambar yang berbeda sendiri dari kelompok berikut?",
+  opts:[shapeHTML('triangle',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segitiga sama sisi', shapeHTML('square',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi', shapeHTML('pentagon',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segilima', shapeHTML('rightTriangle',30,'var(--gold-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segitiga siku siku'], ans:3 },
+{ q:"Tiga gambar berikut punya jumlah sisi genap, satu gambar jumlah sisinya ganjil. Manakah yang berbeda sendiri?",
+  opts:[shapeHTML('hexagon',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segienam (6 sisi)', shapeHTML('pentagon',30,'var(--gold-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segilima (5 sisi)', shapeHTML('hexagon',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segienam (6 sisi)', shapeHTML('square',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi (4 sisi)'], ans:1 },
+{ q:"Soal klasifikasi gambar biasanya bisa dikerjakan lebih cepat dibanding matriks 3x3 karena...",
+  opts:["Cukup dibandingkan antar beberapa gambar saja, tidak perlu analisis dua arah sekaligus","Selalu hanya berisi dua pilihan jawaban","Tidak pernah punya jebakan pada pilihan jawabannya","Bentuknya selalu berupa lingkaran"], ans:0 },
+{ q:"Tiga gambar berikut terarsir di sisi kiri, satu gambar terarsir di sisi kanan. Manakah yang berbeda sendiri?",
+  opts:['<div style="width:30px;height:30px;background:linear-gradient(to right, var(--teal-l) 50%, var(--bg4) 50%);display:inline-block;vertical-align:middle;margin-right:.5rem;"></div>Terarsir kiri','<div style="width:30px;height:30px;background:linear-gradient(to right, var(--teal-l) 50%, var(--bg4) 50%);display:inline-block;vertical-align:middle;margin-right:.5rem;"></div>Terarsir kiri','<div style="width:30px;height:30px;background:linear-gradient(to left, var(--teal-l) 50%, var(--bg4) 50%);display:inline-block;vertical-align:middle;margin-right:.5rem;"></div>Terarsir kanan','<div style="width:30px;height:30px;background:linear-gradient(to right, var(--teal-l) 50%, var(--bg4) 50%);display:inline-block;vertical-align:middle;margin-right:.5rem;"></div>Terarsir kiri'], ans:2 },
+{ q:"Tiga gambar berikut adalah persegi dengan sisi dan sudut yang sama besar, satu gambar berbentuk segiempat tidak beraturan. Manakah yang berbeda sendiri?",
+  opts:[shapeHTML('square',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi', shapeHTML('square',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi', shapeHTML('square',30,'var(--teal-l)','clip-path:polygon(8% 12%,92% 0%,100% 88%,4% 100%);display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Segiempat tidak beraturan', shapeHTML('square',30,'var(--teal-l)','display:inline-block;vertical-align:middle;margin-right:.5rem;')+'Persegi'], ans:2 },
+{ q:"Huruf \"P\" dicerminkan secara horizontal. Manakah bayangan yang tepat?",
+  opts:[letterHTML('P',null,1.8)+' Sama seperti aslinya', letterHTML('P','h',1.8)+' Terbalik kiri kanan (horizontal)', letterHTML('P','v',1.8)+' Terbalik atas bawah (vertikal)', letterHTML('d',null,1.8)+' Berubah jadi huruf d'], ans:1 },
+{ q:"Huruf \"b\" dicerminkan secara horizontal. Bayangannya akan terlihat mirip huruf apa?",
+  img: rowHTML([itemHTML(letterHTML('b',null,2.2),'Asli'),itemHTML(arrowRight(),''),itemHTML(letterHTML('b','h',2.2),'Bayangan Horizontal')]),
+  opts:["Terlihat mirip huruf d","Terlihat mirip huruf p","Terlihat mirip huruf q","Tetap terlihat seperti huruf b"], ans:0 },
+{ q:"Perbedaan utama cermin horizontal dan cermin vertikal pada soal bayangan gambar adalah...",
+  opts:["Horizontal menukar kiri kanan, vertikal menukar atas bawah","Horizontal mengubah warna, vertikal mengubah ukuran","Keduanya menghasilkan bayangan yang selalu sama","Horizontal hanya berlaku untuk huruf, vertikal untuk angka"], ans:0 },
+{ q:"Angka \"2\" dicerminkan secara horizontal. Manakah gambaran bayangan yang tepat?",
+  img: rowHTML([itemHTML(letterHTML('2',null,2.2),'Asli'),itemHTML(arrowRight(),''),itemHTML(emptyHTML(50),'Bayangan')]),
+  opts:[letterHTML('2',null,1.6)+' Sama seperti aslinya, tidak berubah', letterHTML('2','h',1.6)+' Terbalik menghadap arah sebaliknya', letterHTML('2','v',1.6)+' Terbalik atas bawah', letterHTML('5',null,1.6)+' Berubah jadi angka 5'], ans:1 },
+{ q:"Sebuah anak panah menghadap arah kanan atas (diagonal). Kalau dicerminkan secara vertikal, ke arah mana anak panah pada bayangannya?",
+  img: rowHTML([itemHTML(arrowHTML(45),'Asli (kanan atas)'),itemHTML(arrowRight(),''),itemHTML(emptyHTML(50),'Bayangan Vertikal')]),
+  opts:["Menghadap kanan bawah","Menghadap kiri atas","Menghadap kiri bawah","Tetap menghadap kanan atas"], ans:0 },
+{ q:"Berdasarkan pola jumlah bentuk pada tiap baris matriks berikut, berapa jumlah segitiga yang tepat mengisi kotak kosong?",
+  img: matrixHTML([multiShapes('circle',1,12,'var(--teal-l)'),multiShapes('circle',2,11,'var(--teal-l)'),multiShapes('circle',3,10,'var(--teal-l)'),multiShapes('square',1,12,'var(--gold-l)'),multiShapes('square',2,11,'var(--gold-l)'),multiShapes('square',3,10,'var(--gold-l)'),multiShapes('triangle',1,12,'var(--blue)'),multiShapes('triangle',2,11,'var(--blue)'),emptyHTML(30)]),
+  opts:["3 segitiga","2 segitiga","4 segitiga","1 segitiga"], ans:0 },
+{ q:"Warna pada matriks berikut mengikuti pola sehingga tiap baris dan kolom berisi tiga warna berbeda tanpa pengulangan. Warna apa yang tepat mengisi kotak kosong?",
+  img: matrixHTML([shapeHTML('circle',24,'var(--teal-l)'),shapeHTML('circle',24,'var(--gold-l)'),shapeHTML('circle',24,'var(--blue)'),shapeHTML('circle',24,'var(--gold-l)'),shapeHTML('circle',24,'var(--blue)'),shapeHTML('circle',24,'var(--teal-l)'),shapeHTML('circle',24,'var(--blue)'),shapeHTML('circle',24,'var(--teal-l)'),emptyHTML(30)]),
+  opts:["Kuning keemasan (gold)","Hijau kebiruan (teal)","Biru (blue)","Ungu"], ans:0 },
+{ q:"Strategi paling tepat mengerjakan soal matriks 3x3 adalah...",
+  opts:["Cek pola secara horizontal per baris, lalu cek juga pola secara vertikal per kolom","Langsung menebak tanpa mengecek pola sama sekali","Hanya memperhatikan warna, mengabaikan bentuk dan jumlah","Mengerjakan soal ini paling pertama sebelum jenis soal lain"], ans:0 },
+{ q:"Tiap baris matriks berikut memakai bentuk yang sama dengan ukuran mengecil dari kiri ke kanan. Bentuk dan ukuran apa yang tepat mengisi kotak kosong?",
+  img: matrixHTML([shapeHTML('hexagon',30,'var(--teal-l)'),shapeHTML('hexagon',20,'var(--teal-l)'),shapeHTML('hexagon',12,'var(--teal-l)'),shapeHTML('pentagon',30,'var(--gold-l)'),shapeHTML('pentagon',20,'var(--gold-l)'),shapeHTML('pentagon',12,'var(--gold-l)'),shapeHTML('triangle',30,'var(--blue)'),shapeHTML('triangle',20,'var(--blue)'),emptyHTML(30)]),
+  opts:["Segitiga kecil","Segitiga besar","Segilima kecil","Segienam kecil"], ans:0 },
+{ q:"Tiap kolom pada matriks berikut menambahkan rotasi 90 derajat searah jarum jam dari baris sebelumnya. Ke arah mana anak panah yang tepat mengisi kotak kosong?",
+  img: matrixHTML([arrowHTML(0),arrowHTML(90),arrowHTML(180),arrowHTML(90),arrowHTML(180),arrowHTML(270),arrowHTML(180),arrowHTML(270),emptyHTML(30)]),
+  opts:["Menghadap atas","Menghadap kanan","Menghadap bawah","Menghadap kiri"], ans:0 }
+];
+
+function navigate(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  const page = document.getElementById('page-' + pageId);
+  const btn  = document.getElementById('nav-'  + pageId);
+  if (page) {
+    page.querySelectorAll('.anim').forEach(el => {
+      el.style.animation = 'none';
+      void el.offsetWidth;
+      el.style.animation = '';
+    });
+    page.classList.add('active');
+  }
+  if (btn) btn.classList.add('active');
+  const main = document.querySelector('.main');
+  if (main) main.scrollTop = 0;
+  window.scrollTo(0, 0);
+  closeSidebar();
+  if (pageId === 'flashcard') buildFlashcards();
+}
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sbOverlay').classList.toggle('show');
+}
+function closeSidebar() {
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sbOverlay').classList.remove('show');
+}
+function buildFlashcards() {
+  const grid = document.getElementById('fcGrid');
+  if (grid.children.length > 0) return;
+  grid.innerHTML = '';
+  flashcards.forEach((fc, i) => {
+    grid.innerHTML += `
+<div class="fc-container anim" style="animation-delay:${0.05 + i*0.04}s" onclick="flipCard(this)">
+<div class="fc-inner">
+<div class="fc-face fc-front">
+<div>
+<div class="fc-chapter">${fc.chapter}</div>
+<div class="fc-question">${fc.q}</div>
+</div>
+<div class="fc-hint">Klik untuk lihat jawaban</div>
+</div>
+<div class="fc-face fc-back">
+<div>
+<div class="fc-flip-hint">&#8617; Klik untuk kembali</div>
+<div class="fc-answer">${fc.a}</div>
+</div>
+</div>
+</div>
+</div>`;
+  });
+  requestAnimationFrame(() => {
+    grid.querySelectorAll('.fc-container').forEach(container => {
+      const inner = container.querySelector('.fc-inner');
+      const front = container.querySelector('.fc-front');
+      const back  = container.querySelector('.fc-back');
+      back.style.transform  = 'none';
+      back.style.visibility = 'hidden';
+      back.style.position   = 'relative';
+      front.style.position  = 'relative';
+      const h = Math.max(front.scrollHeight, back.scrollHeight, 180);
+      back.style.transform  = '';
+      back.style.visibility = '';
+      back.style.position   = '';
+      front.style.position  = '';
+      inner.style.minHeight = h + 'px';
+    });
+  });
+}
+function flipCard(el) { el.classList.toggle('flipped'); }
+
+let qCurrent = 0, qAnswers = [], qShuffled = [], qAnswered = false;
+let qTimeLeft = 30, qTimerInterval = null;
+
+function openQuiz() {
+  qShuffled = [...quizData].sort(() => Math.random() - .5).slice(0, 20);
+  qCurrent  = 0;
+  qAnswers  = new Array(qShuffled.length).fill(-1);
+  qAnswered = false;
+  clearQuestionTimer();
+  document.getElementById('qScreen').style.display = '';
+  document.getElementById('qResult').style.display = 'none';
+  document.getElementById('quizModal').classList.add('show');
+  document.getElementById('quizOverlay').classList.add('show');
+  renderQuestion();
+}
+function closeQuiz() {
+  clearQuestionTimer();
+  document.getElementById('quizModal').classList.remove('show');
+  document.getElementById('quizOverlay').classList.remove('show');
+}
+function clearQuestionTimer() {
+  if (qTimerInterval) { clearInterval(qTimerInterval); qTimerInterval = null; }
+}
+function startQuestionTimer() {
+  clearQuestionTimer();
+  qTimeLeft = 30;
+  updateTimerUI();
+  qTimerInterval = setInterval(() => {
+    qTimeLeft--;
+    updateTimerUI();
+    if (qTimeLeft <= 0) {
+      clearQuestionTimer();
+      handleTimeout();
+    }
+  }, 1000);
+}
+function updateTimerUI() {
+  const txt  = document.getElementById('qTimerText');
+  const fill = document.getElementById('qTimerFill');
+  const row  = document.getElementById('qTimerRow');
+  if (!txt || !fill || !row) return;
+  txt.textContent = qTimeLeft + ' detik tersisa';
+  fill.style.width = (qTimeLeft / 30 * 100) + '%';
+  row.classList.remove('warn','danger');
+  fill.classList.remove('warn','danger');
+  if (qTimeLeft <= 10 && qTimeLeft > 5) { row.classList.add('warn'); fill.classList.add('warn'); }
+  else if (qTimeLeft <= 5) { row.classList.add('danger'); fill.classList.add('danger'); }
+}
+function hideTimerUI() {
+  const row = document.getElementById('qTimerRow');
+  const bar = document.getElementById('qTimerBarWrap');
+  if (row) row.style.display = 'none';
+  if (bar) bar.style.display = 'none';
+}
+function showTimerUI() {
+  const row = document.getElementById('qTimerRow');
+  const bar = document.getElementById('qTimerBarWrap');
+  if (row) row.style.display = 'flex';
+  if (bar) bar.style.display = 'block';
+}
+function handleTimeout() {
+  document.querySelectorAll('.qm-opt').forEach(b => b.disabled = true);
+  showTimeoutResult();
+}
+function renderQuestion() {
+  const total = qShuffled.length;
+  const q     = qShuffled[qCurrent];
+  document.getElementById('qCounter').textContent = `Soal ${qCurrent + 1} dari ${total}`;
+  document.getElementById('qProgress').style.width = ((qCurrent + 1) / total * 100) + '%';
+  document.getElementById('qText').textContent = q.q;
+  const visual = document.getElementById('qVisual');
+  if (q.img) { visual.innerHTML = q.img; visual.style.display = 'flex'; }
+  else { visual.innerHTML = ''; visual.style.display = 'none'; }
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'none';
+  fb.className = 'qm-feedback';
+  const opts    = document.getElementById('qOpts');
+  opts.innerHTML = '';
+  const letters = ['A','B','C','D'];
+  const chosen  = qAnswers[qCurrent];
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qm-opt';
+    btn.innerHTML = `<span class="opt-letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = () => selectAnswer(i);
+    if (chosen !== -1) {
+      btn.disabled = true;
+      if (i === q.ans) btn.classList.add('correct');
+      if (i === chosen && chosen !== q.ans) btn.classList.add('wrong');
+      if (i === chosen) btn.classList.add('selected');
+      showFeedback(chosen === q.ans);
+    }
+    opts.appendChild(btn);
+  });
+  const prevBtn = document.getElementById('qPrevBtn');
+  const nextBtn = document.getElementById('qNextBtn');
+  prevBtn.style.visibility = qCurrent > 0 ? 'visible' : 'hidden';
+  if (qCurrent === total - 1) {
+    nextBtn.textContent = 'Lihat Hasil \u2192';
+    nextBtn.className   = 'qm-btn qm-btn-gold';
+  } else {
+    nextBtn.textContent = 'Selanjutnya \u2192';
+    nextBtn.className   = 'qm-btn qm-btn-prim';
+  }
+  if (chosen !== -1) { clearQuestionTimer(); hideTimerUI(); }
+  else { showTimerUI(); startQuestionTimer(); }
+  if (window.lucide) lucide.createIcons();
+}
+function selectAnswer(idx) {
+  if (qAnswers[qCurrent] !== -1) return;
+  clearQuestionTimer();
+  hideTimerUI();
+  qAnswers[qCurrent] = idx;
+  const q    = qShuffled[qCurrent];
+  const btns = document.querySelectorAll('.qm-opt');
+  btns.forEach((btn, i) => {
+    btn.disabled = true;
+    if (i === q.ans) btn.classList.add('correct');
+    if (i === idx && idx !== q.ans) {
+      btn.classList.add('wrong');
+      btn.classList.remove('shake');
+      void btn.offsetWidth;
+      btn.classList.add('shake');
+    }
+    if (i === idx) btn.classList.add('selected');
+  });
+  showFeedback(idx === q.ans);
+}
+function showFeedback(correct) {
+  const fb = document.getElementById('qFeedback');
+  fb.style.display = 'block';
+  if (correct) {
+    fb.className = 'qm-feedback correct-fb';
+    fb.innerHTML = 'Jawaban kamu benar. Bagus sekali.';
+  } else {
+    const letter = ['A','B','C','D'][qShuffled[qCurrent].ans];
+    fb.className = 'qm-feedback wrong-fb';
+    fb.innerHTML = `Jawaban kurang tepat. Jawaban yang benar: Opsi <strong>${letter}</strong>.`;
+  }
+}
+function nextQuestion() {
+  if (qCurrent < qShuffled.length - 1) { qCurrent++; renderQuestion(); }
+  else showResult();
+}
+function prevQuestion() {
+  if (qCurrent > 0) { qCurrent--; renderQuestion(); }
+}
+function showResult() {
+  clearQuestionTimer();
+  const total   = qShuffled.length;
+  const correct = qAnswers.filter((a, i) => a === qShuffled[i].ans).length;
+  const pct     = Math.round(correct / total * 100);
+  const pass    = pct >= 60;
+  document.getElementById('qScreen').style.display = 'none';
+  document.getElementById('qResult').style.display = 'block';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('rIcon').innerHTML = pass
+    ? '<i data-lucide="trophy"></i>'
+    : '<i data-lucide="book-open"></i>';
+  if (window.lucide) lucide.createIcons();
+  document.getElementById('rScore').textContent  = pct + '%';
+  document.getElementById('rScore').className    = 'result-score ' + (pass ? 'pass' : 'fail');
+  document.getElementById('rMsg').textContent    = pass ? 'Selamat! Kamu lulus!' : 'Terus semangat belajar!';
+  document.getElementById('rDetail').textContent = `Benar ${correct} dari ${total} soal`;
+  if (pass) startConfetti();
+}
+function showTimeoutResult() {
+  document.getElementById('qScreen').style.display = 'none';
+  document.getElementById('qResult').style.display = 'block';
+  document.getElementById('qProgress').style.width = '100%';
+  document.getElementById('rIcon').innerHTML = '<i data-lucide="timer-off"></i>';
+  if (window.lucide) lucide.createIcons();
+  document.getElementById('rScore').textContent  = 'Waktu Habis';
+  document.getElementById('rScore').className    = 'result-score fail';
+  document.getElementById('rMsg').textContent    = 'Waktu 30 detik untuk soal ini sudah habis.';
+  document.getElementById('rDetail').textContent = 'Quiz otomatis diulang dari soal pertama. Coba lagi, kali ini kamu pasti bisa lebih cepat.';
+}
+function retryQuiz() { openQuiz(); }
+
+let confettiRunning = false;
+function startConfetti() {
+  if (confettiRunning) return;
+  confettiRunning = true;
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx    = canvas.getContext('2d');
+  canvas.width  = window.innerWidth;
+  canvas.height = window.innerHeight;
+  const colors = ['#059669','#10b981','#f59e0b','#fbbf24','#7c3aed','#f472b6','#16a34a'];
+  const pieces = Array.from({length: 140}, () => ({
+    x:   Math.random() * canvas.width,
+    y:   Math.random() * -canvas.height,
+    w:   6 + Math.random() * 8,
+    h:   3 + Math.random() * 5,
+    r:   Math.random() * Math.PI * 2,
+    dr:  (Math.random() - .5) * .12,
+    dy:  2.5 + Math.random() * 4,
+    dx:  (Math.random() - .5) * 2,
+    col: colors[Math.floor(Math.random() * colors.length)]
+  }));
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    pieces.forEach(p => {
+      p.y += p.dy; p.x += p.dx; p.r += p.dr;
+      ctx.save();
+      ctx.translate(p.x, p.y);
+      ctx.rotate(p.r);
+      ctx.fillStyle = p.col;
+      ctx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+      ctx.restore();
+    });
+    frame++;
+    if (frame < 200) requestAnimationFrame(draw);
+    else { ctx.clearRect(0, 0, canvas.width, canvas.height); confettiRunning = false; }
+  }
+  draw();
+}
+
+const searchPageMap = [
+  { page: 'home',      keywords: ['beranda','home','selamat datang'] },
+  { page: 'bab1',      keywords: ['bab1','deret','pola gambar'] },
+  { page: 'bab2',      keywords: ['bab2','analogi'] },
+  { page: 'bab3',      keywords: ['bab3','klasifikasi'] },
+  { page: 'bab4',      keywords: ['bab4','cermin','bayangan'] },
+  { page: 'bab5',      keywords: ['bab5','matriks'] },
+  { page: 'flashcard', keywords: ['flashcard','kartu','flip'] },
+];
+let searchTimeout = null;
+function handleSearch(val) {
+  clearTimeout(searchTimeout);
+  searchTimeout = setTimeout(() => doSearch(val.trim()), 200);
+}
+function doSearch(query) {
+  document.querySelectorAll('.search-highlight').forEach(el => { el.outerHTML = el.textContent; });
+  if (!query) return;
+  const q = query.toLowerCase();
+  let targetPage = null;
+  for (const entry of searchPageMap) {
+    if (entry.keywords.some(k => k.includes(q) || q.includes(k))) { targetPage = entry.page; break; }
+  }
+  if (targetPage) navigate(targetPage);
+  const activePage = document.querySelector('.page.active');
+  if (!activePage) return;
+  const walker = document.createTreeWalker(activePage, NodeFilter.SHOW_TEXT, {
+    acceptNode: n => {
+      if (['SCRIPT','STYLE','INPUT'].includes(n.parentElement.tagName)) return NodeFilter.FILTER_REJECT;
+      return n.textContent.toLowerCase().includes(q) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP;
+    }
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  nodes.forEach(node => {
+    const re   = new RegExp(`(${query.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`, 'gi');
+    const span = document.createElement('span');
+    span.innerHTML = node.textContent.replace(re, '<mark class="search-highlight">$1</mark>');
+    node.parentNode.replaceChild(span, node);
+  });
+  const first = activePage.querySelector('.search-highlight');
+  if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+navigate('home');
+lucide.createIcons();
+</script>
+</body>
+</html>
